@@ -1,513 +1,803 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <!-- ==========================================================================
+       RU: Базовые метаданные страницы
+       EN: Basic page metadata
+       ========================================================================== -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Программа поддержки сотрудников</title>
-  <meta
-    name="description"
-    content="Программа поддержки сотрудников для корпоративных клиентов: психологи, юристы, коучи и wellbeing-сервисы в одном решении."
-  />
+
+  <!-- RU: Заголовок страницы
+       EN: Page title -->
+  <title>ППС — Программа поддержки сотрудников</title>
+
+  <!-- RU: Подключение шрифтов
+       EN: Font loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="./css/styles.css" />
+
+  <!-- RU: Подключение CSS по слоям — база, layout, components
+       EN: Layered CSS loading — base, layout, components -->
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/components.css" />
 </head>
 <body>
+  <!-- ==========================================================================
+       RU: Шапка сайта
+       EN: Site header
+       ========================================================================== -->
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="site-brand" href="#home" aria-label="На главную">
+      <!-- RU: Логотип проекта
+           EN: Project logo -->
+      <a class="site-brand" href="#top" aria-label="ППС — на главную">
         <img
           class="site-brand__logo"
           src="./assets/logo.png"
-          alt="Программа поддержки сотрудников"
-          width="132"
-          height="44"
-          loading="eager"
-          decoding="async"
+          alt="Логотип ППС"
+          width="240"
+          height="58"
         />
       </a>
 
-      <nav class="main-nav" aria-label="Основная навигация">
-        <a href="#home">Главная</a>
-        <a href="#benefits">Преимущества</a>
-        <a href="#services">Услуги</a>
-        <a href="#cases">Кейсы</a>
-        <a href="#pricing">Тарифы</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contacts">Контакты</a>
-        <a href="#account">Личный кабинет</a>
+      <!-- RU: Основная навигация
+           EN: Main navigation -->
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link is-active" href="#about-program">О программе</a></li>
+          <li><a class="site-nav__link" href="#solutions">Услуги</a></li>
+          <li><a class="site-nav__link" href="#benefits">Преимущества</a></li>
+          <li><a class="site-nav__link" href="#experts">Специалисты</a></li>
+          <li><a class="site-nav__link" href="#pricing">Тарифы</a></li>
+          <li><a class="site-nav__link" href="#faq">FAQ</a></li>
+          <li><a class="site-nav__link" href="#contacts">Контакты</a></li>
+        </ul>
       </nav>
 
+      <!-- RU: Действия в шапке
+           EN: Header actions -->
       <div class="site-header__actions">
-        <a class="btn btn--primary" href="#contacts">Получить консультацию</a>
+        <a class="btn btn--secondary site-header__cta" href="#cabinet">Личный кабинет</a>
+
+        <!-- RU: Кнопка мобильного меню
+             EN: Mobile menu toggle -->
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span class="menu-toggle__line"></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <main id="home">
+  <!-- ==========================================================================
+       RU: Основное содержимое страницы
+       EN: Main page content
+       ========================================================================== -->
+  <main id="top">
+    <!-- ======================================================================
+         RU: Hero section
+         EN: Hero section
+         ====================================================================== -->
     <section class="hero">
-      <div class="hero__bg" aria-hidden="true">
-        <span class="hero__shape hero__shape--one"></span>
-        <span class="hero__shape hero__shape--two"></span>
-        <span class="hero__shape hero__shape--three"></span>
-        <span class="hero__shape hero__shape--four"></span>
-      </div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <div class="hero__eyebrow">Corporate wellbeing / EAP</div>
 
-      <div class="container hero__grid">
-        <div>
-          <span class="eyebrow">EAP для бизнеса</span>
           <h1 class="hero__title">
-            Сервис поддержки сотрудников, который реально снижает нагрузку на HR
+            Программа поддержки <span>сотрудников</span> для бизнеса
           </h1>
-          <p class="hero__subtitle">
-            Психологи, юристы, коучи и дополнительные сервисы — в одном корпоративном решении.
-          </p>
-          <p class="hero__lead">
-            Помогаем компаниям выстраивать систему заботы о сотрудниках: от консультационной поддержки
-            и программ wellbeing до дополнительных опций для удержания, лояльности и устойчивости бизнеса.
+
+          <p class="hero__description">
+            Комплексный сервис поддержки сотрудников и их семей: психологи, юристы,
+            коучи, консультанты по здоровью и wellbeing-программы, которые помогают
+            снижать текучесть, повышать вовлечённость и усиливать HR-бренд компании.
           </p>
 
           <div class="hero__actions">
             <a class="btn btn--primary" href="#contacts">Получить консультацию</a>
-            <a class="btn btn--secondary" href="#services">Посмотреть услуги</a>
+            <a class="btn btn--secondary" href="#about-program">Узнать подробнее</a>
           </div>
 
-          <div class="hero-metrics">
-            <div class="hero-metrics__item">
-              <strong>300+</strong>
-              <span>компаний и учреждений уже используют сервис</span>
+          <ul class="hero__meta">
+            <li>Подключение для компаний любого масштаба</li>
+            <li>Конфиденциальная поддержка сотрудников</li>
+            <li>Фокус на удержание, wellbeing и HR-эффективность</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__glow"></div>
+
+          <div class="hero__floating-card hero__floating-card--a">
+            <div class="mini-card">
+              <div class="mini-card__title">Запрос на консультацию</div>
+              <div class="mini-card__text">Сотрудник получает помощь без лишней бюрократии.</div>
             </div>
-            <div class="hero-metrics__item">
-              <strong>24/7</strong>
-              <span>поддержка по ряду сервисов и сценариев обращения</span>
+          </div>
+
+          <div class="hero__floating-card hero__floating-card--b">
+            <div class="mini-card">
+              <div class="mini-card__title">HR-ценность</div>
+              <div class="mini-card__text">Сервис усиливает EVP и снижает нагрузку на HR-команду.</div>
             </div>
-            <div class="hero-metrics__item">
-              <strong>B2B</strong>
-              <span>фокус на корпоративных клиентах, HR и wellbeing</span>
+          </div>
+
+          <div class="hero__floating-card hero__floating-card--c">
+            <div class="mini-card">
+              <div class="mini-card__title">Wellbeing</div>
+              <div class="mini-card__text">Поддержка в сложных жизненных и рабочих ситуациях.</div>
+            </div>
+          </div>
+
+          <div class="hero__floating-card hero__floating-card--d">
+            <div class="mini-card">
+              <div class="mini-card__title">Отчётность</div>
+              <div class="mini-card__text">Понятная коммуникация и прозрачная логика внедрения.</div>
+            </div>
+          </div>
+
+          <div class="hero__panel">
+            <div class="hero__panel-top">
+              <div>
+                <div class="hero__panel-kicker">Программа поддержки</div>
+                <div class="hero__panel-title">Единая корпоративная экосистема помощи сотрудникам</div>
+              </div>
+              <div class="hero__panel-badge">B2B-решение</div>
+            </div>
+
+            <div class="hero__panel-body">
+              <div class="hero__panel-grid">
+                <div class="feature-card">
+                  <div class="feature-card__title">Психологическая поддержка</div>
+                  <div class="feature-card__text">
+                    Консультации специалистов для эмоциональной устойчивости и снижения стресса.
+                  </div>
+                </div>
+
+                <div class="feature-card">
+                  <div class="feature-card__title">Юридические консультации</div>
+                  <div class="feature-card__text">
+                    Помощь сотрудникам по личным и бытовым юридическим вопросам.
+                  </div>
+                </div>
+
+                <div class="feature-card">
+                  <div class="feature-card__title">Коучинг и развитие</div>
+                  <div class="feature-card__text">
+                    Поддержка в вопросах мотивации, адаптации и профессионального роста.
+                  </div>
+                </div>
+
+                <div class="feature-card">
+                  <div class="feature-card__title">Дополнительные сервисы</div>
+                  <div class="feature-card__text">
+                    Здоровье, wellbeing, целевые программы и другие поддерживающие сценарии.
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="hero-showcase">
-          <div class="hero-showcase__frame">
-            <div class="hero-showcase__tabs" aria-label="Сценарии">
-              <span class="hero-showcase__tab is-active">Для HR</span>
-              <span class="hero-showcase__tab">Для сотрудников</span>
-              <span class="hero-showcase__tab">Для бизнеса</span>
+    <!-- ======================================================================
+         RU: О программе
+         EN: About the program
+         ====================================================================== -->
+    <section class="section" id="about-program">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">О программе</div>
+          <h2 class="section-title">Что получает бизнес после подключения программы</h2>
+          <p class="section-description">
+            Сервис помогает выстроить понятную систему поддержки сотрудников, сократить
+            внутреннее напряжение в команде и усилить ценность работодателя без роста
+            административной нагрузки на HR.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
             </div>
+            <h3 class="feature-card__title">Единая точка поддержки</h3>
+            <p class="feature-card__text">
+              Компания получает системный сервис, куда сотрудник может обратиться по широкому кругу вопросов.
+            </p>
+          </article>
 
-            <article class="hero-card">
-              <span class="hero-card__tag">HR-сценарий</span>
-              <h2 class="hero-card__title">Снимаем часть личных обращений с HR-команды</h2>
-              <p class="hero-card__description">
-                Сотрудники получают понятный канал помощи по бытовым, психологическим, юридическим и жизненным
-                вопросам без перегрузки внутренних команд.
-              </p>
-              <ul class="hero-card__list">
-                <li>Понятный внешний сервис поддержки.</li>
-                <li>Снижение непрофильной нагрузки на HR.</li>
-                <li>Корпоративный формат внедрения и отчётности.</li>
-              </ul>
-            </article>
-
-            <div class="hero-showcase__pagination" aria-hidden="true">
-              <span class="hero-showcase__dot is-active"></span>
-              <span class="hero-showcase__dot"></span>
-              <span class="hero-showcase__dot"></span>
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 12h16M12 4l8 8-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="benefits" class="section section--alt">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Преимущества</span>
-          <h2 class="section-title">Почему компании внедряют программу поддержки сотрудников</h2>
-          <p class="section-description">
-            Это не ещё один бонус, а рабочий инструмент поддержки сотрудников, снижения внутреннего напряжения
-            и усиления HR-предложения компании.
-          </p>
-        </div>
-
-        <div class="benefits-grid">
-          <article class="card">
-            <span class="card__number">01</span>
-            <h3 class="card__title">Снижение непрофильной нагрузки на HR</h3>
-            <p class="card__text">
-              Часть личных и чувствительных вопросов сотрудников уходит в отдельный сервис,
-              а внутренняя команда фокусируется на своих задачах.
+            <h3 class="feature-card__title">Поддержка HR и руководителей</h3>
+            <p class="feature-card__text">
+              Снижается нагрузка на внутреннюю команду, потому что часть типовых запросов уходит в внешний сервис.
             </p>
           </article>
 
-          <article class="card">
-            <span class="card__number">02</span>
-            <h3 class="card__title">Поддержка лояльности и удержания</h3>
-            <p class="card__text">
-              Забота о сотрудниках усиливает доверие к работодателю и помогает формировать более устойчивую команду.
-            </p>
-          </article>
-
-          <article class="card">
-            <span class="card__number">03</span>
-            <h3 class="card__title">Понятный формат для сотрудников</h3>
-            <p class="card__text">
-              Людям проще пользоваться сервисом, когда путь ясен: где вход, как записаться, к кому обратиться и что происходит дальше.
-            </p>
-          </article>
-
-          <article class="card">
-            <span class="card__number">04</span>
-            <h3 class="card__title">Гибкость по составу программы</h3>
-            <p class="card__text">
-              Базовые консультационные сервисы можно дополнять целевыми программами, вебинарами и дополнительными корпоративными опциями.
-            </p>
-          </article>
-
-          <article class="card">
-            <span class="card__number">05</span>
-            <h3 class="card__title">Корпоративный формат запуска</h3>
-            <p class="card__text">
-              Программа выстраивается как B2B-решение с onboarding-сценарием, материалами, вводным вебинаром и дальнейшим сопровождением.
-            </p>
-          </article>
-
-          <article class="card">
-            <span class="card__number">06</span>
-            <h3 class="card__title">Основа для зрелой wellbeing-экосистемы</h3>
-            <p class="card__text">
-              Сервис можно использовать как точку входа в более широкую систему поддержки, развития и удержания сотрудников.
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 12l5 5L20 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Вклад в удержание и wellbeing</h3>
+            <p class="feature-card__text">
+              Программа становится частью корпоративной среды, которая помогает сотрудникам чувствовать поддержку.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="services" class="section">
+    <!-- ======================================================================
+         RU: Услуги / направления
+         EN: Services / solution areas
+         ====================================================================== -->
+    <section class="section section--alt" id="solutions">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Услуги</span>
-          <h2 class="section-title">Что входит в программу</h2>
+          <div class="eyebrow">Услуги</div>
+          <h2 class="section-title">Какие направления поддержки можно подключить</h2>
           <p class="section-description">
-            Базовый контур сервиса строится вокруг востребованных консультационных направлений
-            и дополнительных модулей под задачи компании.
+            Программа собирается как понятный пакет корпоративной помощи с фокусом
+            на реальные запросы сотрудников и задачи работодателя.
           </p>
         </div>
 
-        <div class="services-grid">
-          <article class="card">
-            <h3 class="card__title">Психолог</h3>
-            <p class="card__text">
-              Поддержка в стрессовых, личных и рабочих ситуациях, помощь в восстановлении устойчивости и баланса.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="card__title">Юрист</h3>
-            <p class="card__text">
-              Консультации по правовым вопросам: семейные, трудовые, жилищные и другие жизненные ситуации.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="card__title">Коуч-тренер</h3>
-            <p class="card__text">
-              Поддержка в достижении целей, личной эффективности, карьерном развитии и удержании фокуса.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="card__title">Фитнес-тренер</h3>
-            <p class="card__text">
-              Помощь в выстраивании полезных привычек, режима активности и общего wellbeing-подхода.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="card__title">Зооконсультант</h3>
-            <p class="card__text">
-              Нестандартный, но ценный сервис для сотрудников, которым нужна помощь по вопросам ухода за питомцами.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="card__title">Налоговый консультант</h3>
-            <p class="card__text">
-              Консультации по вычетам, возвратам налогов и навигации по финансово-юридическим вопросам.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="cases" class="section section--alt">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Кейсы</span>
-          <h2 class="section-title">Как это выглядит для корпоративного клиента</h2>
-          <p class="section-description">
-            Кейсы и отзывы должны работать как осмысленный social proof, а не как случайный набор блоков.
-          </p>
-        </div>
-
-        <div class="cases-grid">
-          <article class="card">
-            <h3 class="card__title">IT-компания</h3>
-            <p class="card__text">
-              Сервис помогает снять часть личных обращений с HR и создать понятный маршрут помощи для сотрудников.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="card__title">Образовательная организация</h3>
-            <p class="card__text">
-              Подходит для поддержки преподавателей, сотрудников и других категорий пользователей в формате адаптированного сервиса.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="card__title">Крупный корпоративный клиент</h3>
-            <p class="card__text">
-              Программа может масштабироваться, дополняться отчётностью, onboarding-пакетом и расширенными опциями поддержки.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="pricing" class="section">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Тарифы</span>
-          <h2 class="section-title">Базовые тарифные сценарии</h2>
-          <p class="section-description">
-            На главной странице тарифы лучше держать в коротком виде, без перегруза,
-            чтобы они поддерживали продажу, а не уводили в детали.
-          </p>
-        </div>
-
-        <div class="pricing-grid">
-          <article class="card">
-            <p class="card__text">Старт</p>
-            <h3 class="card__title">Для небольших компаний</h3>
-            <div class="price">390 ₽</div>
-            <p class="card__text">за сотрудника в месяц</p>
-            <ul>
-              <li>До 100 сотрудников</li>
-              <li>Базовые консультационные сервисы</li>
-              <li>Подходит для первого запуска программы</li>
+        <div class="grid-3">
+          <article class="feature-card">
+            <h3 class="feature-card__title">Психолог</h3>
+            <p class="feature-card__text">Индивидуальная поддержка сотрудников в кризисных и стрессовых ситуациях.</p>
+            <ul class="feature-card__list">
+              <li>Личные консультации</li>
+              <li>Эмоциональное выгорание</li>
+              <li>Семейные и личные вопросы</li>
             </ul>
           </article>
 
-          <article class="card">
-            <p class="card__text">Бизнес</p>
-            <h3 class="card__title">Для средних компаний</h3>
-            <div class="price">340 ₽</div>
-            <p class="card__text">за сотрудника в месяц</p>
-            <ul>
-              <li>До 500 сотрудников</li>
-              <li>Расширенный пакет поддержки</li>
-              <li>Подробная отчётность и дополнительные опции</li>
+          <article class="feature-card">
+            <h3 class="feature-card__title">Юрист</h3>
+            <p class="feature-card__text">Консультации по бытовым, имущественным и другим личным юридическим вопросам.</p>
+            <ul class="feature-card__list">
+              <li>Правовые обращения</li>
+              <li>Базовые разъяснения</li>
+              <li>Навигация по кейсу</li>
             </ul>
           </article>
 
-          <article class="card">
-            <p class="card__text">Корпоративный</p>
-            <h3 class="card__title">Для крупных организаций</h3>
-            <div class="price">Индивидуально</div>
-            <p class="card__text">по запросу</p>
-            <ul>
-              <li>500+ сотрудников</li>
-              <li>Гибкая конфигурация услуг</li>
-              <li>Сценарий под структуру и задачи компании</li>
+          <article class="feature-card">
+            <h3 class="feature-card__title">Коуч</h3>
+            <p class="feature-card__text">Поддержка в личной эффективности, адаптации и профессиональном развитии.</p>
+            <ul class="feature-card__list">
+              <li>Карьерные вопросы</li>
+              <li>Мотивация и фокус</li>
+              <li>Рабочий баланс</li>
+            </ul>
+          </article>
+
+          <article class="feature-card">
+            <h3 class="feature-card__title">Консультант по wellbeing</h3>
+            <p class="feature-card__text">Сценарии поддержки, связанные с образом жизни, здоровьем и устойчивостью.</p>
+            <ul class="feature-card__list">
+              <li>Профилактика стресса</li>
+              <li>Образ жизни</li>
+              <li>Поддерживающие рекомендации</li>
+            </ul>
+          </article>
+
+          <article class="feature-card">
+            <h3 class="feature-card__title">Целевые программы</h3>
+            <p class="feature-card__text">Отдельные модули под конкретные задачи работодателя и особенности аудитории.</p>
+            <ul class="feature-card__list">
+              <li>Адаптация сотрудников</li>
+              <li>Поддержка отдельных категорий</li>
+              <li>Тематика под HR-задачи</li>
+            </ul>
+          </article>
+
+          <article class="feature-card">
+            <h3 class="feature-card__title">Вебинары и просвещение</h3>
+            <p class="feature-card__text">Форматы для групповой работы и повышения осведомлённости сотрудников.</p>
+            <ul class="feature-card__list">
+              <li>Профилактические темы</li>
+              <li>Wellbeing-коммуникация</li>
+              <li>Поддержка корпоративной культуры</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="faq" class="section section--alt">
+    <!-- ======================================================================
+         RU: Преимущества / выгоды
+         EN: Benefits / value
+         ====================================================================== -->
+    <section class="section" id="benefits">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">FAQ</span>
-          <h2 class="section-title">Часто задаваемые вопросы</h2>
+          <div class="eyebrow">Преимущества</div>
+          <h2 class="section-title">Почему этот сервис полезен работодателю</h2>
           <p class="section-description">
-            Вопросы раскрываются без перегруза страницы длинным текстом.
+            Программа работает не только как employee benefit, но и как инструмент
+            поддержки HR-функции, корпоративной устойчивости и качества рабочей среды.
           </p>
         </div>
 
-        <div class="faq-list">
+        <div class="metrics-row">
+          <article class="metric-card">
+            <div class="metric-card__value">HR</div>
+            <div class="metric-card__label">Снижение нагрузки на HR</div>
+            <p class="metric-card__text">Часть сложных личных запросов переводится во внешний сервис поддержки.</p>
+          </article>
+
+          <article class="metric-card">
+            <div class="metric-card__value">EVP</div>
+            <div class="metric-card__label">Усиление HR-бренда</div>
+            <p class="metric-card__text">Поддержка сотрудников становится понятной частью ценностного предложения работодателя.</p>
+          </article>
+
+          <article class="metric-card">
+            <div class="metric-card__value">WB</div>
+            <div class="metric-card__label">Wellbeing и вовлечённость</div>
+            <p class="metric-card__text">Сотрудник видит не декларативную, а практическую форму заботы со стороны компании.</p>
+          </article>
+
+          <article class="metric-card">
+            <div class="metric-card__value">B2B</div>
+            <div class="metric-card__label">Гибкий формат внедрения</div>
+            <p class="metric-card__text">Сервис адаптируется под размер компании, сценарий запуска и набор подключаемых услуг.</p>
+          </article>
+        </div>
+
+        <div class="split-section split-section--center" style="margin-top: 48px;">
+          <div class="showcase-card">
+            <div class="showcase-card__kicker">Для бизнеса</div>
+            <h3 class="showcase-card__title">Поддержка сотрудников как часть современной HR-экосистемы</h3>
+            <p class="showcase-card__text">
+              Сервис помогает компании не просто “добавить льготу”, а выстроить рабочий механизм помощи,
+              который поддерживает команду и повышает качество внутренних процессов.
+            </p>
+            <ul class="showcase-card__list">
+              <li><span class="showcase-card__dot"></span><span>Понятная логика запуска и подключения</span></li>
+              <li><span class="showcase-card__dot"></span><span>Конфиденциальный формат для сотрудников</span></li>
+              <li><span class="showcase-card__dot"></span><span>Широкий набор сценариев поддержки</span></li>
+            </ul>
+          </div>
+
+          <div>
+            <ul class="step-list">
+              <li class="step-item">
+                <div class="step-item__index">01</div>
+                <div>
+                  <h3 class="step-item__title">Определяем формат подключения</h3>
+                  <p class="step-item__text">Подбираем состав программы под задачи бизнеса, размер команды и ожидания HR.</p>
+                </div>
+              </li>
+
+              <li class="step-item">
+                <div class="step-item__index">02</div>
+                <div>
+                  <h3 class="step-item__title">Готовим запуск для сотрудников</h3>
+                  <p class="step-item__text">Формируем понятный сценарий доступа, информирования и использования сервиса.</p>
+                </div>
+              </li>
+
+              <li class="step-item">
+                <div class="step-item__index">03</div>
+                <div>
+                  <h3 class="step-item__title">Развиваем программу как системный benefit</h3>
+                  <p class="step-item__text">Подключаем дополнительные модули, тематические активности и коммуникации.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         RU: Специалисты
+         EN: Experts
+         ====================================================================== -->
+    <section class="section section--alt" id="experts">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Специалисты</div>
+          <h2 class="section-title">Команда экспертов под разные запросы сотрудников</h2>
+          <p class="section-description">
+            Платформа объединяет направления поддержки, которые чаще всего востребованы
+            в реальной корпоративной среде.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card card--padded card--interactive">
+            <div class="card__eyebrow">Психолог</div>
+            <h3 class="card__title">Эмоциональная устойчивость и кризисные обращения</h3>
+            <p class="card__text">Поддержка при стрессе, перегрузке, выгорании, личных и семейных сложностях.</p>
+          </article>
+
+          <article class="card card--padded card--interactive">
+            <div class="card__eyebrow">Юрист</div>
+            <h3 class="card__title">Личные правовые вопросы</h3>
+            <p class="card__text">Консультации сотрудников по бытовым, имущественным и другим частным кейсам.</p>
+          </article>
+
+          <article class="card card--padded card--interactive">
+            <div class="card__eyebrow">Коуч</div>
+            <h3 class="card__title">Развитие, адаптация, рабочая устойчивость</h3>
+            <p class="card__text">Поддержка в профессиональном росте, самоорганизации и личной эффективности.</p>
+          </article>
+
+          <article class="card card--padded card--interactive">
+            <div class="card__eyebrow">Wellbeing</div>
+            <h3 class="card__title">Поддержка образа жизни и устойчивости</h3>
+            <p class="card__text">Консультации и маршрутизация по вопросам самочувствия и общего wellbeing.</p>
+          </article>
+
+          <article class="card card--padded card--interactive">
+            <div class="card__eyebrow">Программы</div>
+            <h3 class="card__title">Тематические форматы поддержки</h3>
+            <p class="card__text">Дополнительные решения под конкретные HR-задачи и особенности аудитории.</p>
+          </article>
+
+          <article class="card card--padded card--interactive">
+            <div class="card__eyebrow">Вебинары</div>
+            <h3 class="card__title">Групповые активности и просвещение</h3>
+            <p class="card__text">Онлайн-форматы для повышения осведомлённости и профилактики проблемных сценариев.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         RU: Тарифы
+         EN: Pricing
+         ====================================================================== -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Тарифы</div>
+          <h2 class="section-title">Форматы подключения программы</h2>
+          <p class="section-description">
+            Стоимость и состав услуг зависят от сценария подключения, числа сотрудников
+            и набора сервисов, поэтому ниже показана логика тарифных пакетов.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="pricing-card">
+            <div class="pricing-card__label">Базовый</div>
+            <h3 class="pricing-card__title">Старт программы</h3>
+            <div class="pricing-card__price">По запросу</div>
+            <div class="pricing-card__note">Для первых пилотных или ограниченных запусков</div>
+            <p class="pricing-card__text">Подходит для компаний, которые хотят начать с базового контура поддержки.</p>
+            <ul class="pricing-card__features">
+              <li>Базовые направления помощи</li>
+              <li>Первичный запуск и информирование</li>
+              <li>Консультационный формат подключения</li>
+            </ul>
+            <a class="btn btn--secondary" href="#contacts">Узнать условия</a>
+          </article>
+
+          <article class="pricing-card pricing-card--featured">
+            <div class="pricing-card__label">Оптимальный</div>
+            <h3 class="pricing-card__title">Основной корпоративный пакет</h3>
+            <div class="pricing-card__price">По запросу</div>
+            <div class="pricing-card__note">Для системного внедрения программы поддержки</div>
+            <p class="pricing-card__text">Сбалансированный формат для компаний, которым важен полноценный benefit.</p>
+            <ul class="pricing-card__features">
+              <li>Широкий набор сервисов</li>
+              <li>Гибкая настройка под HR-задачи</li>
+              <li>Развитие программы после запуска</li>
+            </ul>
+            <a class="btn btn--primary" href="#contacts">Получить консультацию</a>
+          </article>
+
+          <article class="pricing-card">
+            <div class="pricing-card__label">Расширенный</div>
+            <h3 class="pricing-card__title">Индивидуальная конфигурация</h3>
+            <div class="pricing-card__price">Индивидуально</div>
+            <div class="pricing-card__note">Для сложных сценариев и расширенного состава сервисов</div>
+            <p class="pricing-card__text">Подходит для крупных компаний и расширенных wellbeing-программ.</p>
+            <ul class="pricing-card__features">
+              <li>Дополнительные модули</li>
+              <li>Отдельные активности и программы</li>
+              <li>Сценарии под целевые группы сотрудников</li>
+            </ul>
+            <a class="btn btn--secondary" href="#contacts">Обсудить проект</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         RU: FAQ
+         EN: FAQ
+         ====================================================================== -->
+    <section class="section section--alt" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">FAQ</div>
+          <h2 class="section-title">Частые вопросы по подключению</h2>
+          <p class="section-description">
+            Блок подготовлен в формате accordion и позже будет подключён к JavaScript.
+          </p>
+        </div>
+
+        <div class="faq">
           <article class="faq-item is-open">
-            <button class="faq-question" type="button">Как обеспечивается конфиденциальность обращений?</button>
-            <div class="faq-answer">
-              <p>
-                Персональные обращения обрабатываются в рамках внешнего сервиса поддержки,
-                а работодателю передаются только согласованные агрегированные данные в корпоративном формате.
-              </p>
+            <button class="faq-item__button" type="button">
+              <span class="faq-item__title">Для каких компаний подходит программа?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__content">
+              Программа может быть адаптирована под разные масштабы бизнеса и разные сценарии
+              использования — от пилотного запуска до системного корпоративного решения.
             </div>
           </article>
 
           <article class="faq-item">
-            <button class="faq-question" type="button">Сколько времени занимает запуск программы?</button>
-            <div class="faq-answer">
-              <p>
-                Срок зависит от масштаба компании и конфигурации услуг, но базовый сценарий можно подготовить
-                существенно быстрее, чем разрабатывать внутреннюю систему с нуля.
-              </p>
+            <button class="faq-item__button" type="button">
+              <span class="faq-item__title">Какие специалисты входят в состав сервиса?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__content">
+              Базово это психологи, юристы, коучи и другие специалисты, а также дополнительные
+              wellbeing-сценарии и тематические программы.
             </div>
           </article>
 
           <article class="faq-item">
-            <button class="faq-question" type="button">Можно ли адаптировать состав программы под компанию?</button>
-            <div class="faq-answer">
-              <p>
-                Да, состав сервиса может меняться под численность, отрасль, HR-процессы и приоритетные сценарии поддержки сотрудников.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item">
-            <button class="faq-question" type="button">Можно ли подключить дополнительные опции?</button>
-            <div class="faq-answer">
-              <p>
-                Да, базовые консультационные сервисы дополняются целевыми программами,
-                вебинарами и корпоративными модулями под конкретные задачи бизнеса.
-              </p>
+            <button class="faq-item__button" type="button">
+              <span class="faq-item__title">Можно ли настроить состав программы под компанию?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__content">
+              Да, структура программы может подбираться под тип бизнеса, размер штата,
+              задачи HR и формат поддержки сотрудников.
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="contacts" class="section">
-      <div class="container contact-wrap">
-        <div class="contact-card">
-          <span class="eyebrow">Контакты</span>
-          <h2 class="section-title">Обсудим конфигурацию программы под вашу компанию</h2>
-          <p class="section-description">
-            Оставьте заявку, и мы предложим структуру программы, набор сервисов и формат подключения под ваш сценарий.
-          </p>
+    <!-- ======================================================================
+         RU: CTA + форма
+         EN: CTA + lead form
+         ====================================================================== -->
+    <section class="section" id="contacts">
+      <div class="container stack-32">
+        <div class="cta-panel">
+          <div class="cta-panel__inner">
+            <div class="cta-panel__content">
+              <h2 class="cta-panel__title">Обсудим, как программа поддержки сотрудников может работать в вашей компании</h2>
+              <p class="cta-panel__text">
+                Оставьте заявку, и мы поможем определить подходящий формат подключения,
+                набор услуг и логику запуска.
+              </p>
+            </div>
 
-          <div class="contact-list">
-            <div class="contact-item">
-              <strong>Email</strong>
-              <span>support@employee-care.ru</span>
-            </div>
-            <div class="contact-item">
-              <strong>Телефон</strong>
-              <span>8 (800) 123-45-67</span>
-            </div>
-            <div class="contact-item">
-              <strong>Адрес</strong>
-              <span>454007, г. Челябинск, пр. Ленина, 13-А, пом. 6, оф. 2</span>
+            <div class="cta-panel__actions">
+              <a class="btn btn--primary" href="#lead-form">Оставить заявку</a>
             </div>
           </div>
         </div>
 
-        <div class="form-card">
-          <form class="form-grid">
-            <div class="field">
-              <label for="name">ФИО *</label>
-              <input id="name" type="text" required />
+        <div class="split-section split-section--center">
+          <div class="form-card" id="lead-form">
+            <h3 class="form-card__title">Получить консультацию</h3>
+            <p class="form-card__text">
+              Заполните форму, и мы свяжемся с вами для обсуждения задач, формата подключения и следующего шага.
+            </p>
+
+            <form class="form-grid" action="#" method="post">
+              <div class="form-grid form-grid--2">
+                <div class="field">
+                  <label for="name">Имя</label>
+                  <input id="name" name="name" type="text" placeholder="Ваше имя" />
+                </div>
+
+                <div class="field">
+                  <label for="company">Компания</label>
+                  <input id="company" name="company" type="text" placeholder="Название компании" />
+                </div>
+              </div>
+
+              <div class="form-grid form-grid--2">
+                <div class="field">
+                  <label for="phone">Телефон</label>
+                  <input id="phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" />
+                </div>
+
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" placeholder="name@company.ru" />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="message">Комментарий</label>
+                <textarea id="message" name="message" placeholder="Кратко опишите задачу или интересующий формат подключения"></textarea>
+              </div>
+
+              <label class="form-agreement">
+                <input type="checkbox" name="agreement" />
+                <span>Я соглашаюсь на обработку персональных данных</span>
+              </label>
+
+              <div class="form-actions">
+                <button class="btn btn--primary" type="submit">Отправить заявку</button>
+                <a class="btn btn--secondary" href="tel:+78000000000">Позвонить</a>
+              </div>
+
+              <div class="form-note">
+                После отправки заявки с вами свяжется менеджер для уточнения запроса.
+              </div>
+            </form>
+          </div>
+
+          <div class="stack-20">
+            <div class="mini-card">
+              <div class="mini-card__title">Контакты</div>
+              <div class="mini-card__text">Телефон: +7 (800) 000-00-00</div>
+              <div class="mini-card__text">Email: info@example.ru</div>
             </div>
 
-            <div class="field">
-              <label for="phone">Телефон *</label>
-              <input id="phone" type="tel" required />
+            <div class="mini-card" id="cabinet">
+              <div class="mini-card__title">Личный кабинет</div>
+              <div class="mini-card__text">
+                Здесь будет размещён переход в личный кабинет сотрудников и клиентов после отдельной проработки.
+              </div>
             </div>
 
-            <div class="field">
-              <label for="email">Email *</label>
-              <input id="email" type="email" required />
+            <div class="mini-card">
+              <div class="mini-card__title">Следующий этап</div>
+              <div class="mini-card__text">
+                После утверждения структуры мы вынесем интерактивность в отдельный `js/script.js`.
+              </div>
             </div>
-
-            <div class="field">
-              <label for="company">Название компании</label>
-              <input id="company" type="text" />
-            </div>
-
-            <div class="field">
-              <label for="role">Отдел / должность</label>
-              <input id="role" type="text" />
-            </div>
-
-            <label class="checkbox">
-              <input type="checkbox" required />
-              <span>Я согласен на обработку персональных данных</span>
-            </label>
-
-            <button class="btn btn--primary" type="submit">Отправить заявку</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <section id="account" class="section section--alt">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Личный кабинет</span>
-          <h2 class="section-title">Вход для действующих пользователей</h2>
-          <p class="section-description">
-            Этот блок пока можно использовать как временную точку входа, пока не подключён полноценный кабинет.
-          </p>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- ==========================================================================
+       RU: Футер
+       EN: Footer
+       ========================================================================== -->
   <footer class="site-footer">
-    <div class="container site-footer__inner">
-      <div>
-        <strong>ООО «Мобильная Помощь Онлайн»</strong><br />
-        Программа поддержки сотрудников для корпоративных клиентов
+    <div class="container">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <a class="site-brand" href="#top" aria-label="ППС — на главную">
+            <img
+              class="site-brand__logo"
+              src="./assets/logo.png"
+              alt="Логотип ППС"
+              width="240"
+              height="58"
+            />
+          </a>
+
+          <p class="site-footer__description">
+            Программа поддержки сотрудников для бизнеса: wellbeing, экспертная помощь
+            и системный подход к корпоративной поддержке команды.
+          </p>
+        </div>
+
+        <div class="site-footer__nav">
+          <div>
+            <div class="site-footer__title">Разделы</div>
+            <ul class="site-footer__list">
+              <li><a href="#about-program">О программе</a></li>
+              <li><a href="#solutions">Услуги</a></li>
+              <li><a href="#benefits">Преимущества</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="site-footer__title">Компания</div>
+            <ul class="site-footer__list">
+              <li><a href="#experts">Специалисты</a></li>
+              <li><a href="#pricing">Тарифы</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="site-footer__title">Контакты</div>
+            <ul class="site-footer__list">
+              <li><a href="#contacts">Оставить заявку</a></li>
+              <li><a href="tel:+78000000000">+7 (800) 000-00-00</a></li>
+              <li><a href="mailto:info@example.ru">info@example.ru</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div>
-        ИНН 7452115610<br />
-        ОГРН 1147452002092<br />
-        © 2026 Все права защищены
+
+      <div class="site-footer__bottom">
+        <div>© ППС. Все права защищены.</div>
+        <div>Корпоративная программа поддержки сотрудников</div>
       </div>
     </div>
   </footer>
 
-  <a class="back-to-top" href="#home" aria-label="Наверх">
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- ==========================================================================
+       RU: Кнопка "наверх"
+       EN: Back to top button
+       ========================================================================== -->
+  <button class="back-to-top" type="button" aria-label="Наверх">
+    <svg viewBox="0 0 24 24" fill="none">
       <path
-        d="M12 5L5 12M12 5L19 12M12 5V19"
+        d="M12 19V5M12 5L6 11M12 5L18 11"
         stroke="currentColor"
-        stroke-width="2.4"
+        stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
     </svg>
-  </a>
+  </button>
 
+  <!-- ==========================================================================
+       RU: Временный inline-script только до вынесения в js/script.js
+       EN: Temporary inline script until moving logic into js/script.js
+       ========================================================================== -->
   <script>
-    const backToTop = document.querySelector(".back-to-top");
-    const faqItems = document.querySelectorAll(".faq-item");
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteNav = document.querySelector('.site-nav');
+    const backToTop = document.querySelector('.back-to-top');
+    const faqItems = document.querySelectorAll('.faq-item');
 
-    window.addEventListener(
-      "scroll",
-      () => {
-        if (window.scrollY > 500) {
-          backToTop.classList.add("is-visible");
-        } else {
-          backToTop.classList.remove("is-visible");
-        }
-      },
-      { passive: true }
-    );
+    if (menuToggle && siteNav) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = siteNav.classList.toggle('is-open');
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
 
     faqItems.forEach((item) => {
-      const button = item.querySelector(".faq-question");
-      button.addEventListener("click", () => {
-        item.classList.toggle("is-open");
+      const button = item.querySelector('.faq-item__button');
+      if (!button) return;
+
+      button.addEventListener('click', () => {
+        item.classList.toggle('is-open');
       });
     });
+
+    if (backToTop) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+          backToTop.classList.add('is-visible');
+        } else {
+          backToTop.classList.remove('is-visible');
+        }
+      });
+
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
   </script>
 </body>
 </html>
