@@ -1,0 +1,452 @@
+/* ==========================================================================
+   RU: Базовый слой стилей проекта PPS-v2
+   EN: Base stylesheet layer for the PPS-v2 project
+
+   RU: Этот файл содержит:
+   - reset / нормализацию
+   - токены дизайн-системы
+   - базовые типографические правила
+   - контейнеры
+   - общие секции
+   - кнопки
+   - базовые состояния элементов
+
+   EN: This file contains:
+   - reset / normalization
+   - design system tokens
+   - base typography rules
+   - containers
+   - generic sections
+   - buttons
+   - base element states
+   ========================================================================== */
+
+/* ==========================================================================
+   RU: Токены дизайн-системы
+   EN: Design system tokens
+   ========================================================================== */
+:root {
+  /* RU: Шрифты / EN: Fonts */
+  --font-body: "Inter", Arial, sans-serif;
+  --font-display: "Inter", Arial, sans-serif;
+
+  /* RU: Базовая палитра / EN: Core palette */
+  --color-bg: #eef4fb;
+  --color-bg-soft: #f7fafe;
+  --color-surface: #ffffff;
+  --color-surface-alt: #e7f0fa;
+  --color-surface-deep: #d7e5f4;
+
+  --color-text: #0b3558;
+  --color-text-muted: #4f6f8d;
+  --color-text-soft: #6e87a2;
+
+  --color-primary: #006bff;
+  --color-primary-hover: #0059d6;
+  --color-primary-active: #0047ac;
+
+  --color-border: #cddaea;
+  --color-divider: #d6e2ee;
+
+  /* RU: Тени / EN: Shadows */
+  --shadow-xs: 0 2px 10px rgba(71, 103, 136, 0.05);
+  --shadow-sm: 0 4px 12px rgba(71, 103, 136, 0.06), 0 18px 36px rgba(71, 103, 136, 0.06);
+  --shadow-md: 0 8px 18px rgba(71, 103, 136, 0.08), 0 24px 56px rgba(71, 103, 136, 0.10);
+  --shadow-lg: 0 10px 24px rgba(71, 103, 136, 0.08), 0 30px 72px rgba(71, 103, 136, 0.12);
+
+  /* RU: Скругления / EN: Border radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 30px;
+  --radius-pill: 999px;
+
+  /* RU: Контейнеры и размеры / EN: Containers and sizes */
+  --container: 1180px;
+  --header-height: 92px;
+
+  /* RU: Отступы / EN: Spacing scale */
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-14: 14px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-20: 20px;
+  --space-22: 22px;
+  --space-24: 24px;
+  --space-28: 28px;
+  --space-32: 32px;
+  --space-36: 36px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-72: 72px;
+  --space-80: 80px;
+
+  /* RU: Типографика / EN: Typography */
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+
+  /* RU: Переходы / EN: Transitions */
+  --transition: 220ms ease;
+}
+
+/* ==========================================================================
+   RU: Reset / нормализация
+   EN: Reset / normalization
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure,
+blockquote {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+img,
+picture,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   RU: Базовые стили документа
+   EN: Base document styles
+   ========================================================================== */
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-text);
+  background:
+    radial-gradient(circle at 8% 10%, rgba(0, 107, 255, 0.10), transparent 24%),
+    radial-gradient(circle at 90% 78%, rgba(0, 107, 255, 0.08), transparent 20%),
+    linear-gradient(180deg, var(--color-bg-soft) 0%, var(--color-bg) 100%);
+  min-width: 320px;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  display: block;
+  overflow: clip;
+}
+
+section {
+  position: relative;
+}
+
+p {
+  max-width: 72ch;
+}
+
+/* ==========================================================================
+   RU: Фокус и доступность
+   EN: Focus and accessibility
+   ========================================================================== */
+:focus-visible {
+  outline: 3px solid rgba(0, 107, 255, 0.28);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: rgba(0, 107, 255, 0.16);
+  color: var(--color-text);
+}
+
+/* ==========================================================================
+   RU: Базовые utility-классы
+   EN: Base utility classes
+   ========================================================================== */
+.container {
+  width: min(calc(100% - 32px), var(--container));
+  margin: 0 auto;
+}
+
+.section {
+  position: relative;
+  padding: clamp(84px, 8vw, 120px) 0;
+}
+
+.section + .section {
+  border-top: 1px solid rgba(11, 53, 88, 0.09);
+}
+
+.section--alt {
+  background: linear-gradient(180deg, rgba(231, 240, 250, 0.94), rgba(217, 230, 244, 0.90));
+}
+
+.section-head {
+  max-width: 760px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  margin-bottom: 14px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.section-title {
+  margin-bottom: 14px;
+  font-size: clamp(2rem, 1.6rem + 1.7vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  font-weight: 800;
+}
+
+.section-description {
+  font-size: var(--text-md);
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   RU: Кнопки
+   EN: Buttons
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  transition:
+    transform var(--transition),
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    box-shadow var(--transition);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: #ffffff;
+  box-shadow: var(--shadow-xs);
+}
+
+.btn--primary:hover {
+  background: var(--color-primary-hover);
+}
+
+.btn--primary:active {
+  background: var(--color-primary-active);
+}
+
+.btn--secondary {
+  background: #ffffff;
+  color: var(--color-text);
+  border-color: rgba(11, 53, 88, 0.12);
+}
+
+.btn--secondary:hover {
+  border-color: rgba(0, 107, 255, 0.22);
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   RU: Общие базовые media-элементы
+   EN: Shared base media elements
+   ========================================================================== */
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+/* RU: Делаем логотип заметно крупнее, чем раньше
+   EN: Make the logo visibly larger than before */
+.site-brand__logo {
+  display: block;
+  width: auto;
+  height: 58px;
+  max-width: 240px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* ==========================================================================
+   RU: Базовые поля формы
+   EN: Base form controls
+   ========================================================================== */
+.field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  min-height: 50px;
+  padding: 14px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: #ffffff;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  outline: none;
+  border-color: rgba(0, 107, 255, 0.4);
+  box-shadow: 0 0 0 4px rgba(0, 107, 255, 0.08);
+}
+
+.field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ==========================================================================
+   RU: Анимации
+   EN: Animations
+   ========================================================================== */
+@keyframes floatOne {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(28px, 26px, 0) scale(1.05);
+  }
+}
+
+@keyframes floatTwo {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(-18px, 24px, 0) rotate(10deg);
+  }
+}
+
+@keyframes floatThree {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(18px, -18px, 0) scale(1.08);
+  }
+}
+
+@keyframes floatFour {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(-24px, -20px, 0) rotate(-9deg);
+  }
+}
+
+@keyframes heroGlowShift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(0, -18px, 0) scale(1.04);
+  }
+}
+
+/* ==========================================================================
+   RU: Адаптив
+   EN: Responsive rules
+   ========================================================================== */
+@media (max-width: 760px) {
+  .site-brand__logo {
+    height: 48px;
+    max-width: 210px;
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
