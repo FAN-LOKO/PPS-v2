@@ -229,7 +229,7 @@
             </div>
             <h3 class="feature-card__title">Поддержка HR и руководителей</h3>
             <p class="feature-card__text">
-              Снижается нагрузка на внутреннюю команду, потому что часть типовых запросов уходит в внешний сервис.
+              Снижается нагрузка на внутреннюю команду, потому что часть сложных личных запросов уходит в внешний сервис.
             </p>
           </article>
 
@@ -540,7 +540,7 @@
           <div class="eyebrow">FAQ</div>
           <h2 class="section-title">Частые вопросы по подключению</h2>
           <p class="section-description">
-            Блок подготовлен в формате accordion и позже будет подключён к JavaScript.
+            Блок подготовлен в формате accordion и работает через внешний script.js.
           </p>
         </div>
 
@@ -673,7 +673,7 @@
             <div class="mini-card">
               <div class="mini-card__title">Следующий этап</div>
               <div class="mini-card__text">
-                После утверждения структуры мы вынесем интерактивность в отдельный `js/script.js`.
+                После утверждения структуры мы можем переходить к следующей странице или усиливать интерактивность.
               </div>
             </div>
           </div>
@@ -745,7 +745,7 @@
 
   <!-- ==========================================================================
        RU: Кнопка "наверх"
-       EN: Back to top button
+       EN: Back-to-top button
        ========================================================================== -->
   <button class="back-to-top" type="button" aria-label="Наверх">
     <svg viewBox="0 0 24 24" fill="none">
@@ -760,44 +760,9 @@
   </button>
 
   <!-- ==========================================================================
-       RU: Временный inline-script только до вынесения в js/script.js
-       EN: Temporary inline script until moving logic into js/script.js
+       RU: Подключение внешнего JavaScript
+       EN: External JavaScript file
        ========================================================================== -->
-  <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const siteNav = document.querySelector('.site-nav');
-    const backToTop = document.querySelector('.back-to-top');
-    const faqItems = document.querySelectorAll('.faq-item');
-
-    if (menuToggle && siteNav) {
-      menuToggle.addEventListener('click', () => {
-        const isOpen = siteNav.classList.toggle('is-open');
-        menuToggle.setAttribute('aria-expanded', String(isOpen));
-      });
-    }
-
-    faqItems.forEach((item) => {
-      const button = item.querySelector('.faq-item__button');
-      if (!button) return;
-
-      button.addEventListener('click', () => {
-        item.classList.toggle('is-open');
-      });
-    });
-
-    if (backToTop) {
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) {
-          backToTop.classList.add('is-visible');
-        } else {
-          backToTop.classList.remove('is-visible');
-        }
-      });
-
-      backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    }
-  </script>
+  <script src="./js/script.js"></script>
 </body>
 </html>
