@@ -1,0 +1,842 @@
+/* ==========================================================================
+   RU: Компонентный слой проекта PPS-v2
+   EN: Component stylesheet layer for the PPS-v2 project
+
+   RU: Этот файл содержит стили переиспользуемых интерфейсных блоков:
+   - карточки
+   - feature-блоки
+   - метрики
+   - блоки выгод
+   - тарифные карточки
+   - отзывы
+   - FAQ
+   - CTA-секции
+   - формы
+   - кнопка "наверх"
+
+   EN: This file contains styles for reusable interface blocks:
+   - cards
+   - feature blocks
+   - metrics
+   - value sections
+   - pricing cards
+   - testimonials
+   - FAQ
+   - CTA sections
+   - forms
+   - back-to-top button
+   ========================================================================== */
+
+/* ==========================================================================
+   RU: Базовая карточка
+   EN: Base card
+   ========================================================================== */
+.card {
+  position: relative;
+  display: block;
+  border: 1px solid rgba(11, 53, 88, 0.08);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 251, 255, 0.98));
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.card--padded {
+  padding: 24px;
+}
+
+.card--soft {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(231, 240, 250, 0.72));
+}
+
+.card--deep {
+  background: linear-gradient(180deg, rgba(226, 238, 250, 0.86), rgba(214, 229, 244, 0.88));
+}
+
+.card--interactive {
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+.card--interactive:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(0, 107, 255, 0.16);
+}
+
+.card__eyebrow {
+  display: inline-flex;
+  margin-bottom: 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.card__title {
+  margin-bottom: 12px;
+  font-size: 1.18rem;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.card__text {
+  color: var(--color-text-muted);
+}
+
+.card__footer {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(11, 53, 88, 0.08);
+}
+
+/* ==========================================================================
+   RU: Feature / value cards
+   EN: Feature / value cards
+   ========================================================================== */
+.feature-card {
+  height: 100%;
+  padding: 28px;
+  border: 1px solid rgba(11, 53, 88, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(0, 107, 255, 0.16);
+}
+
+.feature-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  background: rgba(0, 107, 255, 0.10);
+  color: var(--color-primary);
+  box-shadow: inset 0 0 0 1px rgba(0, 107, 255, 0.08);
+}
+
+.feature-card__icon svg,
+.feature-card__icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.feature-card__title {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+
+.feature-card__text {
+  color: var(--color-text-muted);
+}
+
+.feature-card__list {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+  list-style: none;
+}
+
+.feature-card__list li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--color-text-muted);
+}
+
+.feature-card__list li::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-primary);
+}
+
+/* ==========================================================================
+   RU: KPI / метрики
+   EN: KPI / metrics
+   ========================================================================== */
+.metric-card {
+  height: 100%;
+  padding: 24px;
+  border: 1px solid rgba(11, 53, 88, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-xs);
+}
+
+.metric-card__value {
+  margin-bottom: 10px;
+  font-size: clamp(2rem, 1.6rem + 1vw, 2.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.metric-card__label {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.metric-card__text {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   RU: Showcase / highlight card
+   EN: Showcase / highlight card
+   ========================================================================== */
+.showcase-card {
+  position: relative;
+  padding: 28px;
+  border: 1px solid rgba(11, 53, 88, 0.08);
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(240, 246, 252, 0.94));
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.showcase-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -60px -60px auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 107, 255, 0.12), transparent 70%);
+  pointer-events: none;
+}
+
+.showcase-card__kicker {
+  display: inline-flex;
+  margin-bottom: 12px;
+  color: var(--color-primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.showcase-card__title {
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+}
+
+.showcase-card__text {
+  color: var(--color-text-muted);
+}
+
+.showcase-card__list {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+  list-style: none;
+}
+
+.showcase-card__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--color-text-muted);
+}
+
+.showcase-card__dot {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: var(--color-primary);
+}
+
+/* ==========================================================================
+   RU: Списки преимуществ / steps
+   EN: Benefit lists / steps
+   ========================================================================== */
+.step-list {
+  display: grid;
+  gap: 16px;
+  list-style: none;
+}
+
+.step-item {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  padding: 20px;
+  border: 1px solid rgba(11, 53, 88, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-xs);
+}
+
+.step-item__index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  background: rgba(0, 107, 255, 0.10);
+  color: var(--color-primary);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.step-item__title {
+  margin-bottom: 8px;
+  font-size: 1.06rem;
+  font-weight: 800;
+}
+
+.step-item__text {
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   RU: Бейджи и служебные метки
+   EN: Badges and helper labels
+   ========================================================================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid rgba(0, 107, 255, 0.12);
+  border-radius: var(--radius-pill);
+  background: rgba(0, 107, 255, 0.08);
+  color: var(--color-primary);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.badge--neutral {
+  border-color: rgba(11, 53, 88, 0.08);
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   RU: Тарифные карточки
+   EN: Pricing cards
+   ========================================================================== */
+.pricing-card {
+  position: relative;
+  height: 100%;
+  padding: 28px;
+  border: 1px solid rgba(11, 53, 88, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow-sm);
+}
+
+.pricing-card--featured {
+  border-color: rgba(0, 107, 255, 0.18);
+  box-shadow: var(--shadow-md);
+}
+
+.pricing-card__label {
+  display: inline-flex;
+  margin-bottom: 14px;
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pricing-card__title {
+  margin-bottom: 8px;
+  font-size: 1.28rem;
+  line-height: 1.12;
+  font-weight: 800;
+}
+
+.pricing-card__price {
+  margin-bottom: 8px;
+  font-size: clamp(2rem, 1.7rem + 1vw, 2.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.pricing-card__note {
+  margin-bottom: 18px;
+  color: var(--color-text-soft);
+  font-size: 0.94rem;
+}
+
+.pricing-card__text {
+  margin-bottom: 18px;
+  color: var(--color-text-muted);
+}
+
+.pricing-card__features {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 24px;
+  list-style: none;
+}
+
+.pricing-card__features li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--color-text-muted);
+}
+
+.pricing-card__features li::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-primary);
+}
+
+/* ==========================================================================
+   RU: Отзывы
+   EN: Testimonials
+   ========================================================================== */
+.testimonial-card {
+  height: 100%;
+  padding: 28px;
+  border: 1px solid rgba(11, 53, 88, 0.08);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow-sm);
+}
+
+.testimonial-card__quote {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.testimonial-card__author {
+  display: grid;
+  gap: 4px;
+}
+
+.testimonial-card__name {
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.testimonial-card__role {
+  color: var(--color-text-soft);
+  font-size: 0.94rem;
+}
+
+/* ==========================================================================
+   RU: FAQ / аккордеон
+   EN: FAQ / accordion
+   ========================================================================== */
+.faq {
+  display: grid;
+  gap: 14px;
+}
+
+.faq-item {
+  border: 1px solid rgba(11, 53, 88, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow-xs);
+  overflow: hidden;
+}
+
+.faq-item__button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 24px;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.faq-item__button:hover {
+  background: rgba(0, 107, 255, 0.03);
+}
+
+.faq-item__title {
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.faq-item__icon {
+  position: relative;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+}
+
+.faq-item__icon::before,
+.faq-item__icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--color-primary);
+  transform: translate(-50%, -50%);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.faq-item__icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.faq-item.is-open .faq-item__icon::after {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(90deg) scaleX(0.2);
+}
+
+.faq-item__content {
+  display: none;
+  padding: 0 24px 22px;
+  color: var(--color-text-muted);
+}
+
+.faq-item.is-open .faq-item__content {
+  display: block;
+}
+
+/* ==========================================================================
+   RU: CTA-секции
+   EN: CTA sections
+   ========================================================================== */
+.cta-panel {
+  position: relative;
+  padding: clamp(28px, 4vw, 42px);
+  border: 1px solid rgba(0, 107, 255, 0.12);
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(0, 107, 255, 0.08), rgba(255, 255, 255, 0.98) 42%, rgba(231, 240, 250, 0.88));
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.cta-panel::before {
+  content: "";
+  position: absolute;
+  inset: auto -80px -80px auto;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 107, 255, 0.12), transparent 72%);
+  pointer-events: none;
+}
+
+.cta-panel__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: center;
+}
+
+.cta-panel__content {
+  max-width: 720px;
+}
+
+.cta-panel__title {
+  margin-bottom: 12px;
+  font-size: clamp(1.8rem, 1.5rem + 1vw, 2.6rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+}
+
+.cta-panel__text {
+  color: var(--color-text-muted);
+}
+
+.cta-panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   RU: Форма заявки
+   EN: Lead form
+   ========================================================================== */
+.form-card {
+  padding: 28px;
+  border: 1px solid rgba(11, 53, 88, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: var(--shadow-md);
+}
+
+.form-card__title {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  line-height: 1.12;
+  font-weight: 800;
+}
+
+.form-card__text {
+  margin-bottom: 22px;
+  color: var(--color-text-muted);
+}
+
+.form-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.form-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.form-note {
+  margin-top: 14px;
+  color: var(--color-text-soft);
+  font-size: 0.92rem;
+}
+
+.form-agreement {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--color-text-soft);
+  font-size: 0.92rem;
+}
+
+.form-agreement input {
+  margin-top: 4px;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* ==========================================================================
+   RU: Инфо-плашки / mini cards
+   EN: Info strips / mini cards
+   ========================================================================== */
+.mini-card {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  border: 1px solid rgba(11, 53, 88, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-xs);
+}
+
+.mini-card__title {
+  font-size: 0.98rem;
+  font-weight: 800;
+}
+
+.mini-card__text {
+  font-size: 0.94rem;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   RU: Табличный / checklist список
+   EN: Checklist list
+   ========================================================================== */
+.check-list {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+}
+
+.check-list li {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  color: var(--color-text-muted);
+}
+
+.check-list li::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 50% 50%, var(--color-primary) 0 34%, transparent 35%),
+    rgba(0, 107, 255, 0.10);
+  box-shadow: inset 0 0 0 1px rgba(0, 107, 255, 0.08);
+}
+
+/* ==========================================================================
+   RU: Кнопка "наверх"
+   EN: Back to top button
+   ========================================================================== */
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgba(11, 53, 88, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow-md);
+  color: var(--color-primary);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition:
+    opacity var(--transition),
+    visibility var(--transition),
+    transform var(--transition),
+    background-color var(--transition);
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: rgba(0, 107, 255, 0.08);
+}
+
+.back-to-top svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ==========================================================================
+   RU: Служебные пустые блоки для будущих mockup/скриншотов
+   EN: Utility placeholders for future mockups/screenshots
+   ========================================================================== */
+.mockup-frame {
+  position: relative;
+  min-height: 320px;
+  border: 1px solid rgba(11, 53, 88, 0.08);
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(231, 240, 250, 0.84));
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.mockup-frame__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(11, 53, 88, 0.08);
+}
+
+.mockup-frame__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(11, 53, 88, 0.14);
+}
+
+.mockup-frame__body {
+  display: grid;
+  place-items: center;
+  min-height: 250px;
+  padding: 24px;
+  color: var(--color-text-soft);
+  text-align: center;
+}
+
+/* ==========================================================================
+   RU: Адаптив компонентов
+   EN: Responsive components
+   ========================================================================== */
+@media (max-width: 860px) {
+  .form-grid--2,
+  .cta-panel__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-panel__actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .card--padded,
+  .feature-card,
+  .metric-card,
+  .pricing-card,
+  .testimonial-card,
+  .form-card,
+  .showcase-card,
+  .cta-panel {
+    padding: 22px;
+  }
+
+  .step-item {
+    grid-template-columns: 1fr;
+  }
+
+  .step-item__index {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+  }
+
+  .faq-item__button,
+  .faq-item__content {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .back-to-top {
+    right: 14px;
+    bottom: 14px;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+  }
+}
