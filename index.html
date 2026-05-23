@@ -4,348 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Программа поддержки сотрудников</title>
-  <meta name="description" content="Программа поддержки сотрудников для корпоративных клиентов: психологи, юристы, коучи и wellbeing-сервисы в одном решении." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --font-body: "Inter", Arial, sans-serif;
-      --font-display: "Inter", Arial, sans-serif;
-      --color-bg: #eef4fb;
-      --color-bg-soft: #f7fafe;
-      --color-surface: #ffffff;
-      --color-surface-alt: #e7f0fa;
-      --color-surface-deep: #d7e5f4;
-      --color-text: #0b3558;
-      --color-text-muted: #4f6f8d;
-      --color-primary: #006bff;
-      --color-primary-hover: #0059d6;
-      --color-border: #cddaea;
-      --color-divider: #d6e2ee;
-      --shadow-xs: 0 2px 10px rgba(71, 103, 136, 0.05);
-      --shadow-sm: 0 4px 12px rgba(71, 103, 136, 0.06), 0 18px 36px rgba(71, 103, 136, 0.06);
-      --shadow-md: 0 8px 18px rgba(71, 103, 136, 0.08), 0 24px 56px rgba(71, 103, 136, 0.10);
-      --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
-      --radius-xl: 24px;
-      --radius-2xl: 30px;
-      --radius-pill: 999px;
-      --container: 1180px;
-      --header-height: 86px;
-      --space-8: 8px;
-      --space-12: 12px;
-      --space-16: 16px;
-      --space-20: 20px;
-      --space-24: 24px;
-      --space-32: 32px;
-      --space-40: 40px;
-      --space-48: 48px;
-      --space-56: 56px;
-      --space-64: 64px;
-      --space-80: 80px;
-      --text-sm: 0.875rem;
-      --text-base: 1rem;
-      --text-md: 1.0625rem;
-      --text-lg: 1.25rem;
-      --text-xl: 1.5rem;
-      --transition: 220ms ease;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body, h1, h2, h3, p, ul { margin: 0; }
-    body {
-      font-family: var(--font-body);
-      color: var(--color-text);
-      background:
-        radial-gradient(circle at 8% 10%, rgba(0, 107, 255, 0.10), transparent 24%),
-        radial-gradient(circle at 90% 78%, rgba(0, 107, 255, 0.08), transparent 20%),
-        linear-gradient(180deg, var(--color-bg-soft) 0%, var(--color-bg) 100%);
-      line-height: 1.6;
-      min-width: 320px;
-      overflow-x: hidden;
-    }
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; }
-    .container { width: min(calc(100% - 32px), var(--container)); margin: 0 auto; }
-    .section { position: relative; padding: clamp(84px, 8vw, 120px) 0; }
-    .section + .section { border-top: 1px solid rgba(11,53,88,0.09); }
-    .section--alt {
-      background: linear-gradient(180deg, rgba(231,240,250,0.92), rgba(217,230,244,0.88));
-    }
-    .section-head { max-width: 760px; margin: 0 auto 48px; text-align: center; }
-    .eyebrow {
-      display: inline-flex; margin-bottom: 14px; font-size: 0.84rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: var(--color-primary);
-    }
-    .section-title {
-      font-size: clamp(2rem, 1.6rem + 1.7vw, 3rem);
-      line-height: 1.08;
-      letter-spacing: -0.035em;
-      margin-bottom: 14px;
-      font-weight: 800;
-    }
-    .section-description { color: var(--color-text-muted); font-size: var(--text-md); }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: var(--radius-sm); font-size: var(--text-sm); font-weight: 700; border: 1px solid transparent; transition: transform var(--transition), background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
-    }
-    .btn:hover { transform: translateY(-1px); }
-    .btn--primary { background: var(--color-primary); color: #fff; box-shadow: var(--shadow-xs); }
-    .btn--primary:hover { background: var(--color-primary-hover); }
-    .btn--secondary { background: #fff; color: var(--color-text); border-color: rgba(11,53,88,0.12); }
-
-    .site-header {
-      position: sticky; top: 0; z-index: 100; min-height: var(--header-height);
-      background: rgba(250, 252, 255, 0.92); backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(11,53,88,0.08);
-    }
-    .site-header__inner {
-      display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center; min-height: var(--header-height);
-    }
-    .site-brand {
-      display: inline-flex; align-items: center; flex: 0 0 auto;
-    }
-    .site-brand__mark {
-      width: 122px; height: 42px; display: inline-flex; align-items: center; justify-content: flex-start;
-    }
-    .site-brand__mark svg { width: 122px; height: 42px; }
-    .site-brand__text { display: none; }
-    .main-nav {
-      display: flex; justify-content: center; align-items: center; gap: clamp(14px, 1.2vw, 22px);
-      flex-wrap: wrap;
-    }
-    .main-nav a {
-      font-size: 0.92rem; font-weight: 600; color: var(--color-text-muted); position: relative;
-    }
-    .main-nav a:hover { color: var(--color-text); }
-    .site-header__actions { display: flex; justify-content: flex-end; }
-
-    .hero {
-      position: relative; overflow: hidden;
-      padding: clamp(54px, 6vw, 92px) 0 clamp(84px, 9vw, 126px);
-      background:
-        linear-gradient(180deg, rgba(245,249,253,0.85), rgba(237,243,249,0.97));
-    }
-    .hero__bg { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
-    .hero__shape {
-      position: absolute; border-radius: 999px; opacity: 1;
-      filter: blur(2px);
-      will-change: transform;
-    }
-    .hero__shape--one {
-      top: 0; left: -4%; width: 320px; height: 320px;
-      background: radial-gradient(circle at 35% 35%, rgba(0,107,255,.16), rgba(0,107,255,.02) 72%);
-      animation: floatOne 16s ease-in-out infinite;
-    }
-    .hero__shape--two {
-      right: 10%; top: 8%; width: 180px; height: 180px; border-radius: 38px;
-      background: radial-gradient(circle at 35% 35%, rgba(0,107,255,.13), rgba(0,107,255,.015) 74%);
-      animation: floatTwo 18s ease-in-out infinite;
-    }
-    .hero__shape--three {
-      left: 48%; bottom: 12%; width: 140px; height: 140px;
-      background: radial-gradient(circle at 35% 35%, rgba(11,53,88,.11), rgba(11,53,88,.01) 72%);
-      animation: floatThree 14s ease-in-out infinite;
-    }
-    .hero__shape--four {
-      right: -1%; bottom: 8%; width: 240px; height: 240px; border-radius: 42% 58% 48% 52% / 52% 42% 58% 48%;
-      background: radial-gradient(circle at 35% 35%, rgba(0,107,255,.10), rgba(0,107,255,.015) 76%);
-      animation: floatFour 19s ease-in-out infinite;
-    }
-    .hero__grid {
-      position: relative; z-index: 1;
-      display: grid; grid-template-columns: minmax(0, 1.03fr) minmax(360px, 460px); gap: clamp(28px, 4vw, 68px); align-items: center;
-    }
-    .hero__title {
-      max-width: 10.5ch; margin-bottom: 16px; font-size: clamp(3.1rem, 2.4rem + 2.4vw, 5rem); line-height: .95; letter-spacing: -0.055em; font-weight: 800;
-    }
-    .hero__subtitle {
-      max-width: 28ch; margin-bottom: 18px; font-size: clamp(1.08rem, 1rem + .3vw, 1.35rem); line-height: 1.22; font-weight: 600; color: var(--color-text-muted);
-    }
-    .hero__lead {
-      max-width: 58ch; margin-bottom: 32px; color: var(--color-text-muted); font-size: var(--text-md);
-    }
-    .hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 36px; }
-    .hero-metrics {
-      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;
-    }
-    .hero-metrics__item {
-      padding: 20px; border-radius: var(--radius-lg); background: rgba(255,255,255,.84); border: 1px solid rgba(11,53,88,0.08); box-shadow: var(--shadow-sm);
-    }
-    .hero-metrics__item strong { display: block; margin-bottom: 8px; font-size: 1.45rem; line-height: 1; }
-    .hero-metrics__item span { font-size: var(--text-sm); color: var(--color-text-muted); }
-
-    .hero-showcase__frame {
-      position: relative; padding: 20px; border-radius: var(--radius-2xl); border: 1px solid rgba(11,53,88,.08);
-      background: linear-gradient(180deg, rgba(247,251,255,.97), rgba(237,244,250,.95));
-      box-shadow: 0 8px 18px rgba(71,103,136,0.06), 0 26px 62px rgba(71,103,136,0.10);
-      overflow: hidden;
-    }
-    .hero-showcase__frame::before {
-      content: ""; position: absolute; inset: 0;
-      background: radial-gradient(circle at top right, rgba(0,107,255,.14), transparent 30%), radial-gradient(circle at bottom left, rgba(0,107,255,.06), transparent 28%);
-      pointer-events: none;
-    }
-    .hero-showcase__tabs {
-      position: relative; z-index: 1; display: inline-flex; gap: 8px; margin-bottom: 18px; padding: 8px; background: rgba(223,233,244,.92); border-radius: var(--radius-pill);
-    }
-    .hero-showcase__tab {
-      min-height: 34px; padding: 0 14px; border-radius: var(--radius-pill); font-size: .84rem; font-weight: 700; color: var(--color-text-muted);
-    }
-    .hero-showcase__tab.is-active { background: #fff; color: var(--color-primary); box-shadow: var(--shadow-xs); }
-    .hero-card {
-      position: relative; z-index: 1; display: flex; flex-direction: column; min-height: 314px; padding: 22px; border-radius: 22px; background: rgba(255,255,255,.95); border: 1px solid rgba(11,53,88,.07); box-shadow: 0 6px 18px rgba(71,103,136,0.05);
-      overflow: hidden;
-    }
-    .hero-card__tag {
-      display: inline-flex; align-self: flex-start; margin-bottom: 14px; padding: 6px 12px; border-radius: 999px; font-size: .78rem; font-weight: 700; color: var(--color-primary); background: rgba(0,107,255,.09);
-    }
-    .hero-card__title {
-      margin-bottom: 14px; max-width: 12ch; font-size: clamp(1.75rem, 1.45rem + .8vw, 2.25rem); line-height: 1.06; letter-spacing: -0.03em; font-weight: 800;
-      overflow-wrap: anywhere;
-    }
-    .hero-card__description {
-      margin-bottom: 14px; color: var(--color-text-muted); font-size: 1rem;
-      overflow-wrap: anywhere;
-    }
-    .hero-card__list {
-      margin-top: auto; padding-left: 1.1rem; color: var(--color-text-muted); font-size: .96rem;
-    }
-    .hero-card__list li + li { margin-top: 8px; }
-    .hero-showcase__pagination {
-      position: relative; z-index: 1; display: flex; gap: 8px; justify-content: center; margin-top: 16px;
-    }
-    .hero-showcase__dot {
-      width: 10px; height: 10px; border-radius: 999px; background: rgba(11,53,88,.16);
-    }
-    .hero-showcase__dot.is-active { width: 24px; background: var(--color-primary); }
-
-    .benefits-grid, .services-grid, .cases-grid, .pricing-grid {
-      display: grid; gap: 20px;
-    }
-    .benefits-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
-    .services-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
-    .cases-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
-    .pricing-grid { grid-template-columns: repeat(3, minmax(0,1fr)); align-items: stretch; }
-
-    .card {
-      height: 100%; padding: 24px; border-radius: var(--radius-xl); background: rgba(255,255,255,.96); border: 1px solid rgba(11,53,88,.08); box-shadow: var(--shadow-sm);
-      overflow-wrap: anywhere;
-    }
-    .card__number { display: inline-flex; margin-bottom: 16px; font-size: .8rem; font-weight: 700; color: var(--color-primary); }
-    .card__title { margin-bottom: 12px; font-size: 1.35rem; line-height: 1.15; font-weight: 800; }
-    .card__text { color: var(--color-text-muted); }
-    .card ul { padding-left: 1.1rem; color: var(--color-text-muted); }
-    .card ul li + li { margin-top: 8px; }
-    .price { font-size: 2rem; line-height: 1; font-weight: 800; margin: 14px 0; }
-    .faq-list { display: grid; gap: 14px; max-width: 920px; margin: 0 auto; }
-    .faq-item {
-      background: rgba(255,255,255,.98); border: 1px solid rgba(11,53,88,.08); border-radius: 18px; box-shadow: var(--shadow-xs); overflow: hidden;
-    }
-    .faq-question {
-      width: 100%; text-align: left; padding: 22px 24px; background: transparent; border: 0; font-weight: 700; color: var(--color-text); cursor: pointer;
-    }
-    .faq-answer { display: none; padding: 0 24px 22px; color: var(--color-text-muted); }
-    .faq-item.is-open .faq-answer { display: block; }
-
-    .contact-wrap {
-      display: grid; grid-template-columns: minmax(0, .95fr) minmax(340px, 420px); gap: 24px; align-items: start;
-    }
-    .contact-card, .form-card {
-      padding: 28px; border-radius: var(--radius-xl); background: rgba(255,255,255,.98); border: 1px solid rgba(11,53,88,.08); box-shadow: var(--shadow-sm);
-    }
-    .contact-list { display: grid; gap: 16px; margin-top: 24px; }
-    .contact-item strong { display: block; margin-bottom: 4px; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--color-primary); }
-    .form-grid { display: grid; gap: 16px; }
-    .field label { display: block; margin-bottom: 8px; font-size: .92rem; font-weight: 600; }
-    .field input, .field textarea {
-      width: 100%; min-height: 50px; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--color-border); background: #fff;
-    }
-    .field textarea { min-height: 120px; resize: vertical; }
-    .checkbox { display: flex; gap: 12px; align-items: flex-start; color: var(--color-text-muted); font-size: .94rem; }
-    .checkbox input { margin-top: 4px; }
-    .site-footer {
-      padding: 28px 0 42px; border-top: 1px solid rgba(11,53,88,.08); background: linear-gradient(180deg, rgba(233,241,248,.9), rgba(227,236,245,.96));
-    }
-    .site-footer__inner {
-      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; color: var(--color-text-muted); font-size: .94rem;
-    }
-
-    .back-to-top {
-      position: fixed; right: 22px; bottom: 22px; z-index: 120;
-      width: 52px; height: 52px; display: inline-flex; align-items: center; justify-content: center;
-      border: 1px solid rgba(11,53,88,.08); border-radius: 999px; background: rgba(0,107,255,.96); color: #fff; box-shadow: 0 10px 30px rgba(0,107,255,.28);
-      opacity: 0; visibility: hidden; transform: translateY(12px);
-      transition: opacity var(--transition), visibility var(--transition), transform var(--transition), background-color var(--transition);
-    }
-    .back-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
-    .back-to-top:hover { background: var(--color-primary-hover); }
-    .back-to-top svg { width: 20px; height: 20px; }
-
-    @keyframes floatOne {
-      0%,100% { transform: translate3d(0,0,0); }
-      50% { transform: translate3d(18px, 20px, 0); }
-    }
-    @keyframes floatTwo {
-      0%,100% { transform: translate3d(0,0,0) rotate(0deg); }
-      50% { transform: translate3d(-12px, 18px, 0) rotate(8deg); }
-    }
-    @keyframes floatThree {
-      0%,100% { transform: translate3d(0,0,0); }
-      50% { transform: translate3d(10px, -14px, 0); }
-    }
-    @keyframes floatFour {
-      0%,100% { transform: translate3d(0,0,0); }
-      50% { transform: translate3d(-18px, -18px, 0) rotate(-7deg); }
-    }
-
-    @media (max-width: 1080px) {
-      .site-header__inner { grid-template-columns: auto 1fr; }
-      .site-header__actions { display: none; }
-      .hero__grid, .contact-wrap { grid-template-columns: 1fr; }
-      .benefits-grid, .services-grid, .cases-grid, .pricing-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .hero__title { max-width: 11.5ch; }
-    }
-
-    @media (max-width: 760px) {
-      .site-header { position: sticky; }
-      .site-header__inner { grid-template-columns: 1fr; gap: 14px; padding: 12px 0; }
-      .site-brand { justify-content: center; }
-      .main-nav { justify-content: center; gap: 12px 16px; }
-      .hero { padding-top: 40px; }
-      .hero__title { font-size: clamp(2.45rem, 9vw, 3.8rem); max-width: 9ch; }
-      .hero-metrics, .benefits-grid, .services-grid, .cases-grid, .pricing-grid { grid-template-columns: 1fr; }
-      .hero-card { min-height: auto; }
-      .section { padding: 72px 0; }
-      .back-to-top { right: 16px; bottom: 16px; width: 48px; height: 48px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-      }
-    }
-  </style>
+  <meta
+    name="description"
+    content="Программа поддержки сотрудников для корпоративных клиентов: психологи, юристы, коучи и wellbeing-сервисы в одном решении."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="site-brand" href="#home" aria-label="На главную">
-        <span class="site-brand__mark" aria-hidden="true">
-          <svg viewBox="0 0 164 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 28C19 18.6112 26.6112 11 36 11H68L51.5 28L68 45H36C26.6112 45 19 37.3888 19 28Z" fill="#0B3558" opacity="0.16"/>
-            <path d="M52 28L74 11H95C104.389 11 112 18.6112 112 28C112 37.3888 104.389 45 95 45H74L52 28Z" fill="#006BFF"/>
-            <path d="M126 19H147" stroke="#0B3558" stroke-width="4" stroke-linecap="round"/>
-            <path d="M121 28H151" stroke="#0B3558" stroke-width="4" stroke-linecap="round"/>
-            <path d="M126 37H145" stroke="#0B3558" stroke-width="4" stroke-linecap="round"/>
-          </svg>
-        </span>
-        <span class="site-brand__text">Программа поддержки сотрудников</span>
+        <img
+          class="site-brand__logo"
+          src="./assets/logo.png"
+          alt="Программа поддержки сотрудников"
+          width="132"
+          height="44"
+          loading="eager"
+          decoding="async"
+        />
       </a>
 
       <nav class="main-nav" aria-label="Основная навигация">
@@ -356,6 +39,7 @@
         <a href="#pricing">Тарифы</a>
         <a href="#faq">FAQ</a>
         <a href="#contacts">Контакты</a>
+        <a href="#account">Личный кабинет</a>
       </nav>
 
       <div class="site-header__actions">
@@ -372,20 +56,39 @@
         <span class="hero__shape hero__shape--three"></span>
         <span class="hero__shape hero__shape--four"></span>
       </div>
+
       <div class="container hero__grid">
         <div>
           <span class="eyebrow">EAP для бизнеса</span>
-          <h1 class="hero__title">Сервис поддержки сотрудников, который реально снижает нагрузку на HR</h1>
-          <p class="hero__subtitle">Психологи, юристы, коучи и дополнительные сервисы — в одном корпоративном решении.</p>
-          <p class="hero__lead">Помогаем компаниям выстраивать систему заботы о сотрудниках: от консультационной поддержки и программ wellbeing до дополнительных опций для удержания, лояльности и устойчивости бизнеса.</p>
+          <h1 class="hero__title">
+            Сервис поддержки сотрудников, который реально снижает нагрузку на HR
+          </h1>
+          <p class="hero__subtitle">
+            Психологи, юристы, коучи и дополнительные сервисы — в одном корпоративном решении.
+          </p>
+          <p class="hero__lead">
+            Помогаем компаниям выстраивать систему заботы о сотрудниках: от консультационной поддержки
+            и программ wellbeing до дополнительных опций для удержания, лояльности и устойчивости бизнеса.
+          </p>
+
           <div class="hero__actions">
             <a class="btn btn--primary" href="#contacts">Получить консультацию</a>
             <a class="btn btn--secondary" href="#services">Посмотреть услуги</a>
           </div>
+
           <div class="hero-metrics">
-            <div class="hero-metrics__item"><strong>300+</strong><span>компаний и учреждений уже используют сервис</span></div>
-            <div class="hero-metrics__item"><strong>24/7</strong><span>поддержка по ряду сервисов и сценариев обращения</span></div>
-            <div class="hero-metrics__item"><strong>B2B</strong><span>фокус на корпоративных клиентах, HR и wellbeing</span></div>
+            <div class="hero-metrics__item">
+              <strong>300+</strong>
+              <span>компаний и учреждений уже используют сервис</span>
+            </div>
+            <div class="hero-metrics__item">
+              <strong>24/7</strong>
+              <span>поддержка по ряду сервисов и сценариев обращения</span>
+            </div>
+            <div class="hero-metrics__item">
+              <strong>B2B</strong>
+              <span>фокус на корпоративных клиентах, HR и wellbeing</span>
+            </div>
           </div>
         </div>
 
@@ -396,16 +99,21 @@
               <span class="hero-showcase__tab">Для сотрудников</span>
               <span class="hero-showcase__tab">Для бизнеса</span>
             </div>
+
             <article class="hero-card">
               <span class="hero-card__tag">HR-сценарий</span>
               <h2 class="hero-card__title">Снимаем часть личных обращений с HR-команды</h2>
-              <p class="hero-card__description">Сотрудники получают понятный канал помощи по бытовым, психологическим, юридическим и жизненным вопросам без перегрузки внутренних команд.</p>
+              <p class="hero-card__description">
+                Сотрудники получают понятный канал помощи по бытовым, психологическим, юридическим и жизненным
+                вопросам без перегрузки внутренних команд.
+              </p>
               <ul class="hero-card__list">
                 <li>Понятный внешний сервис поддержки.</li>
                 <li>Снижение непрофильной нагрузки на HR.</li>
                 <li>Корпоративный формат внедрения и отчётности.</li>
               </ul>
             </article>
+
             <div class="hero-showcase__pagination" aria-hidden="true">
               <span class="hero-showcase__dot is-active"></span>
               <span class="hero-showcase__dot"></span>
@@ -421,15 +129,61 @@
         <div class="section-head">
           <span class="eyebrow">Преимущества</span>
           <h2 class="section-title">Почему компании внедряют программу поддержки сотрудников</h2>
-          <p class="section-description">Это не ещё один бонус, а рабочий инструмент поддержки сотрудников, снижения внутреннего напряжения и усиления HR-предложения компании.</p>
+          <p class="section-description">
+            Это не ещё один бонус, а рабочий инструмент поддержки сотрудников, снижения внутреннего напряжения
+            и усиления HR-предложения компании.
+          </p>
         </div>
+
         <div class="benefits-grid">
-          <article class="card"><span class="card__number">01</span><h3 class="card__title">Снижение непрофильной нагрузки на HR</h3><p class="card__text">Часть личных и чувствительных вопросов сотрудников уходит в отдельный сервис, а внутренняя команда фокусируется на своих задачах.</p></article>
-          <article class="card"><span class="card__number">02</span><h3 class="card__title">Поддержка лояльности и удержания</h3><p class="card__text">Забота о сотрудниках усиливает доверие к работодателю и помогает формировать более устойчивую команду.</p></article>
-          <article class="card"><span class="card__number">03</span><h3 class="card__title">Понятный формат для сотрудников</h3><p class="card__text">Людям проще пользоваться сервисом, когда путь ясен: где вход, как записаться, к кому обратиться и что происходит дальше.</p></article>
-          <article class="card"><span class="card__number">04</span><h3 class="card__title">Гибкость по составу программы</h3><p class="card__text">Базовые консультационные сервисы можно дополнять целевыми программами, вебинарами и дополнительными корпоративными опциями.</p></article>
-          <article class="card"><span class="card__number">05</span><h3 class="card__title">Корпоративный формат запуска</h3><p class="card__text">Программа выстраивается как B2B-решение с onboarding-сценарием, материалами, вводным вебинаром и дальнейшим сопровождением.</p></article>
-          <article class="card"><span class="card__number">06</span><h3 class="card__title">Основа для зрелой wellbeing-экосистемы</h3><p class="card__text">Сервис можно использовать как точку входа в более широкую систему поддержки, развития и удержания сотрудников.</p></article>
+          <article class="card">
+            <span class="card__number">01</span>
+            <h3 class="card__title">Снижение непрофильной нагрузки на HR</h3>
+            <p class="card__text">
+              Часть личных и чувствительных вопросов сотрудников уходит в отдельный сервис,
+              а внутренняя команда фокусируется на своих задачах.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card__number">02</span>
+            <h3 class="card__title">Поддержка лояльности и удержания</h3>
+            <p class="card__text">
+              Забота о сотрудниках усиливает доверие к работодателю и помогает формировать более устойчивую команду.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card__number">03</span>
+            <h3 class="card__title">Понятный формат для сотрудников</h3>
+            <p class="card__text">
+              Людям проще пользоваться сервисом, когда путь ясен: где вход, как записаться, к кому обратиться и что происходит дальше.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card__number">04</span>
+            <h3 class="card__title">Гибкость по составу программы</h3>
+            <p class="card__text">
+              Базовые консультационные сервисы можно дополнять целевыми программами, вебинарами и дополнительными корпоративными опциями.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card__number">05</span>
+            <h3 class="card__title">Корпоративный формат запуска</h3>
+            <p class="card__text">
+              Программа выстраивается как B2B-решение с onboarding-сценарием, материалами, вводным вебинаром и дальнейшим сопровождением.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card__number">06</span>
+            <h3 class="card__title">Основа для зрелой wellbeing-экосистемы</h3>
+            <p class="card__text">
+              Сервис можно использовать как точку входа в более широкую систему поддержки, развития и удержания сотрудников.
+            </p>
+          </article>
         </div>
       </div>
     </section>
@@ -439,15 +193,54 @@
         <div class="section-head">
           <span class="eyebrow">Услуги</span>
           <h2 class="section-title">Что входит в программу</h2>
-          <p class="section-description">Базовый контур сервиса строится вокруг востребованных консультационных направлений и дополнительных модулей под задачи компании.</p>
+          <p class="section-description">
+            Базовый контур сервиса строится вокруг востребованных консультационных направлений
+            и дополнительных модулей под задачи компании.
+          </p>
         </div>
+
         <div class="services-grid">
-          <article class="card"><h3 class="card__title">Психолог</h3><p class="card__text">Поддержка в стрессовых, личных и рабочих ситуациях, помощь в восстановлении устойчивости и баланса.</p></article>
-          <article class="card"><h3 class="card__title">Юрист</h3><p class="card__text">Консультации по правовым вопросам: семейные, трудовые, жилищные и другие жизненные ситуации.</p></article>
-          <article class="card"><h3 class="card__title">Коуч-тренер</h3><p class="card__text">Поддержка в достижении целей, личной эффективности, карьерном развитии и удержании фокуса.</p></article>
-          <article class="card"><h3 class="card__title">Фитнес-тренер</h3><p class="card__text">Помощь в выстраивании полезных привычек, режима активности и общего wellbeing-подхода.</p></article>
-          <article class="card"><h3 class="card__title">Зооконсультант</h3><p class="card__text">Нестандартный, но ценный сервис для сотрудников, которым нужна помощь по вопросам ухода за питомцами.</p></article>
-          <article class="card"><h3 class="card__title">Налоговый консультант</h3><p class="card__text">Консультации по вычетам, возвратам налогов и навигации по финансово-юридическим вопросам.</p></article>
+          <article class="card">
+            <h3 class="card__title">Психолог</h3>
+            <p class="card__text">
+              Поддержка в стрессовых, личных и рабочих ситуациях, помощь в восстановлении устойчивости и баланса.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Юрист</h3>
+            <p class="card__text">
+              Консультации по правовым вопросам: семейные, трудовые, жилищные и другие жизненные ситуации.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Коуч-тренер</h3>
+            <p class="card__text">
+              Поддержка в достижении целей, личной эффективности, карьерном развитии и удержании фокуса.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Фитнес-тренер</h3>
+            <p class="card__text">
+              Помощь в выстраивании полезных привычек, режима активности и общего wellbeing-подхода.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Зооконсультант</h3>
+            <p class="card__text">
+              Нестандартный, но ценный сервис для сотрудников, которым нужна помощь по вопросам ухода за питомцами.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Налоговый консультант</h3>
+            <p class="card__text">
+              Консультации по вычетам, возвратам налогов и навигации по финансово-юридическим вопросам.
+            </p>
+          </article>
         </div>
       </div>
     </section>
@@ -457,12 +250,32 @@
         <div class="section-head">
           <span class="eyebrow">Кейсы</span>
           <h2 class="section-title">Как это выглядит для корпоративного клиента</h2>
-          <p class="section-description">Кейсы и отзывы должны работать как осмысленный social proof, а не как случайный набор блоков.</p>
+          <p class="section-description">
+            Кейсы и отзывы должны работать как осмысленный social proof, а не как случайный набор блоков.
+          </p>
         </div>
+
         <div class="cases-grid">
-          <article class="card"><h3 class="card__title">IT-компания</h3><p class="card__text">Сервис помогает снять часть личных обращений с HR и создать понятный маршрут помощи для сотрудников.</p></article>
-          <article class="card"><h3 class="card__title">Образовательная организация</h3><p class="card__text">Подходит для поддержки преподавателей, сотрудников и других категорий пользователей в формате адаптированного сервиса.</p></article>
-          <article class="card"><h3 class="card__title">Крупный корпоративный клиент</h3><p class="card__text">Программа может масштабироваться, дополняться отчётностью, onboarding-пакетом и расширенными опциями поддержки.</p></article>
+          <article class="card">
+            <h3 class="card__title">IT-компания</h3>
+            <p class="card__text">
+              Сервис помогает снять часть личных обращений с HR и создать понятный маршрут помощи для сотрудников.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Образовательная организация</h3>
+            <p class="card__text">
+              Подходит для поддержки преподавателей, сотрудников и других категорий пользователей в формате адаптированного сервиса.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Крупный корпоративный клиент</h3>
+            <p class="card__text">
+              Программа может масштабироваться, дополняться отчётностью, onboarding-пакетом и расширенными опциями поддержки.
+            </p>
+          </article>
         </div>
       </div>
     </section>
@@ -472,12 +285,48 @@
         <div class="section-head">
           <span class="eyebrow">Тарифы</span>
           <h2 class="section-title">Базовые тарифные сценарии</h2>
-          <p class="section-description">На главной странице тарифы лучше держать в коротком виде, без перегруза, чтобы они поддерживали продажу, а не уводили в детали.</p>
+          <p class="section-description">
+            На главной странице тарифы лучше держать в коротком виде, без перегруза,
+            чтобы они поддерживали продажу, а не уводили в детали.
+          </p>
         </div>
+
         <div class="pricing-grid">
-          <article class="card"><p class="card__text">Старт</p><h3 class="card__title">Для небольших компаний</h3><div class="price">390 ₽</div><p class="card__text">за сотрудника в месяц</p><ul><li>До 100 сотрудников</li><li>Базовые консультационные сервисы</li><li>Подходит для первого запуска программы</li></ul></article>
-          <article class="card"><p class="card__text">Бизнес</p><h3 class="card__title">Для средних компаний</h3><div class="price">340 ₽</div><p class="card__text">за сотрудника в месяц</p><ul><li>До 500 сотрудников</li><li>Расширенный пакет поддержки</li><li>Подробная отчётность и дополнительные опции</li></ul></article>
-          <article class="card"><p class="card__text">Корпоративный</p><h3 class="card__title">Для крупных организаций</h3><div class="price">Индивидуально</div><p class="card__text">по запросу</p><ul><li>500+ сотрудников</li><li>Гибкая конфигурация услуг</li><li>Сценарий под структуру и задачи компании</li></ul></article>
+          <article class="card">
+            <p class="card__text">Старт</p>
+            <h3 class="card__title">Для небольших компаний</h3>
+            <div class="price">390 ₽</div>
+            <p class="card__text">за сотрудника в месяц</p>
+            <ul>
+              <li>До 100 сотрудников</li>
+              <li>Базовые консультационные сервисы</li>
+              <li>Подходит для первого запуска программы</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <p class="card__text">Бизнес</p>
+            <h3 class="card__title">Для средних компаний</h3>
+            <div class="price">340 ₽</div>
+            <p class="card__text">за сотрудника в месяц</p>
+            <ul>
+              <li>До 500 сотрудников</li>
+              <li>Расширенный пакет поддержки</li>
+              <li>Подробная отчётность и дополнительные опции</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <p class="card__text">Корпоративный</p>
+            <h3 class="card__title">Для крупных организаций</h3>
+            <div class="price">Индивидуально</div>
+            <p class="card__text">по запросу</p>
+            <ul>
+              <li>500+ сотрудников</li>
+              <li>Гибкая конфигурация услуг</li>
+              <li>Сценарий под структуру и задачи компании</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
@@ -487,13 +336,50 @@
         <div class="section-head">
           <span class="eyebrow">FAQ</span>
           <h2 class="section-title">Часто задаваемые вопросы</h2>
-          <p class="section-description">Вопросы раскрываются без перегруза страницы длинным текстом.</p>
+          <p class="section-description">
+            Вопросы раскрываются без перегруза страницы длинным текстом.
+          </p>
         </div>
+
         <div class="faq-list">
-          <article class="faq-item is-open"><button class="faq-question" type="button">Как обеспечивается конфиденциальность обращений?</button><div class="faq-answer"><p>Персональные обращения обрабатываются в рамках внешнего сервиса поддержки, а работодателю передаются только согласованные агрегированные данные в корпоративном формате.</p></div></article>
-          <article class="faq-item"><button class="faq-question" type="button">Сколько времени занимает запуск программы?</button><div class="faq-answer"><p>Срок зависит от масштаба компании и конфигурации услуг, но базовый сценарий можно подготовить существенно быстрее, чем разрабатывать внутреннюю систему с нуля.</p></div></article>
-          <article class="faq-item"><button class="faq-question" type="button">Можно ли адаптировать состав программы под компанию?</button><div class="faq-answer"><p>Да, состав сервиса может меняться под численность, отрасль, HR-процессы и приоритетные сценарии поддержки сотрудников.</p></div></article>
-          <article class="faq-item"><button class="faq-question" type="button">Можно ли подключить дополнительные опции?</button><div class="faq-answer"><p>Да, базовые консультационные сервисы дополняются целевыми программами, вебинарами и корпоративными модулями под конкретные задачи бизнеса.</p></div></article>
+          <article class="faq-item is-open">
+            <button class="faq-question" type="button">Как обеспечивается конфиденциальность обращений?</button>
+            <div class="faq-answer">
+              <p>
+                Персональные обращения обрабатываются в рамках внешнего сервиса поддержки,
+                а работодателю передаются только согласованные агрегированные данные в корпоративном формате.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button">Сколько времени занимает запуск программы?</button>
+            <div class="faq-answer">
+              <p>
+                Срок зависит от масштаба компании и конфигурации услуг, но базовый сценарий можно подготовить
+                существенно быстрее, чем разрабатывать внутреннюю систему с нуля.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button">Можно ли адаптировать состав программы под компанию?</button>
+            <div class="faq-answer">
+              <p>
+                Да, состав сервиса может меняться под численность, отрасль, HR-процессы и приоритетные сценарии поддержки сотрудников.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button">Можно ли подключить дополнительные опции?</button>
+            <div class="faq-answer">
+              <p>
+                Да, базовые консультационные сервисы дополняются целевыми программами,
+                вебинарами и корпоративными модулями под конкретные задачи бизнеса.
+              </p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -503,23 +389,72 @@
         <div class="contact-card">
           <span class="eyebrow">Контакты</span>
           <h2 class="section-title">Обсудим конфигурацию программы под вашу компанию</h2>
-          <p class="section-description">Оставьте заявку, и мы предложим структуру программы, набор сервисов и формат подключения под ваш сценарий.</p>
+          <p class="section-description">
+            Оставьте заявку, и мы предложим структуру программы, набор сервисов и формат подключения под ваш сценарий.
+          </p>
+
           <div class="contact-list">
-            <div class="contact-item"><strong>Email</strong><span>support@employee-care.ru</span></div>
-            <div class="contact-item"><strong>Телефон</strong><span>8 (800) 123-45-67</span></div>
-            <div class="contact-item"><strong>Адрес</strong><span>454007, г. Челябинск, пр. Ленина, 13-А, пом. 6, оф. 2</span></div>
+            <div class="contact-item">
+              <strong>Email</strong>
+              <span>support@employee-care.ru</span>
+            </div>
+            <div class="contact-item">
+              <strong>Телефон</strong>
+              <span>8 (800) 123-45-67</span>
+            </div>
+            <div class="contact-item">
+              <strong>Адрес</strong>
+              <span>454007, г. Челябинск, пр. Ленина, 13-А, пом. 6, оф. 2</span>
+            </div>
           </div>
         </div>
+
         <div class="form-card">
           <form class="form-grid">
-            <div class="field"><label for="name">ФИО *</label><input id="name" type="text" required></div>
-            <div class="field"><label for="phone">Телефон *</label><input id="phone" type="tel" required></div>
-            <div class="field"><label for="email">Email *</label><input id="email" type="email" required></div>
-            <div class="field"><label for="company">Название компании</label><input id="company" type="text"></div>
-            <div class="field"><label for="role">Отдел / должность</label><input id="role" type="text"></div>
-            <label class="checkbox"><input type="checkbox" required><span>Я согласен на обработку персональных данных</span></label>
+            <div class="field">
+              <label for="name">ФИО *</label>
+              <input id="name" type="text" required />
+            </div>
+
+            <div class="field">
+              <label for="phone">Телефон *</label>
+              <input id="phone" type="tel" required />
+            </div>
+
+            <div class="field">
+              <label for="email">Email *</label>
+              <input id="email" type="email" required />
+            </div>
+
+            <div class="field">
+              <label for="company">Название компании</label>
+              <input id="company" type="text" />
+            </div>
+
+            <div class="field">
+              <label for="role">Отдел / должность</label>
+              <input id="role" type="text" />
+            </div>
+
+            <label class="checkbox">
+              <input type="checkbox" required />
+              <span>Я согласен на обработку персональных данных</span>
+            </label>
+
             <button class="btn btn--primary" type="submit">Отправить заявку</button>
           </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="account" class="section section--alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Личный кабинет</span>
+          <h2 class="section-title">Вход для действующих пользователей</h2>
+          <p class="section-description">
+            Этот блок пока можно использовать как временную точку входа, пока не подключён полноценный кабинет.
+          </p>
         </div>
       </div>
     </section>
@@ -528,37 +463,49 @@
   <footer class="site-footer">
     <div class="container site-footer__inner">
       <div>
-        <strong>ООО «Мобильная Помощь Онлайн»</strong><br>
+        <strong>ООО «Мобильная Помощь Онлайн»</strong><br />
         Программа поддержки сотрудников для корпоративных клиентов
       </div>
       <div>
-        ИНН 7452115610<br>
-        ОГРН 1147452002092<br>
+        ИНН 7452115610<br />
+        ОГРН 1147452002092<br />
         © 2026 Все права защищены
       </div>
     </div>
   </footer>
 
   <a class="back-to-top" href="#home" aria-label="Наверх">
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5L5 12M12 5L19 12M12 5V19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M12 5L5 12M12 5L19 12M12 5V19"
+        stroke="currentColor"
+        stroke-width="2.4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
   </a>
 
   <script>
-    const backToTop = document.querySelector('.back-to-top');
-    const faqItems = document.querySelectorAll('.faq-item');
+    const backToTop = document.querySelector(".back-to-top");
+    const faqItems = document.querySelectorAll(".faq-item");
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 500) {
-        backToTop.classList.add('is-visible');
-      } else {
-        backToTop.classList.remove('is-visible');
-      }
-    }, { passive: true });
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (window.scrollY > 500) {
+          backToTop.classList.add("is-visible");
+        } else {
+          backToTop.classList.remove("is-visible");
+        }
+      },
+      { passive: true }
+    );
 
     faqItems.forEach((item) => {
-      const button = item.querySelector('.faq-question');
-      button.addEventListener('click', () => {
-        item.classList.toggle('is-open');
+      const button = item.querySelector(".faq-question");
+      button.addEventListener("click", () => {
+        item.classList.toggle("is-open");
       });
     });
   </script>
