@@ -41,8 +41,8 @@
   column-gap: 24px;
 }
 
-/* RU: Лого занимает устойчивое место и не сжимается
-   EN: Logo keeps a stable area and does not shrink */
+/* RU: Логотип занимает устойчивую зону в шапке
+   EN: Logo keeps a stable area inside the header */
 .site-header .site-brand {
   min-width: 220px;
 }
@@ -150,8 +150,8 @@
 }
 
 /* ==========================================================================
-   RU: Hero-секция
-   EN: Hero section
+   RU: Hero-секция / композиция первого экрана
+   EN: Hero section / first screen composition
    ========================================================================== */
 .hero {
   padding: clamp(34px, 5vw, 56px) 0 clamp(80px, 8vw, 118px);
@@ -251,13 +251,11 @@
   animation: heroGlowShift 4.8s ease-in-out infinite alternate;
 }
 
+/* RU: Каркас hero-панели
+   EN: Hero panel frame */
 .hero__panel {
   position: relative;
   width: min(100%, 560px);
-  border: 1px solid rgba(11, 53, 88, 0.08);
-  border-radius: 30px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 251, 255, 0.98));
-  box-shadow: var(--shadow-lg);
   overflow: hidden;
 }
 
@@ -266,41 +264,11 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 20px 24px;
-  border-bottom: 1px solid rgba(11, 53, 88, 0.08);
-}
-
-.hero__panel-kicker {
-  display: inline-flex;
-  margin-bottom: 6px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-primary);
-}
-
-.hero__panel-title {
-  font-size: 1.05rem;
-  font-weight: 800;
-}
-
-.hero__panel-badge {
-  display: inline-flex;
-  align-items: center;
-  min-height: 34px;
-  padding: 0 12px;
-  border-radius: var(--radius-pill);
-  background: rgba(0, 107, 255, 0.1);
-  color: var(--color-primary);
-  font-size: 0.85rem;
-  font-weight: 700;
 }
 
 .hero__panel-body {
   display: grid;
   gap: 18px;
-  padding: 24px;
 }
 
 .hero__panel-grid {
@@ -309,6 +277,8 @@
   gap: 16px;
 }
 
+/* RU: Плавающие карточки hero как часть композиции
+   EN: Floating hero cards as part of composition */
 .hero__floating-card {
   position: absolute;
   max-width: 220px;
@@ -396,17 +366,14 @@
   align-items: center;
 }
 
-.split-section__content {
-  min-width: 0;
-}
-
+.split-section__content,
 .split-section__side {
   min-width: 0;
 }
 
 /* ==========================================================================
-   RU: Метрики, бейджи, списки
-   EN: Metrics, badges, lists
+   RU: Вспомогательные layout-паттерны
+   EN: Helper layout patterns
    ========================================================================== */
 .metrics-row {
   display: grid;
@@ -480,8 +447,7 @@
 .site-footer {
   padding: 56px 0 28px;
   border-top: 1px solid rgba(11, 53, 88, 0.08);
-  background:
-    linear-gradient(180deg, rgba(231, 240, 250, 0.72), rgba(255, 255, 255, 0.96));
+  background: linear-gradient(180deg, rgba(231, 240, 250, 0.72), rgba(255, 255, 255, 0.96));
 }
 
 .site-footer__top {
@@ -531,13 +497,13 @@
 }
 
 .site-footer__bottom {
-  padding-top: 20px;
-  border-top: 1px solid rgba(11, 53, 88, 0.08);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(11, 53, 88, 0.08);
   color: var(--color-text-soft);
   font-size: 0.92rem;
 }
@@ -635,10 +601,7 @@
 @media (max-width: 860px) {
   .grid-3,
   .grid-4,
-  .hero__panel-grid {
-    grid-template-columns: 1fr;
-  }
-
+  .hero__panel-grid,
   .grid-2 {
     grid-template-columns: 1fr;
   }
