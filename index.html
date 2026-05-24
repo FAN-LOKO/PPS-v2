@@ -29,57 +29,53 @@
 <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-  <!-- ==========================================================================
-       RU: Шапка сайта
-       EN: Site header
-       ========================================================================== -->
-  <header class="site-header">
-    <div class="container site-header__inner">
-      <!-- RU: Логотип проекта
-           EN: Project logo -->
-      <a class="site-brand" href="#top" aria-label="ППС — на главную">
-        <img
-          class="site-brand__logo"
-          src="./assets/logo.png"
-          alt="Логотип ППС"
-          width="240"
-          height="58"
-        />
+  <!-- ====================================================================== -->
+<!-- RU: HEADER / ШАПКА САЙТА                                               -->
+<!-- EN: HEADER / SITE HEADER                                               -->
+<!-- RU: Заменить текущий блок шапки сайта целиком на этот section          -->
+<!-- EN: Replace the current site header block entirely with this section    -->
+<!-- ====================================================================== -->
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-brand" href="./index.html" aria-label="На главную">
+      <img
+        class="site-brand__logo"
+        src="./assets/logo.png"
+        alt="Программа поддержки сотрудников"
+        width="260"
+        height="72"
+      />
+    </a>
+
+    <nav class="site-nav" aria-label="Основная навигация">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link is-active" href="#about">О программе</a></li>
+        <li><a class="site-nav__link" href="#services">Услуги</a></li>
+        <li><a class="site-nav__link" href="#benefits">Преимущества</a></li>
+        <li><a class="site-nav__link" href="#specialists">Специалисты</a></li>
+        <li><a class="site-nav__link" href="#pricing">Тарифы</a></li>
+        <li><a class="site-nav__link" href="#faq">FAQ</a></li>
+        <li><a class="site-nav__link" href="#contacts">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-header__actions">
+      <a class="btn btn--primary site-header__cta site-header__cabinet" href="./employees.html">
+        Личный кабинет
       </a>
 
-      <!-- RU: Основная навигация
-           EN: Main navigation -->
-      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
-          <li><a class="site-nav__link is-active" href="#about-program">О программе</a></li>
-          <li><a class="site-nav__link" href="#solutions">Услуги</a></li>
-          <li><a class="site-nav__link" href="#benefits">Преимущества</a></li>
-          <li><a class="site-nav__link" href="#experts">Специалисты</a></li>
-          <li><a class="site-nav__link" href="#pricing">Тарифы</a></li>
-          <li><a class="site-nav__link" href="#faq">FAQ</a></li>
-          <li><a class="site-nav__link" href="#contacts">Контакты</a></li>
-        </ul>
-      </nav>
-
-      <!-- RU: Действия в шапке
-           EN: Header actions -->
-      <div class="site-header__actions">
-        <a class="btn btn--secondary site-header__cta" href="#cabinet">Личный кабинет</a>
-
-        <!-- RU: Кнопка мобильного меню
-             EN: Mobile menu toggle -->
-        <button
-          class="menu-toggle"
-          type="button"
-          aria-label="Открыть меню"
-          aria-expanded="false"
-          aria-controls="site-nav"
-        >
-          <span class="menu-toggle__line"></span>
-        </button>
-      </div>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+        aria-controls="mobile-navigation"
+      >
+        <span class="menu-toggle__line"></span>
+      </button>
     </div>
-  </header>
+  </div>
+</header>
 
   <!-- ==========================================================================
        RU: Основное содержимое страницы
@@ -90,108 +86,176 @@
          RU: Hero section
          EN: Hero section
          ====================================================================== -->
-    <section class="hero">
-      <div class="container hero__inner">
-        <div class="hero__content">
-          <div class="hero__eyebrow">Corporate wellbeing / EAP</div>
+    <!-- ====================================================================== -->
+<!-- RU: HERO / ПЕРВЫЙ ЭКРАН ГЛАВНОЙ                                        -->
+<!-- EN: HERO / HOMEPAGE FIRST SCREEN                                       -->
+<!-- RU: Заменить текущий hero-блок главной страницы целиком на этот section -->
+<!-- EN: Replace the current homepage hero block entirely with this section  -->
+<!-- ====================================================================== -->
+<section class="hero" id="about">
+  <div class="hero__bg" aria-hidden="true">
+    <span class="hero__shape hero__shape--one"></span>
+    <span class="hero__shape hero__shape--two"></span>
+    <span class="hero__shape hero__shape--three"></span>
+    <span class="hero__shape hero__shape--four"></span>
+  </div>
 
-          <h1 class="hero__title">
-            Программа поддержки <span>сотрудников</span> для бизнеса
-          </h1>
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <span class="hero__eyebrow">Corporate wellbeing / EAP</span>
 
-          <p class="hero__description">
-            Комплексный сервис поддержки сотрудников и их семей: психологи, юристы,
-            коучи, консультанты по здоровью и wellbeing-программы, которые помогают
-            снижать текучесть, повышать вовлечённость и усиливать HR-бренд компании.
+      <h1 class="hero__title">
+        Программа поддержки
+        <span>сотрудников</span>
+        для бизнеса
+      </h1>
+
+      <p class="hero__description">
+        Комплексный сервис поддержки сотрудников и их семей: психологи, юристы,
+        коучи, консультанты по здоровью и wellbeing-программы, которые помогают
+        снижать текучесть, повышать вовлечённость и усиливать HR-бренд компании.
+      </p>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#contacts">Получить консультацию</a>
+        <a class="btn btn--secondary" href="./solutions.html">Узнать подробнее</a>
+      </div>
+
+      <ul class="hero__meta">
+        <li>Подключение для компаний любого масштаба</li>
+        <li>Конфиденциальная поддержка сотрудников</li>
+        <li>Фокус на удержание, wellbeing и HR-эффективность</li>
+      </ul>
+    </div>
+
+    <div class="hero__visual" aria-label="Сценарии программы поддержки сотрудников">
+      <div class="hero__glow" aria-hidden="true"></div>
+
+      <div class="hero__floating-card hero__floating-card--a">
+        <article class="mini-card">
+          <h3 class="mini-card__title">Запрос на консультацию</h3>
+          <p class="mini-card__text">
+            Сотрудник получает помощь без лишней бюрократии.
           </p>
+        </article>
+      </div>
 
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#contacts">Получить консультацию</a>
-            <a class="btn btn--secondary" href="#about-program">Узнать подробнее</a>
+      <div class="hero__floating-card hero__floating-card--b">
+        <article class="mini-card">
+          <h3 class="mini-card__title">HR-ценность</h3>
+          <p class="mini-card__text">
+            Сервис усиливает EVP и снижает нагрузку на HR-команду.
+          </p>
+        </article>
+      </div>
+
+      <div class="hero__floating-card hero__floating-card--c">
+        <article class="mini-card">
+          <h3 class="mini-card__title">Wellbeing</h3>
+          <p class="mini-card__text">
+            Поддержка в сложных жизненных и рабочих ситуациях.
+          </p>
+        </article>
+      </div>
+
+      <div class="hero__floating-card hero__floating-card--d">
+        <article class="mini-card">
+          <h3 class="mini-card__title">Отчётность</h3>
+          <p class="mini-card__text">
+            Понятная коммуникация и прозрачная логика внедрения.
+          </p>
+        </article>
+      </div>
+
+      <div class="hero__panel hero-showcase" data-hero-showcase>
+        <div class="hero__panel-top">
+          <div>
+            <span class="hero__panel-kicker">Программа поддержки</span>
+            <h2 class="hero__panel-title">Единая корпоративная экосистема помощи</h2>
           </div>
-
-          <ul class="hero__meta">
-            <li>Подключение для компаний любого масштаба</li>
-            <li>Конфиденциальная поддержка сотрудников</li>
-            <li>Фокус на удержание, wellbeing и HR-эффективность</li>
-          </ul>
+          <span class="hero__panel-badge">B2B-решение</span>
         </div>
 
-        <div class="hero__visual" aria-hidden="true">
-          <div class="hero__glow"></div>
-
-          <div class="hero__floating-card hero__floating-card--a">
-            <div class="mini-card">
-              <div class="mini-card__title">Запрос на консультацию</div>
-              <div class="mini-card__text">Сотрудник получает помощь без лишней бюрократии.</div>
-            </div>
+        <div class="hero__panel-body">
+          <div class="hero-showcase__tabs" role="tablist" aria-label="Сценарии программы">
+            <button
+              class="hero-showcase__tab is-active"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              data-hero-tab="0"
+            >
+              Поддержка
+            </button>
+            <button
+              class="hero-showcase__tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-hero-tab="1"
+            >
+              HR
+            </button>
+            <button
+              class="hero-showcase__tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-hero-tab="2"
+            >
+              Аналитика
+            </button>
           </div>
 
-          <div class="hero__floating-card hero__floating-card--b">
-            <div class="mini-card">
-              <div class="mini-card__title">HR-ценность</div>
-              <div class="mini-card__text">Сервис усиливает EVP и снижает нагрузку на HR-команду.</div>
-            </div>
-          </div>
+          <article class="hero-card is-active" data-hero-card="0">
+            <span class="hero-card__tag">Поддержка сотрудников</span>
+            <h3 class="hero-card__title">Психологическая, юридическая и wellbeing-помощь</h3>
+            <p class="hero-card__description">
+              Единая точка входа в сервисы поддержки для сотрудников и членов их семей.
+            </p>
+            <ul class="hero-card__list">
+              <li>Быстрое подключение к нужному специалисту</li>
+              <li>Конфиденциальное обращение</li>
+              <li>Понятный пользовательский путь</li>
+            </ul>
+          </article>
 
-          <div class="hero__floating-card hero__floating-card--c">
-            <div class="mini-card">
-              <div class="mini-card__title">Wellbeing</div>
-              <div class="mini-card__text">Поддержка в сложных жизненных и рабочих ситуациях.</div>
-            </div>
-          </div>
+          <article class="hero-card" data-hero-card="1" hidden>
+            <span class="hero-card__tag">Ценность для HR</span>
+            <h3 class="hero-card__title">Инструмент удержания и снижения нагрузки на команду</h3>
+            <p class="hero-card__description">
+              Программа помогает усиливать employer brand и поддерживать сотрудников в критических точках.
+            </p>
+            <ul class="hero-card__list">
+              <li>Поддержка HR-функции без перегруза внутренних команд</li>
+              <li>Рост доверия к работодателю</li>
+              <li>Премиальная корпоративная подача сервиса</li>
+            </ul>
+          </article>
 
-          <div class="hero__floating-card hero__floating-card--d">
-            <div class="mini-card">
-              <div class="mini-card__title">Отчётность</div>
-              <div class="mini-card__text">Понятная коммуникация и прозрачная логика внедрения.</div>
-            </div>
-          </div>
+          <article class="hero-card" data-hero-card="2" hidden>
+            <span class="hero-card__tag">Прозрачная логика</span>
+            <h3 class="hero-card__title">Коммуникация, внедрение и отчётность для бизнеса</h3>
+            <p class="hero-card__description">
+              Руководство и HR получают понятную структуру взаимодействия с сервисом и сценарием запуска.
+            </p>
+            <ul class="hero-card__list">
+              <li>Простая логика внедрения</li>
+              <li>Понятные сценарии использования</li>
+              <li>Аккуратная корпоративная коммуникация</li>
+            </ul>
+          </article>
 
-          <div class="hero__panel">
-            <div class="hero__panel-top">
-              <div>
-                <div class="hero__panel-kicker">Программа поддержки</div>
-                <div class="hero__panel-title">Единая корпоративная экосистема помощи сотрудникам</div>
-              </div>
-              <div class="hero__panel-badge">B2B-решение</div>
-            </div>
-
-            <div class="hero__panel-body">
-              <div class="hero__panel-grid">
-                <div class="feature-card">
-                  <div class="feature-card__title">Психологическая поддержка</div>
-                  <div class="feature-card__text">
-                    Консультации специалистов для эмоциональной устойчивости и снижения стресса.
-                  </div>
-                </div>
-
-                <div class="feature-card">
-                  <div class="feature-card__title">Юридические консультации</div>
-                  <div class="feature-card__text">
-                    Помощь сотрудникам по личным и бытовым юридическим вопросам.
-                  </div>
-                </div>
-
-                <div class="feature-card">
-                  <div class="feature-card__title">Коучинг и развитие</div>
-                  <div class="feature-card__text">
-                    Поддержка в вопросах мотивации, адаптации и профессионального роста.
-                  </div>
-                </div>
-
-                <div class="feature-card">
-                  <div class="feature-card__title">Дополнительные сервисы</div>
-                  <div class="feature-card__text">
-                    Здоровье, wellbeing, целевые программы и другие поддерживающие сценарии.
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="hero-showcase__pagination" aria-hidden="true">
+            <span class="hero-showcase__dot is-active" data-hero-dot="0"></span>
+            <span class="hero-showcase__dot" data-hero-dot="1"></span>
+            <span class="hero-showcase__dot" data-hero-dot="2"></span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <!-- ======================================================================
          RU: О программе
