@@ -133,7 +133,7 @@ body {
   content: "";
   position: absolute;
   inset: 1px;
-  border-radius: calc(30px - 1px);
+  border-radius: calc(var(--hero-panel-radius) - 1px);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.66), rgba(255, 255, 255, 0.34));
   pointer-events: none;
   z-index: 0;
@@ -176,8 +176,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(135deg, rgba(0, 107, 255, 0.06), transparent 28%);
+  background: linear-gradient(135deg, rgba(0, 107, 255, 0.06), transparent 28%);
   opacity: 0;
   transition: opacity var(--transition);
   pointer-events: none;
@@ -185,10 +184,6 @@ body {
 
 .hero-card.is-active::before {
   opacity: 1;
-}
-
-.hero-card.is-active {
-  transform: translateY(0);
 }
 
 .hero-showcase__pagination {
@@ -257,7 +252,6 @@ body {
 /* EN: Premium hover states for section cards                                 */
 /* ========================================================================== */
 .card,
-.contact-card,
 .form-card,
 .faq-item {
   transition:
@@ -268,7 +262,6 @@ body {
 }
 
 .card:hover,
-.contact-card:hover,
 .form-card:hover {
   transform: translateY(-4px);
   border-color: rgba(0, 107, 255, 0.16);
@@ -278,41 +271,6 @@ body {
 .faq-item:hover {
   border-color: rgba(0, 107, 255, 0.14);
   box-shadow: var(--shadow-sm);
-}
-
-/* ========================================================================== */
-/* RU: Усиление service cards                                                 */
-/* EN: Service cards enhancement                                              */
-/* ========================================================================== */
-.services-grid .card {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-}
-
-.services-grid .card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at top right, rgba(0, 107, 255, 0.10), transparent 30%);
-  opacity: 0;
-  transition: opacity var(--transition);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.services-grid .card:hover::before {
-  opacity: 1;
-}
-
-.services-grid .card > * {
-  position: relative;
-  z-index: 1;
-}
-
-.services-grid .card:hover .card__title {
-  color: var(--color-primary);
 }
 
 /* ========================================================================== */
@@ -526,7 +484,6 @@ body {
   }
 
   .card,
-  .contact-card,
   .form-card,
   .faq-item,
   .hero-card,
