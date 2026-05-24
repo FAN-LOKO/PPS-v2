@@ -1,182 +1,283 @@
-/* ==========================================================================
-   RU: Основной JavaScript проекта PPS-v2
-   EN: Main JavaScript file for the PPS-v2 project
-
-   RU: Этот файл отвечает за:
-   - мобильное меню
-   - активные ссылки навигации
-   - FAQ accordion
-   - кнопку "наверх"
-
-   EN: This file is responsible for:
-   - mobile menu
-   - active navigation links
-   - FAQ accordion
-   - back-to-top button
-   ========================================================================== */
+/* ========================================================================== */
+/* RU: script.js — основная интерактивность главной страницы PPS              */
+/* EN: script.js — main homepage interactivity for PPS                        */
+/* ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
-  /* ========================================================================
-     RU: Получаем базовые DOM-элементы
-     EN: Get base DOM elements
-     ======================================================================== */
-  const menuToggle = document.querySelector(".menu-toggle");
-  const siteNav = document.querySelector(".site-nav");
+  initMobileMenu();
+  initHeroShowcase();
+  initFaqAccordion();
+  initActiveNavLinks();
+  initBackToTop();
+  initStickyHeaderState();
+});
+
+/* ========================================================================== */
+/* RU: Мобильное меню                                                         */
+/* EN: Mobile menu                                                            */
+/* ========================================================================== */
+function initMobileMenu() {
+  const toggleButton = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".site-nav");
   const navLinks = document.querySelectorAll(".site-nav__link");
-  const backToTop = document.querySelector(".back-to-top");
+
+  if (!toggleButton || !nav) return;
+
+  toggleButton.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("is-open");
+    toggleButton.setAttribute("aria-expanded", String(isOpen));
+    document.body.classList.toggle("menu-open", isOpen);
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("is-open");
+      toggleButton.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    const clickedInsideNav = nav.contains(event.target);
+    const clickedToggle = toggleButton.contains(event.target);
+
+    if (!clickedInsideNav && !clickedToggle) {
+      nav.classList.remove("is-open");
+      toggleButton.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 920) {
+      nav.classList.remove("is-open");
+      toggleButton.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+    }
+  });
+}
+
+/* ========================================================================== */
+/* RU: Hero showcase / переключение карточек справа                           */
+/* EN: Hero showcase / right-side card switching                              */
+/* ========================================================================== */
+function initHeroShowcase() {
+  const showcase = document.querySelector("[data-hero-showcase]");
+  if (!showcase) return;
+
+  const tabs = Array.from(showcase.querySelectorAll("[data-hero-tab]"));
+  const cards = Array.from(showcase.querySelectorAll("[data-hero-card]"));
+  const dots = Array.from(showcase.querySelectorAll("[data-hero-dot]"));
+
+  if (!tabs.length || !cards.length) return;
+
+  let activeIndex = 0;
+  let autoplayId = null;
+  const autoplayDelay = 4200;
+
+  function setActiveSlide(index) {
+    const safeIndex = index >= cards.length ? 0 : index < 0 ? cards.length - 1 : index;
+    activeIndex = safeIndex;
+
+    tabs.forEach((tab, tabIndex) => {
+      const isActive = tabIndex === safeIndex;
+      tab.classList.toggle("is-active", isActive);
+      tab.setAttribute("aria-selected", String(isActive));
+      tab.setAttribute("tabindex", isActive ? "0" : "-1");
+    });
+
+    cards.forEach((card, cardIndex) => {
+      const isActive = cardIndex === safeIndex;
+      card.classList.toggle("is-active", isActive);
+      card.hidden = !isActive;
+    });
+
+    dots.forEach((dot, dotIndex) => {
+      dot.classList.toggle("is-active", dotIndex === safeIndex);
+    });
+  }
+
+  function nextSlide() {
+    setActiveSlide(activeIndex + 1);
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayId = window.setInterval(nextSlide, autoplayDelay);
+  }
+
+  function stopAutoplay() {
+    if (autoplayId) {
+      window.clearInterval(autoplayId);
+      autoplayId = null;
+    }
+  }
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+      setActiveSlide(index);
+      startAutoplay();
+    });
+
+    tab.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        const nextIndex = index + 1 >= tabs.length ? 0 : index + 1;
+        tabs[nextIndex].focus();
+        setActiveSlide(nextIndex);
+        startAutoplay();
+      }
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        const prevIndex = index - 1 < 0 ? tabs.length - 1 : index - 1;
+        tabs[prevIndex].focus();
+        setActiveSlide(prevIndex);
+        startAutoplay();
+      }
+    });
+  });
+
+  showcase.addEventListener("mouseenter", stopAutoplay);
+  showcase.addEventListener("mouseleave", startAutoplay);
+  showcase.addEventListener("focusin", stopAutoplay);
+  showcase.addEventListener("focusout", startAutoplay);
+
+  setActiveSlide(0);
+  startAutoplay();
+}
+
+/* ========================================================================== */
+/* RU: FAQ accordion                                                          */
+/* EN: FAQ accordion                                                          */
+/* ========================================================================== */
+function initFaqAccordion() {
   const faqItems = document.querySelectorAll(".faq-item");
 
-  /* ========================================================================
-     RU: Вспомогательные функции для мобильного меню
-     EN: Helper functions for mobile menu
-     ======================================================================== */
-  const openMenu = () => {
-    if (!siteNav || !menuToggle) return;
-    siteNav.classList.add("is-open");
-    menuToggle.setAttribute("aria-expanded", "true");
-    menuToggle.setAttribute("aria-label", "Закрыть меню");
-  };
+  if (!faqItems.length) return;
 
-  const closeMenu = () => {
-    if (!siteNav || !menuToggle) return;
-    siteNav.classList.remove("is-open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Открыть меню");
-  };
+  faqItems.forEach((item) => {
+    const button = item.querySelector(".faq-question");
+    const answer = item.querySelector(".faq-answer");
 
-  const toggleMenu = () => {
-    if (!siteNav) return;
-    const isOpen = siteNav.classList.contains("is-open");
-    if (isOpen) {
-      closeMenu();
-    } else {
-      openMenu();
+    if (!button || !answer) return;
+
+    button.setAttribute("aria-expanded", item.classList.contains("is-open") ? "true" : "false");
+
+    if (!item.classList.contains("is-open")) {
+      answer.hidden = true;
     }
-  };
 
-  /* ========================================================================
-     RU: Логика мобильного меню
-     EN: Mobile menu logic
-     ======================================================================== */
-  if (menuToggle && siteNav) {
-    menuToggle.addEventListener("click", toggleMenu);
+    button.addEventListener("click", () => {
+      const isOpen = item.classList.contains("is-open");
 
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        if (window.innerWidth <= 1100) {
-          closeMenu();
+      faqItems.forEach((faqItem) => {
+        const faqButton = faqItem.querySelector(".faq-question");
+        const faqAnswer = faqItem.querySelector(".faq-answer");
+
+        faqItem.classList.remove("is-open");
+
+        if (faqButton) {
+          faqButton.setAttribute("aria-expanded", "false");
+        }
+
+        if (faqAnswer) {
+          faqAnswer.hidden = true;
         }
       });
-    });
 
-    document.addEventListener("click", (event) => {
-      const target = event.target;
-      if (!(target instanceof Element)) return;
-
-      const clickedInsideNav = target.closest(".site-nav");
-      const clickedToggle = target.closest(".menu-toggle");
-
-      if (!clickedInsideNav && !clickedToggle && siteNav.classList.contains("is-open")) {
-        closeMenu();
+      if (!isOpen) {
+        item.classList.add("is-open");
+        button.setAttribute("aria-expanded", "true");
+        answer.hidden = false;
       }
     });
+  });
+}
 
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 1100) {
-        closeMenu();
-      }
-    });
-  }
+/* ========================================================================== */
+/* RU: Активный пункт меню при скролле                                        */
+/* EN: Active navigation link on scroll                                       */
+/* ========================================================================== */
+function initActiveNavLinks() {
+  const navLinks = Array.from(document.querySelectorAll(".site-nav__link"));
+  if (!navLinks.length) return;
 
-  /* ========================================================================
-     RU: Активный пункт меню при прокрутке страницы
-     EN: Active navigation item on scroll
-     ======================================================================== */
-  const sectionIds = Array.from(navLinks)
-    .map((link) => link.getAttribute("href"))
-    .filter((href) => href && href.startsWith("#"))
-    .map((href) => href.replace("#", ""));
+  const linksWithTargets = navLinks
+    .map((link) => {
+      const href = link.getAttribute("href");
+      if (!href || !href.startsWith("#")) return null;
 
-  const sections = sectionIds
-    .map((id) => document.getElementById(id))
+      const target = document.querySelector(href);
+      if (!target) return null;
+
+      return { link, target };
+    })
     .filter(Boolean);
 
-  const setActiveNavLink = () => {
-    if (!sections.length || !navLinks.length) return;
+  if (!linksWithTargets.length) return;
 
+  function updateActiveLink() {
     const scrollPosition = window.scrollY + 140;
-    let currentId = "";
 
-    sections.forEach((section) => {
-      if (!section) return;
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
+    let currentSection = linksWithTargets[0];
 
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        currentId = section.id;
+    linksWithTargets.forEach((entry) => {
+      if (entry.target.offsetTop <= scrollPosition) {
+        currentSection = entry;
       }
     });
 
-    if (!currentId && sections[0]) {
-      currentId = sections[0].id;
+    navLinks.forEach((link) => link.classList.remove("is-active"));
+
+    if (currentSection?.link) {
+      currentSection.link.classList.add("is-active");
     }
-
-    navLinks.forEach((link) => {
-      const href = link.getAttribute("href");
-      const isActive = href === `#${currentId}`;
-      link.classList.toggle("is-active", isActive);
-    });
-  };
-
-  setActiveNavLink();
-  window.addEventListener("scroll", setActiveNavLink);
-
-  /* ========================================================================
-     RU: FAQ accordion
-     EN: FAQ accordion
-     ======================================================================== */
-  if (faqItems.length) {
-    faqItems.forEach((item) => {
-      const button = item.querySelector(".faq-item__button");
-      if (!button) return;
-
-      button.addEventListener("click", () => {
-        const isOpen = item.classList.contains("is-open");
-
-        faqItems.forEach((faqItem) => {
-          faqItem.classList.remove("is-open");
-        });
-
-        if (!isOpen) {
-          item.classList.add("is-open");
-        }
-      });
-    });
   }
 
-  /* ========================================================================
-     RU: Кнопка "наверх"
-     EN: Back-to-top button
-     ======================================================================== */
-  const toggleBackToTop = () => {
-    if (!backToTop) return;
+  updateActiveLink();
+  window.addEventListener("scroll", updateActiveLink, { passive: true });
+}
 
-    if (window.scrollY > 500) {
-      backToTop.classList.add("is-visible");
+/* ========================================================================== */
+/* RU: Кнопка "наверх"                                                        */
+/* EN: Back to top button                                                     */
+/* ========================================================================== */
+function initBackToTop() {
+  const backToTopButton = document.querySelector(".back-to-top");
+  if (!backToTopButton) return;
+
+  function toggleButtonVisibility() {
+    if (window.scrollY > 520) {
+      backToTopButton.classList.add("is-visible");
     } else {
-      backToTop.classList.remove("is-visible");
+      backToTopButton.classList.remove("is-visible");
     }
-  };
-
-  toggleBackToTop();
-  window.addEventListener("scroll", toggleBackToTop);
-
-  if (backToTop) {
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    });
   }
-});
+
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+  toggleButtonVisibility();
+  window.addEventListener("scroll", toggleButtonVisibility, { passive: true });
+}
+
+/* ========================================================================== */
+/* RU: Состояние header при прокрутке                                         */
+/* EN: Header state on scroll                                                 */
+/* ========================================================================== */
+function initStickyHeaderState() {
+  const header = document.querySelector(".site-header");
+  if (!header) return;
+
+  function updateHeaderState() {
+    header.classList.toggle("is-scrolled", window.scrollY > 12);
+  }
+
+  updateHeaderState();
+  window.addEventListener("scroll", updateHeaderState, { passive: true });
+}
