@@ -1,706 +1,35 @@
-/* ==========================================================================
-   RU: Layout-слой проекта PPS-v2
-   EN: Layout stylesheet layer for the PPS-v2 project
+/* ========================================================================== */
+/* RU: layout.css — каркас страниц, header, hero, сетки секций, footer       */
+/* EN: layout.css — page layout, header, hero, section grids, footer          */
+/* ========================================================================== */
 
-   RU: Этот файл отвечает за:
-   - шапку сайта
-   - навигацию
-   - hero-секцию
-   - сетки секций
-   - футер
-   - базовый layout внутренних страниц
-
-   EN: This file is responsible for:
-   - site header
-   - navigation
-   - hero section
-   - section grids
-   - footer
-   - base layout for inner pages
-   ========================================================================== */
-
-/* ==========================================================================
-   RU: Header / верхняя панель сайта
-   EN: Header / top site bar
-   ========================================================================== */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  min-height: var(--header-height);
-  backdrop-filter: blur(16px);
-  background: rgba(247, 250, 254, 0.86);
-  border-bottom: 1px solid rgba(11, 53, 88, 0.08);
-}
-
-.site-header__inner {
-  min-height: var(--header-height);
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  column-gap: 24px;
-}
-
-/* RU: Логотип занимает устойчивую зону в шапке
-   EN: Logo keeps a stable area inside the header */
-.site-header .site-brand {
-  min-width: 220px;
-}
-
-/* ==========================================================================
-   RU: Основная навигация
-   EN: Main navigation
-   ========================================================================== */
-.site-nav {
-  display: flex;
-  justify-content: center;
-}
-
-.site-nav__list {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  list-style: none;
-}
-
-.site-nav__link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 42px;
-  padding: 0 14px;
-  border-radius: 999px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--color-text);
-  transition:
-    background-color var(--transition),
-    color var(--transition),
-    transform var(--transition);
-}
-
-.site-nav__link:hover {
-  color: var(--color-primary);
-  background: rgba(0, 107, 255, 0.08);
-}
-
-.site-nav__link:active {
-  transform: translateY(1px);
-}
-
-.site-nav__link.is-active {
-  color: var(--color-primary);
-  background: rgba(0, 107, 255, 0.10);
-}
-
-/* ==========================================================================
-   RU: Действия в шапке
-   EN: Header actions
-   ========================================================================== */
-.site-header__actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.site-header__cta {
-  white-space: nowrap;
-}
-
-/* RU: Кнопка мобильного меню
-   EN: Mobile menu button */
-.menu-toggle {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  width: 46px;
-  height: 46px;
-  border: 1px solid rgba(11, 53, 88, 0.12);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: var(--shadow-xs);
-}
-
-.menu-toggle__line {
-  position: relative;
+/* ========================================================================== */
+/* RU: Общая структура layout                                                 */
+/* EN: General layout structure                                               */
+/* ========================================================================== */
+.site-main {
   display: block;
-  width: 18px;
-  height: 2px;
-  background: var(--color-text);
-  border-radius: 999px;
+  overflow: clip;
 }
 
-.menu-toggle__line::before,
-.menu-toggle__line::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 18px;
-  height: 2px;
-  border-radius: 999px;
-  background: var(--color-text);
-}
-
-.menu-toggle__line::before {
-  top: -6px;
-}
-
-.menu-toggle__line::after {
-  top: 6px;
-}
-
-/* ==========================================================================
-   RU: Hero-секция / композиция первого экрана
-   EN: Hero section / first screen composition
-   ========================================================================== */
-.hero {
-  padding: clamp(34px, 5vw, 56px) 0 clamp(80px, 8vw, 118px);
-}
-
-.hero__inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1.02fr) minmax(420px, 0.98fr);
-  align-items: center;
-  gap: clamp(30px, 5vw, 72px);
-}
-
-.hero__content {
-  max-width: 640px;
-}
-
-.hero__eyebrow {
-  display: inline-flex;
-  margin-bottom: 18px;
-  padding: 8px 14px;
-  border: 1px solid rgba(0, 107, 255, 0.12);
-  border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.72);
-  color: var(--color-primary);
-  font-size: 0.84rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  box-shadow: var(--shadow-xs);
-}
-
-.hero__title {
-  max-width: 12ch;
-  margin-bottom: 20px;
-  font-size: clamp(2.75rem, 2.1rem + 2.4vw, 4.7rem);
-  line-height: 0.96;
-  letter-spacing: -0.05em;
-  font-weight: 800;
-}
-
-.hero__title span {
-  color: var(--color-primary);
-}
-
-.hero__description {
-  max-width: 58ch;
-  margin-bottom: 28px;
-  font-size: 1.08rem;
-  color: var(--color-text-muted);
-}
-
-.hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-bottom: 28px;
-}
-
-.hero__meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  list-style: none;
-}
-
-.hero__meta li {
-  display: inline-flex;
-  align-items: center;
-  min-height: 40px;
-  padding: 0 14px;
-  border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(11, 53, 88, 0.08);
-  box-shadow: var(--shadow-xs);
-  color: var(--color-text-muted);
-  font-size: 0.92rem;
-  font-weight: 600;
-}
-
-/* RU: Визуальная колонка hero
-   EN: Hero visual column */
-.hero__visual {
+.section {
   position: relative;
-  min-height: 560px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: clamp(84px, 8vw, 120px) 0;
 }
 
-.hero__glow {
-  position: absolute;
-  inset: 6% 8% 12% 8%;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(0, 107, 255, 0.18), rgba(0, 107, 255, 0.04) 58%, transparent 72%);
-  filter: blur(10px);
-  animation: heroGlowShift 4.8s ease-in-out infinite alternate;
+.section + .section {
+  border-top: 1px solid rgba(11, 53, 88, 0.09);
 }
 
-/* RU: Каркас hero-панели
-   EN: Hero panel frame */
-.hero__panel {
-  position: relative;
-  width: min(100%, 560px);
-  overflow: hidden;
+.section--alt {
+  background: linear-gradient(180deg, rgba(231, 240, 250, 0.94), rgba(217, 230, 244, 0.90));
 }
 
-.hero__panel-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.hero__panel-body {
-  display: grid;
-  gap: 18px;
-}
-
-.hero__panel-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-}
-
-/* RU: Плавающие карточки hero как часть композиции
-   EN: Floating hero cards as part of composition */
-.hero__floating-card {
-  position: absolute;
-  max-width: 220px;
-  z-index: 2;
-}
-
-.hero__floating-card--a {
-  top: 38px;
-  left: -24px;
-  animation: floatOne 7.2s ease-in-out infinite;
-}
-
-.hero__floating-card--b {
-  right: -14px;
-  top: 110px;
-  animation: floatTwo 8s ease-in-out infinite;
-}
-
-.hero__floating-card--c {
-  left: 10px;
-  bottom: 56px;
-  animation: floatThree 7.6s ease-in-out infinite;
-}
-
-.hero__floating-card--d {
-  right: 8px;
-  bottom: 24px;
-  animation: floatFour 8.4s ease-in-out infinite;
-}
-
-/* ==========================================================================
-   RU: Универсальные сетки секций
-   EN: Universal section grids
-   ========================================================================== */
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.stack-16 {
-  display: grid;
-  gap: 16px;
-}
-
-.stack-20 {
-  display: grid;
-  gap: 20px;
-}
-
-.stack-24 {
-  display: grid;
-  gap: 24px;
-}
-
-.stack-32 {
-  display: grid;
-  gap: 32px;
-}
-
-/* ==========================================================================
-   RU: Контентные двухколоночные секции
-   EN: Two-column content sections
-   ========================================================================== */
-.split-section {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
-  gap: clamp(28px, 4vw, 56px);
-  align-items: start;
-}
-
-.split-section--center {
-  align-items: center;
-}
-
-.split-section__content,
-.split-section__side {
-  min-width: 0;
-}
-
-/* ==========================================================================
-   RU: Вспомогательные layout-паттерны
-   EN: Helper layout patterns
-   ========================================================================== */
-.metrics-row {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.inline-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.inline-list {
-  display: grid;
-  gap: 12px;
-  list-style: none;
-}
-
-/* ==========================================================================
-   RU: Layout внутренних hero-секций страниц
-   EN: Inner page hero layout
-   ========================================================================== */
-.page-hero {
-  padding: clamp(42px, 5vw, 72px) 0 clamp(60px, 7vw, 88px);
-}
-
-.page-hero__inner {
-  display: grid;
-  grid-template-columns: minmax(0, 0.96fr) minmax(300px, 0.84fr);
-  gap: 32px;
-  align-items: end;
-}
-
-.page-hero__content {
+.section-head {
   max-width: 760px;
+  margin: 0 auto 48px;
+  text-align: center;
 }
-
-.page-hero__eyebrow {
-  display: inline-flex;
-  margin-bottom: 14px;
-  color: var(--color-primary);
-  font-size: 0.84rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.page-hero__title {
-  margin-bottom: 16px;
-  font-size: clamp(2.3rem, 1.9rem + 1.7vw, 3.6rem);
-  line-height: 1.02;
-  letter-spacing: -0.04em;
-  font-weight: 800;
-}
-
-.page-hero__description {
-  color: var(--color-text-muted);
-  font-size: 1.04rem;
-}
-
-.page-hero__aside {
-  display: grid;
-  gap: 14px;
-}
-
-/* ==========================================================================
-   RU: Footer
-   EN: Footer
-   ========================================================================== */
-.site-footer {
-  padding: 56px 0 28px;
-  border-top: 1px solid rgba(11, 53, 88, 0.08);
-  background: linear-gradient(180deg, rgba(231, 240, 250, 0.72), rgba(255, 255, 255, 0.96));
-}
-
-.site-footer__top {
-  display: grid;
-  grid-template-columns: minmax(240px, 1fr) minmax(0, 1.3fr);
-  gap: 36px;
-  padding-bottom: 28px;
-}
-
-.site-footer__brand {
-  max-width: 360px;
-}
-
-.site-footer__brand .site-brand {
-  margin-bottom: 18px;
-}
-
-.site-footer__description {
-  color: var(--color-text-muted);
-}
-
-.site-footer__nav {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.site-footer__title {
-  margin-bottom: 14px;
-  font-size: 0.98rem;
-  font-weight: 800;
-  color: var(--color-text);
-}
-
-.site-footer__list {
-  display: grid;
-  gap: 10px;
-  list-style: none;
-}
-
-.site-footer__list a {
-  color: var(--color-text-muted);
-}
-
-.site-footer__list a:hover {
-  color: var(--color-primary);
-}
-
-.site-footer__bottom {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(11, 53, 88, 0.08);
-  color: var(--color-text-soft);
-  font-size: 0.92rem;
-}
-
-/* ==========================================================================
-   RU: Мобильная навигация
-   EN: Mobile navigation
-   ========================================================================== */
-@media (max-width: 1100px) {
-  .site-header__inner {
-    grid-template-columns: auto auto;
-    justify-content: space-between;
-  }
-
-  .site-nav {
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 16px;
-    right: 16px;
-    display: none;
-    justify-content: stretch;
-    padding: 14px;
-    border: 1px solid rgba(11, 53, 88, 0.1);
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: var(--shadow-md);
-  }
-
-  .site-nav.is-open {
-    display: flex;
-  }
-
-  .site-nav__list {
-    width: 100%;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 6px;
-  }
-
-  .site-nav__link {
-    justify-content: flex-start;
-    width: 100%;
-    min-height: 46px;
-    padding: 0 14px;
-    border-radius: 14px;
-  }
-
-  .site-header__actions .site-header__cta {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: inline-flex;
-  }
-}
-
-/* ==========================================================================
-   RU: Адаптив hero и секций
-   EN: Responsive hero and sections
-   ========================================================================== */
-@media (max-width: 1024px) {
-  .hero__inner,
-  .split-section,
-  .page-hero__inner,
-  .site-footer__top {
-    grid-template-columns: 1fr;
-  }
-
-  .hero__content,
-  .page-hero__content {
-    max-width: 100%;
-  }
-
-  .hero__visual {
-    min-height: 500px;
-  }
-
-  .hero__floating-card--a {
-    left: 0;
-  }
-
-  .hero__floating-card--b {
-    right: 0;
-  }
-
-  .metrics-row {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .site-footer__nav {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 860px) {
-  .grid-3,
-  .grid-4,
-  .hero__panel-grid,
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    padding-top: 28px;
-  }
-
-  .hero__title {
-    max-width: 100%;
-    font-size: clamp(2.3rem, 1.9rem + 3.2vw, 3.4rem);
-  }
-
-  .hero__description {
-    font-size: 1rem;
-  }
-
-  .hero__visual {
-    min-height: 460px;
-  }
-
-  .hero__floating-card {
-    max-width: 200px;
-  }
-}
-
-@media (max-width: 640px) {
-  .site-header {
-    min-height: 82px;
-  }
-
-  .site-header__inner {
-    min-height: 82px;
-    column-gap: 16px;
-  }
-
-  .site-header .site-brand {
-    min-width: auto;
-  }
-
-  .hero {
-    padding: 24px 0 72px;
-  }
-
-  .hero__actions,
-  .hero__meta {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .hero__meta li {
-    width: 100%;
-  }
-
-  .hero__visual {
-    min-height: 400px;
-  }
-
-  .hero__floating-card {
-    position: relative;
-    inset: auto;
-    max-width: 100%;
-    animation: none;
-  }
-
-  .hero__panel {
-    border-radius: 24px;
-  }
-
-  .hero__panel-top,
-  .hero__panel-body {
-    padding: 18px;
-  }
-
-  .metrics-row,
-  .site-footer__nav {
-    grid-template-columns: 1fr;
-  }
-
-  .site-footer {
-    padding-top: 48px;
-  }
-
-  .site-footer__top {
-    gap: 28px;
-  }
-
-  .site-footer__bottom {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-}
-
-/* ========================================================================== */
-/* RU: HEADER + HERO ДЛЯ ГЛАВНОЙ СТРАНИЦЫ                                     */
-/* EN: HEADER + HERO FOR THE HOMEPAGE                                         */
-/* RU: Этот блок вставить в css/layout.css целиком                            */
-/* EN: Insert this whole block into css/layout.css                            */
-/* ========================================================================== */
 
 /* ========================================================================== */
 /* RU: Header / Шапка сайта                                                   */
@@ -816,7 +145,7 @@
   height: 48px;
   border-radius: 14px;
   border: 1px solid rgba(11, 53, 88, 0.10);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.90);
   box-shadow: var(--shadow-xs);
 }
 
@@ -1166,12 +495,70 @@
 }
 
 /* ========================================================================== */
-/* RU: Адаптив для header + hero                                              */
-/* EN: Responsive rules for header + hero                                     */
+/* RU: Grid-секции главной                                                    */
+/* EN: Homepage grid sections                                                 */
+/* ========================================================================== */
+.benefits-grid,
+.services-grid,
+.cases-grid,
+.pricing-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* ========================================================================== */
+/* RU: Контакты / Контактный layout                                           */
+/* EN: Contacts / Contact layout                                              */
+/* ========================================================================== */
+.contact-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(340px, 420px);
+  gap: 24px;
+  align-items: start;
+}
+
+.contact-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.contact-item strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+/* ========================================================================== */
+/* RU: Footer / Подвал сайта                                                  */
+/* EN: Footer / Site footer                                                   */
+/* ========================================================================== */
+.site-footer {
+  padding: 28px 0 42px;
+  border-top: 1px solid rgba(11, 53, 88, 0.08);
+  background: linear-gradient(180deg, rgba(233, 241, 248, 0.90), rgba(227, 236, 245, 0.96));
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--color-text-muted);
+  font-size: 0.94rem;
+}
+
+/* ========================================================================== */
+/* RU: Адаптивность / Responsive                                              */
+/* EN: Responsiveness                                                         */
 /* ========================================================================== */
 @media (max-width: 1180px) {
   .site-header__inner {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto minmax(0, 1fr) auto;
     gap: 18px;
   }
 
@@ -1189,12 +576,20 @@
     font-size: 0.88rem;
   }
 
-  .hero__inner {
+  .hero__inner,
+  .contact-wrap {
     grid-template-columns: 1fr;
   }
 
   .hero__visual {
     min-height: 560px;
+  }
+
+  .benefits-grid,
+  .services-grid,
+  .cases-grid,
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -1289,6 +684,13 @@
 
   .hero__floating-card {
     display: none;
+  }
+
+  .benefits-grid,
+  .services-grid,
+  .cases-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr;
   }
 }
 
