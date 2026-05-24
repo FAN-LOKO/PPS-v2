@@ -1,6 +1,6 @@
 /* ========================================================================== */
-/* RU: script.js — основная интерактивность главной страницы PPS              */
-/* EN: script.js — main homepage interactivity for PPS                        */
+/* RU: script.js — интерактивность главной страницы PPS                       */
+/* EN: script.js — PPS homepage interactivity                                 */
 /* ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -23,17 +23,32 @@ function initMobileMenu() {
 
   if (!toggleButton || !nav) return;
 
+  function closeMenu() {
+    nav.classList.remove("is-open");
+    toggleButton.setAttribute("aria-expanded", "false");
+    toggleButton.setAttribute("aria-label", "Открыть меню");
+    document.body.classList.remove("menu-open");
+  }
+
+  function openMenu() {
+    nav.classList.add("is-open");
+    toggleButton.setAttribute("aria-expanded", "true");
+    toggleButton.setAttribute("aria-label", "Закрыть меню");
+    document.body.classList.add("menu-open");
+  }
+
   toggleButton.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("is-open");
-    toggleButton.setAttribute("aria-expanded", String(isOpen));
-    document.body.classList.toggle("menu-open", isOpen);
+    const isOpen = nav.classList.contains("is-open");
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   });
 
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      nav.classList.remove("is-open");
-      toggleButton.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("menu-open");
+      closeMenu();
     });
   });
 
@@ -42,24 +57,26 @@ function initMobileMenu() {
     const clickedToggle = toggleButton.contains(event.target);
 
     if (!clickedInsideNav && !clickedToggle) {
-      nav.classList.remove("is-open");
-      toggleButton.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("menu-open");
+      closeMenu();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
     }
   });
 
   window.addEventListener("resize", () => {
     if (window.innerWidth > 920) {
-      nav.classList.remove("is-open");
-      toggleButton.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("menu-open");
+      closeMenu();
     }
   });
 }
 
 /* ========================================================================== */
-/* RU: Hero showcase / переключение карточек справа                           */
-/* EN: Hero showcase / right-side card switching                              */
+/* RU: Hero showcase / табы и карточки справа                                 */
+/* EN: Hero showcase / tabs and right-side cards                              */
 /* ========================================================================== */
 function initHeroShowcase() {
   const showcase = document.querySelector("[data-hero-showcase]");
@@ -73,10 +90,11 @@ function initHeroShowcase() {
 
   let activeIndex = 0;
   let autoplayId = null;
-  const autoplayDelay = 4200;
+  const autoplayDelay = 4500;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function setActiveSlide(index) {
-    const safeIndex = index >= cards.length ? 0 : index < 0 ? cards.length - 1 : index;
+    const safeIndex = index < 0 ? cards.length - 1 : index >= cards.length ? 0 : index;
     activeIndex = safeIndex;
 
     tabs.forEach((tab, tabIndex) => {
@@ -101,16 +119,17 @@ function initHeroShowcase() {
     setActiveSlide(activeIndex + 1);
   }
 
-  function startAutoplay() {
-    stopAutoplay();
-    autoplayId = window.setInterval(nextSlide, autoplayDelay);
-  }
-
   function stopAutoplay() {
     if (autoplayId) {
       window.clearInterval(autoplayId);
       autoplayId = null;
     }
+  }
+
+  function startAutoplay() {
+    if (reducedMotion) return;
+    stopAutoplay();
+    autoplayId = window.setInterval(nextSlide, autoplayDelay);
   }
 
   tabs.forEach((tab, index) => {
@@ -135,13 +154,40 @@ function initHeroShowcase() {
         setActiveSlide(prevIndex);
         startAutoplay();
       }
+
+      if (event.key === "Home") {
+        event.preventDefault();
+        tabs[0].focus();
+        setActiveSlide(0);
+        startAutoplay();
+      }
+
+      if (event.key === "End") {
+        event.preventDefault();
+        tabs[tabs.length - 1].focus();
+        setActiveSlide(tabs.length - 1);
+        startAutoplay();
+      }
+    });
+  });
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      setActiveSlide(index);
+      startAutoplay();
     });
   });
 
   showcase.addEventListener("mouseenter", stopAutoplay);
   showcase.addEventListener("mouseleave", startAutoplay);
   showcase.addEventListener("focusin", stopAutoplay);
-  showcase.addEventListener("focusout", startAutoplay);
+  showcase.addEventListener("focusout", () => {
+    window.setTimeout(() => {
+      if (!showcase.contains(document.activeElement)) {
+        startAutoplay();
+      }
+    }, 0);
+  });
 
   setActiveSlide(0);
   startAutoplay();
@@ -156,24 +202,31 @@ function initFaqAccordion() {
 
   if (!faqItems.length) return;
 
-  faqItems.forEach((item) => {
-    const button = item.querySelector(".faq-question");
-    const answer = item.querySelector(".faq-answer");
+  faqItems.forEach((item, index) => {
+    const button = item.querySelector(".faq-item__button");
+    const content = item.querySelector(".faq-item__content");
 
-    if (!button || !answer) return;
+    if (!button || !content) return;
 
-    button.setAttribute("aria-expanded", item.classList.contains("is-open") ? "true" : "false");
+    const contentId = `faq-content-${index + 1}`;
+    const buttonId = `faq-button-${index + 1}`;
+    const isOpen = item.classList.contains("is-open");
 
-    if (!item.classList.contains("is-open")) {
-      answer.hidden = true;
-    }
+    button.setAttribute("id", buttonId);
+    button.setAttribute("aria-controls", contentId);
+    button.setAttribute("aria-expanded", String(isOpen));
+
+    content.setAttribute("id", contentId);
+    content.setAttribute("role", "region");
+    content.setAttribute("aria-labelledby", buttonId);
+    content.hidden = !isOpen;
 
     button.addEventListener("click", () => {
-      const isOpen = item.classList.contains("is-open");
+      const currentlyOpen = item.classList.contains("is-open");
 
       faqItems.forEach((faqItem) => {
-        const faqButton = faqItem.querySelector(".faq-question");
-        const faqAnswer = faqItem.querySelector(".faq-answer");
+        const faqButton = faqItem.querySelector(".faq-item__button");
+        const faqContent = faqItem.querySelector(".faq-item__content");
 
         faqItem.classList.remove("is-open");
 
@@ -181,23 +234,23 @@ function initFaqAccordion() {
           faqButton.setAttribute("aria-expanded", "false");
         }
 
-        if (faqAnswer) {
-          faqAnswer.hidden = true;
+        if (faqContent) {
+          faqContent.hidden = true;
         }
       });
 
-      if (!isOpen) {
+      if (!currentlyOpen) {
         item.classList.add("is-open");
         button.setAttribute("aria-expanded", "true");
-        answer.hidden = false;
+        content.hidden = false;
       }
     });
   });
 }
 
 /* ========================================================================== */
-/* RU: Активный пункт меню при скролле                                        */
-/* EN: Active navigation link on scroll                                       */
+/* RU: Активный пункт навигации при скролле                                   */
+/* EN: Active navigation item on scroll                                       */
 /* ========================================================================== */
 function initActiveNavLinks() {
   const navLinks = Array.from(document.querySelectorAll(".site-nav__link"));
@@ -206,6 +259,7 @@ function initActiveNavLinks() {
   const linksWithTargets = navLinks
     .map((link) => {
       const href = link.getAttribute("href");
+
       if (!href || !href.startsWith("#")) return null;
 
       const target = document.querySelector(href);
@@ -218,8 +272,7 @@ function initActiveNavLinks() {
   if (!linksWithTargets.length) return;
 
   function updateActiveLink() {
-    const scrollPosition = window.scrollY + 140;
-
+    const scrollPosition = window.scrollY + 160;
     let currentSection = linksWithTargets[0];
 
     linksWithTargets.forEach((entry) => {
@@ -228,26 +281,29 @@ function initActiveNavLinks() {
       }
     });
 
-    navLinks.forEach((link) => link.classList.remove("is-active"));
+    navLinks.forEach((link) => {
+      link.classList.remove("is-active");
+    });
 
-    if (currentSection?.link) {
+    if (currentSection && currentSection.link) {
       currentSection.link.classList.add("is-active");
     }
   }
 
   updateActiveLink();
   window.addEventListener("scroll", updateActiveLink, { passive: true });
+  window.addEventListener("resize", updateActiveLink);
 }
 
 /* ========================================================================== */
 /* RU: Кнопка "наверх"                                                        */
-/* EN: Back to top button                                                     */
+/* EN: Back-to-top button                                                     */
 /* ========================================================================== */
 function initBackToTop() {
   const backToTopButton = document.querySelector(".back-to-top");
   if (!backToTopButton) return;
 
-  function toggleButtonVisibility() {
+  function updateVisibility() {
     if (window.scrollY > 520) {
       backToTopButton.classList.add("is-visible");
     } else {
@@ -258,16 +314,16 @@ function initBackToTop() {
   backToTopButton.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
     });
   });
 
-  toggleButtonVisibility();
-  window.addEventListener("scroll", toggleButtonVisibility, { passive: true });
+  updateVisibility();
+  window.addEventListener("scroll", updateVisibility, { passive: true });
 }
 
 /* ========================================================================== */
-/* RU: Состояние header при прокрутке                                         */
+/* RU: Состояние шапки при прокрутке                                          */
 /* EN: Header state on scroll                                                 */
 /* ========================================================================== */
 function initStickyHeaderState() {
