@@ -10,6 +10,7 @@
    - общие секции
    - кнопки
    - базовые состояния элементов
+   - базовые поля формы
 
    EN: This file contains:
    - reset / normalization
@@ -19,6 +20,7 @@
    - generic sections
    - buttons
    - base element states
+   - base form controls
    ========================================================================== */
 
 /* ==========================================================================
@@ -169,6 +171,8 @@ body {
 }
 
 body {
+  min-width: 320px;
+  overflow-x: hidden;
   font-family: var(--font-body);
   font-size: var(--text-base);
   line-height: 1.6;
@@ -177,8 +181,6 @@ body {
     radial-gradient(circle at 8% 10%, rgba(0, 107, 255, 0.10), transparent 24%),
     radial-gradient(circle at 90% 78%, rgba(0, 107, 255, 0.08), transparent 20%),
     linear-gradient(180deg, var(--color-bg-soft) 0%, var(--color-bg) 100%);
-  min-width: 320px;
-  overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -211,8 +213,8 @@ p {
 }
 
 /* ==========================================================================
-   RU: Базовые utility-классы
-   EN: Base utility classes
+   RU: Базовые utility-классы и секции
+   EN: Base utility classes and sections
    ========================================================================== */
 .container {
   width: min(calc(100% - 32px), var(--container));
@@ -232,6 +234,7 @@ p {
   background: linear-gradient(180deg, rgba(231, 240, 250, 0.94), rgba(217, 230, 244, 0.90));
 }
 
+/* RU: Универсальная шапка секции / EN: Generic section heading */
 .section-head {
   max-width: 760px;
   margin: 0 auto 48px;
@@ -262,8 +265,8 @@ p {
 }
 
 /* ==========================================================================
-   RU: Кнопки
-   EN: Buttons
+   RU: Базовые кнопки
+   EN: Base buttons
    ========================================================================== */
 .btn {
   display: inline-flex;
@@ -317,27 +320,6 @@ p {
 }
 
 /* ==========================================================================
-   RU: Общие базовые media-элементы
-   EN: Shared base media elements
-   ========================================================================== */
-.site-brand {
-  display: inline-flex;
-  align-items: center;
-  flex: 0 0 auto;
-}
-
-/* RU: Делаем логотип заметно крупнее, чем раньше
-   EN: Make the logo visibly larger than before */
-.site-brand__logo {
-  display: block;
-  width: auto;
-  height: 58px;
-  max-width: 240px;
-  object-fit: contain;
-  object-position: left center;
-}
-
-/* ==========================================================================
    RU: Базовые поля формы
    EN: Base form controls
    ========================================================================== */
@@ -374,64 +356,10 @@ p {
 }
 
 /* ==========================================================================
-   RU: Анимации
-   EN: Animations
-   ========================================================================== */
-@keyframes floatOne {
-  0%, 100% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  50% {
-    transform: translate3d(28px, 26px, 0) scale(1.05);
-  }
-}
-
-@keyframes floatTwo {
-  0%, 100% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
-  }
-  50% {
-    transform: translate3d(-18px, 24px, 0) rotate(10deg);
-  }
-}
-
-@keyframes floatThree {
-  0%, 100% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  50% {
-    transform: translate3d(18px, -18px, 0) scale(1.08);
-  }
-}
-
-@keyframes floatFour {
-  0%, 100% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
-  }
-  50% {
-    transform: translate3d(-24px, -20px, 0) rotate(-9deg);
-  }
-}
-
-@keyframes heroGlowShift {
-  0% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  100% {
-    transform: translate3d(0, -18px, 0) scale(1.04);
-  }
-}
-
-/* ==========================================================================
    RU: Адаптив
    EN: Responsive rules
    ========================================================================== */
 @media (max-width: 760px) {
-  .site-brand__logo {
-    height: 48px;
-    max-width: 210px;
-  }
-
   .section {
     padding: 72px 0;
   }
