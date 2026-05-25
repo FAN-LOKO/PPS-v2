@@ -31,11 +31,11 @@ body {
   inset: -10%;
   background:
     radial-gradient(circle at 12% 16%, rgba(0, 107, 255, 0.16), transparent 20%),
-    radial-gradient(circle at 78% 24%, rgba(0, 107, 255, 0.12), transparent 18%),
-    radial-gradient(circle at 84% 78%, rgba(0, 107, 255, 0.10), transparent 18%),
-    radial-gradient(circle at 42% 72%, rgba(11, 53, 88, 0.08), transparent 16%);
+    radial-gradient(circle at 78% 24%, rgba(0, 107, 255, 0.14), transparent 18%),
+    radial-gradient(circle at 84% 78%, rgba(0, 107, 255, 0.12), transparent 18%),
+    radial-gradient(circle at 42% 72%, rgba(11, 53, 88, 0.10), transparent 16%);
   filter: blur(8px);
-  animation: heroGlowShift 18s ease-in-out infinite alternate;
+  animation: heroGlowShift 9s ease-in-out infinite alternate;
 }
 
 .hero__bg::after {
@@ -62,43 +62,56 @@ body {
 }
 
 .hero__shape--one {
-  top: -2%;
-  left: -5%;
-  width: 340px;
-  height: 340px;
+  top: -4%;
+  left: -6%;
+  width: 360px;
+  height: 360px;
   border-radius: 999px;
-  background: radial-gradient(circle at 35% 35%, rgba(0, 107, 255, 0.22), rgba(0, 107, 255, 0.03) 72%);
-  animation: floatOne 14s ease-in-out infinite;
+  background: radial-gradient(circle at 35% 35%, rgba(0, 107, 255, 0.24), rgba(0, 107, 255, 0.04) 72%);
+  animation: floatOne 7s ease-in-out infinite;
 }
 
 .hero__shape--two {
-  top: 10%;
-  right: 8%;
-  width: 190px;
-  height: 190px;
+  top: 8%;
+  right: 6%;
+  width: 220px;
+  height: 220px;
   border-radius: 40px;
-  background: radial-gradient(circle at 35% 35%, rgba(0, 107, 255, 0.18), rgba(0, 107, 255, 0.02) 74%);
-  animation: floatTwo 16s ease-in-out infinite;
+  background: radial-gradient(circle at 35% 35%, rgba(0, 107, 255, 0.20), rgba(0, 107, 255, 0.03) 74%);
+  animation: floatTwo 8s ease-in-out infinite;
 }
 
 .hero__shape--three {
-  left: 50%;
-  bottom: 8%;
-  width: 170px;
-  height: 170px;
+  left: 52%;
+  bottom: 4%;
+  width: 190px;
+  height: 190px;
   border-radius: 999px;
-  background: radial-gradient(circle at 35% 35%, rgba(11, 53, 88, 0.16), rgba(11, 53, 88, 0.02) 72%);
-  animation: floatThree 12s ease-in-out infinite;
+  background: radial-gradient(circle at 35% 35%, rgba(11, 53, 88, 0.18), rgba(11, 53, 88, 0.03) 72%);
+  animation: floatThree 6s ease-in-out infinite;
 }
 
 .hero__shape--four {
-  right: -2%;
-  bottom: 4%;
-  width: 260px;
-  height: 260px;
+  right: -3%;
+  bottom: 2%;
+  width: 280px;
+  height: 280px;
   border-radius: 42% 58% 48% 52% / 52% 42% 58% 48%;
-  background: radial-gradient(circle at 35% 35%, rgba(0, 107, 255, 0.14), rgba(0, 107, 255, 0.02) 76%);
-  animation: floatFour 17s ease-in-out infinite;
+  background: radial-gradient(circle at 35% 35%, rgba(0, 107, 255, 0.16), rgba(0, 107, 255, 0.03) 76%);
+  animation: floatFour 8.5s ease-in-out infinite;
+}
+
+.hero__shape--center {
+  left: 50%;
+  top: 50%;
+  width: 520px;
+  height: 520px;
+  border-radius: 26%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(0, 107, 255, 0.26), rgba(0, 107, 255, 0.06) 58%, transparent 78%);
+  transform: translate(-50%, -50%) rotate(24deg);
+  filter: blur(4px);
+  animation: floatCenter 6s ease-in-out infinite;
 }
 
 /* ========================================================================== */
@@ -176,7 +189,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0, 107, 255, 0.06), transparent 28%);
+  background: linear-gradient(135deg, rgba(0, 107, 255, 0.07), transparent 28%);
   opacity: 0;
   transition: opacity var(--transition);
   pointer-events: none;
@@ -200,77 +213,6 @@ body {
 
 .hero-showcase__dot.is-active {
   transform: scale(1);
-}
-
-/* ========================================================================== */
-/* RU: Плавающие мини-карточки hero                                           */
-/* EN: Floating mini cards in hero                                            */
-/* ========================================================================== */
-.hero__floating-card {
-  transition:
-    transform 300ms ease,
-    opacity 300ms ease;
-}
-
-.hero__floating-card--a {
-  animation: floatCardOne 9s ease-in-out infinite;
-}
-
-.hero__floating-card--b {
-  animation: floatCardTwo 11s ease-in-out infinite;
-}
-
-.hero__floating-card--c {
-  animation: floatCardThree 10s ease-in-out infinite;
-}
-
-.hero__floating-card--d {
-  animation: floatCardFour 12s ease-in-out infinite;
-}
-
-.mini-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.mini-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(0, 107, 255, 0.08), transparent 34%);
-  pointer-events: none;
-}
-
-.mini-card__title,
-.mini-card__text {
-  position: relative;
-  z-index: 1;
-}
-
-/* ========================================================================== */
-/* RU: Премиальные hover-состояния карточек секций                            */
-/* EN: Premium hover states for section cards                                 */
-/* ========================================================================== */
-.card,
-.form-card,
-.faq-item {
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition),
-    border-color var(--transition),
-    background-color var(--transition);
-}
-
-.card:hover,
-.form-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(0, 107, 255, 0.16);
-  box-shadow: var(--shadow-md);
-}
-
-.faq-item:hover {
-  border-color: rgba(0, 107, 255, 0.14);
-  box-shadow: var(--shadow-sm);
 }
 
 /* ========================================================================== */
@@ -326,7 +268,7 @@ body {
     transform: translate3d(0, 0, 0) scale(1);
   }
   50% {
-    transform: translate3d(28px, 26px, 0) scale(1.05);
+    transform: translate3d(42px, 38px, 0) scale(1.08);
   }
 }
 
@@ -335,7 +277,7 @@ body {
     transform: translate3d(0, 0, 0) rotate(0deg);
   }
   50% {
-    transform: translate3d(-18px, 24px, 0) rotate(10deg);
+    transform: translate3d(-28px, 34px, 0) rotate(14deg);
   }
 }
 
@@ -344,7 +286,7 @@ body {
     transform: translate3d(0, 0, 0) scale(1);
   }
   50% {
-    transform: translate3d(18px, -18px, 0) scale(1.08);
+    transform: translate3d(28px, -28px, 0) scale(1.12);
   }
 }
 
@@ -353,7 +295,16 @@ body {
     transform: translate3d(0, 0, 0) rotate(0deg);
   }
   50% {
-    transform: translate3d(-24px, -20px, 0) rotate(-9deg);
+    transform: translate3d(-34px, -28px, 0) rotate(-14deg);
+  }
+}
+
+@keyframes floatCenter {
+  0%, 100% {
+    transform: translate(-50%, -50%) rotate(24deg) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(38deg) scale(1.12);
   }
 }
 
@@ -362,43 +313,7 @@ body {
     transform: translate3d(0, 0, 0) scale(1);
   }
   100% {
-    transform: translate3d(0, -18px, 0) scale(1.04);
-  }
-}
-
-@keyframes floatCardOne {
-  0%, 100% {
-    transform: translate3d(0, 0, 0) rotate(-3deg);
-  }
-  50% {
-    transform: translate3d(8px, -8px, 0) rotate(1deg);
-  }
-}
-
-@keyframes floatCardTwo {
-  0%, 100% {
-    transform: translate3d(0, 0, 0) rotate(4deg);
-  }
-  50% {
-    transform: translate3d(-8px, 10px, 0) rotate(-1deg);
-  }
-}
-
-@keyframes floatCardThree {
-  0%, 100% {
-    transform: translate3d(0, 0, 0) rotate(-2deg);
-  }
-  50% {
-    transform: translate3d(10px, 6px, 0) rotate(2deg);
-  }
-}
-
-@keyframes floatCardFour {
-  0%, 100% {
-    transform: translate3d(0, 0, 0) rotate(3deg);
-  }
-  50% {
-    transform: translate3d(-10px, -6px, 0) rotate(-2deg);
+    transform: translate3d(0, -26px, 0) scale(1.08);
   }
 }
 
@@ -408,37 +323,47 @@ body {
 /* ========================================================================== */
 @media (max-width: 1180px) {
   .hero__shape--one {
-    width: 300px;
-    height: 300px;
+    width: 310px;
+    height: 310px;
   }
 
   .hero__shape--four {
-    width: 220px;
-    height: 220px;
+    width: 240px;
+    height: 240px;
+  }
+
+  .hero__shape--center {
+    width: 420px;
+    height: 420px;
   }
 }
 
 @media (max-width: 920px) {
   .hero__shape--one {
     left: -8%;
-    width: 240px;
-    height: 240px;
+    width: 250px;
+    height: 250px;
   }
 
   .hero__shape--two {
-    width: 160px;
-    height: 160px;
+    width: 170px;
+    height: 170px;
   }
 
   .hero__shape--three {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
   }
 
   .hero__shape--four {
     right: -6%;
-    width: 180px;
-    height: 180px;
+    width: 190px;
+    height: 190px;
+  }
+
+  .hero__shape--center {
+    width: 340px;
+    height: 340px;
   }
 }
 
@@ -455,7 +380,13 @@ body {
 
   .hero__shape--two,
   .hero__shape--three {
-    opacity: 0.54;
+    opacity: 0.56;
+  }
+
+  .hero__shape--center {
+    width: 260px;
+    height: 260px;
+    opacity: 0.72;
   }
 
   .back-to-top {
@@ -476,20 +407,20 @@ body {
   .hero__shape--two,
   .hero__shape--three,
   .hero__shape--four,
-  .hero__floating-card--a,
-  .hero__floating-card--b,
-  .hero__floating-card--c,
-  .hero__floating-card--d {
+  .hero__shape--center {
     animation: none !important;
   }
 
   .card,
+  .feature-card,
+  .pricing-card,
+  .metric-card,
   .form-card,
   .faq-item,
+  .step-item,
   .hero-card,
   .hero-showcase__tab,
   .hero-showcase__dot,
-  .hero__floating-card,
   .back-to-top {
     transition: none !important;
   }
