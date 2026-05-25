@@ -27,6 +27,22 @@
   box-shadow: var(--shadow-sm);
 }
 
+.card,
+.feature-card,
+.metric-card,
+.pricing-card,
+.form-card,
+.faq-item,
+.mini-card,
+.step-item {
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition),
+    background-color var(--transition),
+    color var(--transition);
+}
+
 .card {
   border-radius: 28px;
 }
@@ -35,18 +51,58 @@
   padding: 28px;
 }
 
-.card--interactive {
-  transition:
-    transform var(--transition),
-    border-color var(--transition),
-    box-shadow var(--transition),
-    background-color var(--transition);
+.card--interactive:hover,
+.feature-card:hover,
+.metric-card:hover,
+.pricing-card:hover,
+.form-card:hover,
+.faq-item:hover,
+.step-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 107, 255, 0.18);
+  box-shadow: 0 24px 52px rgba(0, 107, 255, 0.14);
 }
 
-.card--interactive:hover {
-  transform: translateY(-4px);
-  border-color: rgba(0, 107, 255, 0.14);
-  box-shadow: var(--shadow-md);
+/* ========================================================================== */
+/* RU: Единый синий hover-fill для карточек                                   */
+/* EN: Unified blue hover fill for cards                                      */
+/* ========================================================================== */
+.card::before,
+.feature-card::before,
+.metric-card::before,
+.pricing-card::before,
+.form-card::before,
+.faq-item::before,
+.step-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(0, 107, 255, 0.12), rgba(0, 107, 255, 0.04));
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+
+.card:hover::before,
+.feature-card:hover::before,
+.metric-card:hover::before,
+.pricing-card:hover::before,
+.form-card:hover::before,
+.faq-item:hover::before,
+.step-item:hover::before {
+  opacity: 1;
+}
+
+.card > *,
+.feature-card > *,
+.metric-card > *,
+.pricing-card > *,
+.form-card > *,
+.faq-item > *,
+.step-item > * {
+  position: relative;
+  z-index: 1;
 }
 
 .card__eyebrow {
@@ -88,17 +144,7 @@
   min-height: 100%;
   padding: 28px;
   border-radius: 30px;
-  transition:
-    transform var(--transition),
-    border-color var(--transition),
-    box-shadow var(--transition),
-    background-color var(--transition);
-}
-
-.feature-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(0, 107, 255, 0.14);
-  box-shadow: var(--shadow-md);
+  overflow: hidden;
 }
 
 .feature-card__icon {
@@ -119,12 +165,46 @@
   height: 24px;
 }
 
+.feature-card__header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.feature-card__service-icon {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(0, 107, 255, 0.14), rgba(0, 107, 255, 0.08));
+  color: var(--color-primary);
+  box-shadow: inset 0 0 0 1px rgba(0, 107, 255, 0.06);
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    transform var(--transition);
+}
+
+.feature-card__service-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
 .feature-card__title {
   margin: 0 0 12px;
   color: var(--color-text);
   font-size: clamp(1.2rem, 1.16rem + 0.28vw, 1.45rem);
   line-height: 1.2;
   font-weight: 800;
+  transition: color var(--transition);
+}
+
+.feature-card--service .feature-card__title {
+  margin-bottom: 0;
 }
 
 .feature-card__text {
@@ -132,6 +212,7 @@
   color: var(--color-text-muted);
   font-size: 1rem;
   line-height: 1.62;
+  transition: color var(--transition);
 }
 
 .feature-card__list {
@@ -148,6 +229,7 @@
   color: var(--color-text-muted);
   font-size: 0.98rem;
   line-height: 1.5;
+  transition: color var(--transition);
 }
 
 .feature-card__list li::before {
@@ -160,6 +242,29 @@
   border-radius: 999px;
   background: var(--color-primary);
   transform: translateY(-50%);
+  transition: background-color var(--transition);
+}
+
+.feature-card:hover .feature-card__title,
+.feature-card:hover .feature-card__text,
+.feature-card:hover .feature-card__list li,
+.card:hover .card__title,
+.card:hover .card__text,
+.metric-card:hover .metric-card__label,
+.metric-card:hover .metric-card__text,
+.pricing-card:hover .pricing-card__title,
+.pricing-card:hover .pricing-card__text,
+.pricing-card:hover .pricing-card__features li,
+.step-item:hover .step-item__title,
+.step-item:hover .step-item__text,
+.faq-item:hover .faq-item__title,
+.faq-item:hover .faq-item__content {
+  color: var(--color-text);
+}
+
+.feature-card:hover .feature-card__service-icon {
+  background: rgba(0, 107, 255, 0.14);
+  transform: translateY(-1px);
 }
 
 /* ========================================================================== */
@@ -178,22 +283,6 @@
   padding: 26px;
   border-radius: 26px;
   overflow: hidden;
-}
-
-.metric-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(145deg, rgba(0, 107, 255, 0.06), transparent 34%);
-  pointer-events: none;
-}
-
-.metric-card__value,
-.metric-card__label,
-.metric-card__text {
-  position: relative;
-  z-index: 1;
 }
 
 .metric-card__value {
@@ -346,6 +435,7 @@
   border: 1px solid rgba(11, 53, 88, 0.08);
   background: rgba(255, 255, 255, 0.82);
   box-shadow: var(--shadow-sm);
+  overflow: hidden;
 }
 
 .step-item__index {
@@ -388,17 +478,7 @@
   min-height: 100%;
   padding: 30px;
   border-radius: 32px;
-  transition:
-    transform var(--transition),
-    border-color var(--transition),
-    box-shadow var(--transition),
-    background-color var(--transition);
-}
-
-.pricing-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(0, 107, 255, 0.16);
-  box-shadow: var(--shadow-md);
+  overflow: hidden;
 }
 
 .pricing-card--featured {
@@ -609,6 +689,21 @@
   justify-content: flex-end;
 }
 
+.btn--cta-contrast {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--color-primary);
+  box-shadow: 0 16px 34px rgba(7, 43, 84, 0.16);
+}
+
+.btn--cta-contrast:hover,
+a.btn--cta-contrast:hover {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(255, 255, 255, 0.92);
+  color: var(--color-primary-hover);
+  box-shadow: 0 18px 38px rgba(7, 43, 84, 0.18);
+}
+
 /* ========================================================================== */
 /* RU: Form card / Карточка формы                                             */
 /* EN: Form card / form card                                                  */
@@ -616,6 +711,7 @@
 .form-card {
   padding: 32px;
   border-radius: 34px;
+  overflow: hidden;
 }
 
 .form-card__title {
@@ -922,15 +1018,29 @@
     flex-direction: column;
     align-items: stretch;
   }
+
+  .feature-card__header {
+    gap: 12px;
+  }
+
+  .feature-card__service-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .card--interactive,
+  .card,
   .feature-card,
   .pricing-card,
+  .metric-card,
+  .form-card,
   .faq-item,
+  .step-item,
   .field input,
-  .field textarea {
+  .field textarea,
+  .feature-card__service-icon {
     transition: none !important;
   }
 }
