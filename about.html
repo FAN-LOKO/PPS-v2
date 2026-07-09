@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ППС — О программе поддержки сотрудников</title>
+
+  <meta
+    name="description"
+    content="Программа поддержки сотрудников: как устроен сервис, кто оказывает помощь, в каких ситуациях программа актуальна и чем отличается от других корпоративных решений."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-brand site-brand--header" href="./index.html" aria-label="На главную">
+        <img
+          class="site-brand__logo"
+          src="./assets/logo.png"
+          alt="Программа поддержки сотрудников"
+          width="260"
+          height="72"
+        />
+      </a>
+
+      <nav
+        class="site-nav"
+        id="mobile-navigation"
+        aria-label="Основная навигация"
+      >
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link is-active" href="./about.html">О программе</a></li>
+          <li><a class="site-nav__link" href="./solutions.html">Услуги</a></li>
+          <li><a class="site-nav__link" href="./hr-business.html">HR-бизнес</a></li>
+          <li><a class="site-nav__link" href="./gost-ekg.html">ГОСТ / ЭКГ</a></li>
+          <li><a class="site-nav__link" href="./cases.html">Кейсы</a></li>
+          <li><a class="site-nav__link" href="./road-help.html">Как обратиться</a></li>
+          <li><a class="site-nav__link" href="./contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="btn btn--primary site-header__cabinet" href="./employees.html">
+          Личный кабинет
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+          aria-controls="mobile-navigation"
+        >
+          <span class="menu-toggle__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main" id="main-content">
+    <!-- ==========================================================================
+         RU: HERO — split layout, текст слева / изображение справа
+         EN: HERO — split layout, text left / supporting image right
+         ========================================================================== -->
+    <section class="section hero-split" aria-labelledby="about-hero-title">
+      <div class="container hero-split__inner">
+        <div class="hero-split__content">
+          <div class="eyebrow">О программе</div>
+          <h1 class="section-title section-title--wide" id="about-hero-title">
+            Программа <span class="text-accent">поддержки сотрудников</span>:<br />
+            как это работает
+          </h1>
+          <p class="section-description">
+            ППС — это корпоративный сервис, который даёт сотрудникам и их семьям
+            доступ к профессиональной психологической, юридической и коучинговой
+            поддержке. Компания подключает готовый контур помощи — без нагрузки
+            на внутреннюю команду и без сложной административной логики.
+          </p>
+          <div class="hero-badges">
+            <span class="eyebrow">ГОСТ Р 72119-2025</span>
+            <span class="eyebrow">12+ лет на рынке</span>
+            <span class="eyebrow">Конфиденциальность</span>
+          </div>
+        </div>
+        <div class="hero-split__media">
+          <img src="./assets/images/about.png" alt="Программа поддержки сотрудников" width="768" height="512" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         RU: КАК УСТРОЕНА ПРОГРАММА — вертикальный нумерованный флоу
+         EN: HOW THE PROGRAM WORKS — vertical numbered step flow
+         ========================================================================== -->
+    <section class="section section--alt" aria-labelledby="how-it-works-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Как устроена программа</div>
+          <h2 class="section-title" id="how-it-works-title">Одно обращение — вся необходимая поддержка</h2>
+          <p class="section-description">
+            Сотрудник получает единую точку входа в сервис, а маршрутизация
+            к нужному специалисту происходит без его участия в администрировании.
+          </p>
+        </div>
+
+        <ol class="step-list">
+          <li class="step-item">
+            <div class="step-item__index">01</div>
+            <div>
+              <h3 class="step-item__title">Обращение</h3>
+              <p class="step-item__text">
+                Сотрудник оставляет заявку через телефон, чат или сайт —
+                без посредников и без участия HR. Сервис работает круглосуточно.
+              </p>
+            </div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-item__index">02</div>
+            <div>
+              <h3 class="step-item__title">Маршрутизация</h3>
+              <p class="step-item__text">
+                Оператор определяет профиль запроса и соединяет сотрудника
+                с профильным специалистом — психологом, юристом или коучем.
+              </p>
+            </div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-item__index">03</div>
+            <div>
+              <h3 class="step-item__title">Поддержка и результат</h3>
+              <p class="step-item__text">
+                Сотрудник получает помощь в удобном формате. Работодатель
+                получает только обобщённую статистику — без имён и деталей
+                обращений.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         RU: КТО ОКАЗЫВАЕТ ПОДДЕРЖКУ — сетка feature-card с иконками
+         EN: WHO PROVIDES SUPPORT — feature-card grid with icons
+         ========================================================================== -->
+    <section class="section" aria-labelledby="experts-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Кто оказывает поддержку</div>
+          <h2 class="section-title" id="experts-title">Команда профессионалов с едиными стандартами качества</h2>
+          <p class="section-description">
+            Все специалисты проходят отбор, работают по согласованным протоколам
+            и находятся под регулярным супервизионным контролем.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Отбор и компетенции</h3>
+            <p class="feature-card__text">
+              Каждый специалист проходит многоэтапное собеседование, проверку
+              профильного образования и практического опыта.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Методология и протоколы</h3>
+            <p class="feature-card__text">
+              Работа строится по единым алгоритмам: приём, ведение кейса,
+              эскалация, завершение. Это исключает разнобой в качестве.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Супервизия и контроль</h3>
+            <p class="feature-card__text">
+              Регулярные супервизии и аудит кейсов позволяют поддерживать
+              высокий уровень работы и своевременно корректировать помощь.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         RU: КОГДА ПРОГРАММА ОСОБЕННО АКТУАЛЬНА — одинарный showcase-card с листом
+         EN: WHEN THE PROGRAM IS ESPECIALLY RELEVANT — single showcase-card with list
+         ========================================================================== -->
+    <section class="section section--alt" aria-labelledby="scenarios-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Когда программа особенно актуальна</div>
+          <h2 class="section-title section-title--wide" id="scenarios-title">
+            Ситуации, в которых сервис создаёт наибольшую ценность
+          </h2>
+          <p class="section-description">
+            Программа особенно востребована в конкретных рабочих контекстах —
+            там, где нагрузка на сотрудников и HR растёт, а стандартные
+            инструменты не покрывают реальных потребностей.
+          </p>
+        </div>
+
+        <div class="showcase-card">
+          <div class="showcase-card__kicker">Три рабочих контекста</div>
+          <h3 class="showcase-card__title">Когда поддержка сотрудников нужна особенно остро</h3>
+          <p class="showcase-card__text">
+            В одних ситуациях программа становится инструментом удержания,
+            в других — способом снизить напряжение в команде, в третьих —
+            единственным доступным форматом поддержки для распределённой команды.
+          </p>
+          <ul class="showcase-card__list">
+            <li>
+              <span class="showcase-card__dot"></span>
+              <span>
+                <strong>Удалённая и распределённая команда</strong> — сотрудники
+                из разных городов и часовых поясов получают равный доступ
+                к помощи, недоступной в офлайн-формате.
+              </span>
+            </li>
+            <li>
+              <span class="showcase-card__dot"></span>
+              <span>
+                <strong>Период изменений и неопределённости</strong> —
+                реорганизация, сокращения, слияния повышают тревожность.
+                Внешний сервис снимает напряжение без вовлечения HR.
+              </span>
+            </li>
+            <li>
+              <span class="showcase-card__dot"></span>
+              <span>
+                <strong>Высокий стресс и эмоциональное выгорание</strong> —
+                в профессиях с интенсивной нагрузкой психологическая поддержка
+                становится не льготой, а рабочим инструментом сохранения команды.
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         RU: ЧЕМ ПРОГРАММА ОТЛИЧАЕТСЯ — асимметричная строка: якорная карта + 2 опоры
+         EN: HOW THE PROGRAM DIFFERS — asymmetric row: anchor card + 2 supports
+         ========================================================================== -->
+    <section class="section" aria-labelledby="diff-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Чем программа отличается</div>
+          <h2 class="section-title" id="diff-title">Главные отличия PPS от других форматов поддержки</h2>
+          <p class="section-description">
+            Программа не заменяет ДМС или внутреннюю HR-функцию — она
+            закрывает те зоны, которые остаются за их границами.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="showcase-card">
+            <div class="showcase-card__kicker">Конфиденциальность</div>
+            <h3 class="showcase-card__title">Работодатель не знает, кто обращался</h3>
+            <p class="showcase-card__text">
+              Сервис работает по принципу полной анонимности: HR видит только
+              обезличенную статистику — количество обращений, тематику,
+              удовлетворённость. Никаких имён, должностей или отделов.
+            </p>
+            <ul class="showcase-card__list">
+              <li>
+                <span class="showcase-card__dot"></span>
+                <span>Сотрудник обращается напрямую — без участия HR</span>
+              </li>
+              <li>
+                <span class="showcase-card__dot"></span>
+                <span>Компания получает метрики, а не личные данные</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="card card--padded">
+            <div class="card__eyebrow">Экспертиза и доступ</div>
+            <h3 class="card__title">Профессионалы под супервизией и единая точка входа</h3>
+            <p class="card__text">
+              Все специалисты проходят отбор, работают по согласованным
+              протоколам и находятся под регулярным контролем. Сотруднику
+              не нужно выбирать — маршрутизация определяет профильного
+              эксперта под конкретный запрос.
+            </p>
+          </article>
+
+          <article class="card card--padded">
+            <div class="card__eyebrow">HR и бизнес</div>
+            <h3 class="card__title">Снятие нагрузки и отдельный инструмент, а не ДМС</h3>
+            <p class="card__text">
+              Личные запросы сотрудников уходят во внешний сервис — HR
+              занимается стратегическими задачами. Программа покрывает
+              психосоциальную поддержку, которую ДМС не закрывает:
+              она не заменяет страховку, а дополняет её.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         RU: CTA / обсуждение программы
+         EN: CTA / discuss the program
+         ========================================================================== -->
+    <section class="section section--alt" aria-labelledby="about-cta-title">
+      <div class="container">
+        <div class="cta-panel">
+          <div class="cta-panel__inner">
+            <div class="cta-panel__content">
+              <h2 class="cta-panel__title" id="about-cta-title">
+                Готовы обсудить программу для вашей команды?
+              </h2>
+              <p class="cta-panel__text">
+                Расскажем, как сервис встраивается в корпоративную среду,
+                подберём состав под ваши задачи и покажем логику запуска.
+              </p>
+            </div>
+
+            <div class="cta-panel__actions">
+              <a class="btn btn--cta-contrast" href="./contacts.html">Обсудить программу для вашей команды</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <a class="site-brand site-brand--footer" href="./index.html" aria-label="ППС — на главную">
+            <img
+              class="site-brand__logo"
+              src="./assets/logo.png"
+              alt="Логотип ППС"
+              width="240"
+              height="58"
+            />
+          </a>
+
+          <p class="site-footer__description">
+            Программа поддержки сотрудников для бизнеса: wellbeing, экспертная помощь
+            и системный подход к корпоративной поддержке команды.
+          </p>
+        </div>
+
+        <div class="site-footer__nav">
+          <div>
+            <div class="site-footer__title">Разделы</div>
+            <ul class="site-footer__list">
+              <li><a href="./about.html">О программе</a></li>
+              <li><a href="./solutions.html">Услуги</a></li>
+              <li><a href="./hr-business.html">HR-бизнес</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="site-footer__title">Компания</div>
+            <ul class="site-footer__list">
+              <li><a href="./gost-ekg.html">ГОСТ / ЭКГ</a></li>
+              <li><a href="./cases.html">Кейсы</a></li>
+              <li><a href="./contacts.html">Контакты</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="site-footer__title">Контакты</div>
+            <ul class="site-footer__list">
+              <li><a href="./contacts.html">Оставить заявку</a></li>
+              <li><a href="tel:+78000000000">+7 (800) 000-00-00</a></li>
+              <li><a href="mailto:info@example.ru">info@example.ru</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <div>© ППС. Все права защищены.</div>
+        <div>Корпоративная программа поддержки сотрудников</div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="Наверх">
+    <svg viewBox="0 0 24 24" fill="none">
+      <path
+        d="M12 19V5M12 5L6 11M12 5L18 11"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </button>
+
+  <script src="./js/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ППС — Услуги и направления программы поддержки сотрудников</title>
+
+  <meta
+    name="description"
+    content="Программа поддержки сотрудников: шесть направлений профессиональной помощи, целевые программы для жизненных ситуаций и вебинары. Соберите свой состав модулей."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-brand site-brand--header" href="./index.html" aria-label="На главную">
+        <img
+          class="site-brand__logo"
+          src="./assets/logo.png"
+          alt="Программа поддержки сотрудников"
+          width="260"
+          height="72"
+        />
+      </a>
+
+      <nav
+        class="site-nav"
+        id="mobile-navigation"
+        aria-label="Основная навигация"
+      >
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="./about.html">О программе</a></li>
+          <li><a class="site-nav__link is-active" href="./solutions.html">Услуги</a></li>
+          <li><a class="site-nav__link" href="./hr-business.html">HR-бизнес</a></li>
+          <li><a class="site-nav__link" href="./gost-ekg.html">ГОСТ / ЭКГ</a></li>
+          <li><a class="site-nav__link" href="./cases.html">Кейсы</a></li>
+          <li><a class="site-nav__link" href="./road-help.html">Как обратиться</a></li>
+          <li><a class="site-nav__link" href="./contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="btn btn--primary site-header__cabinet" href="./employees.html">
+          Личный кабинет
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+          aria-controls="mobile-navigation"
+        >
+          <span class="menu-toggle__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main" id="main-content">
+    <!-- ==========================================================================
+         RU: B2B-ориентированное введение / page header
+         EN: B2B-oriented introduction / page header
+         ========================================================================== -->
+    <section class="section" aria-labelledby="solutions-hero-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Услуги</div>
+          <h1 class="section-title section-title--wide" id="solutions-hero-title">
+            Соберите <span class="text-accent">программу поддержки</span> под задачи вашего бизнеса
+          </h1>
+          <p class="section-description">
+            Программа строится из трёх уровней: базовый контур профессиональных специалистов,
+            целевые программы для ключевых жизненных ситуаций и просветительские вебинары.
+            Компания комбинирует эти блоки как конструктор — под отрасль, размер команды
+            и HR-приоритеты.
+          </p>
+        </div>
+
+        <div class="section-intro-metrics">
+          <div class="grid-3">
+            <article class="metric-card text-center">
+              <div class="metric-card__value">6</div>
+              <div class="metric-card__label">Направлений помощи</div>
+              <p class="metric-card__text">Профильные специалисты для сотрудников и членов их семей</p>
+            </article>
+
+            <article class="metric-card text-center">
+              <div class="metric-card__value">7</div>
+              <div class="metric-card__label">Целевых программ</div>
+              <p class="metric-card__text">Адресная поддержка в ключевых жизненных ситуациях</p>
+            </article>
+
+            <article class="metric-card text-center">
+              <div class="metric-card__value">10+</div>
+              <div class="metric-card__label">Вебинаров</div>
+              <p class="metric-card__text">Просветительские форматы по психологии и здоровью</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         RU: Ключевые специалисты / базовый контур программы
+         EN: Core specialist services / base program scope
+         ========================================================================== -->
+    <section class="section section--alt" aria-labelledby="core-services-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Базовый контур программы</div>
+          <h2 class="section-title" id="core-services-title">Шесть направлений профессиональной помощи</h2>
+          <p class="section-description">
+            Каждый сотрудник и члены его семьи получают доступ к профильным специалистам
+            с подтверждённой квалификацией. Все консультации конфиденциальны.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="feature-card feature-card--service">
+            <div class="feature-card__header">
+              <div class="feature-card__service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3c-3.866 0-7 3.134-7 7 0 1.955.804 3.721 2.098 4.992.63.618 1.204 1.571 1.34 2.508h7.124c.136-.937.71-1.89 1.34-2.508A6.967 6.967 0 0 0 19 10c0-3.866-3.134-7-7-7Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9.5 19h5M10 21h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="feature-card__title">Психолог</h3>
+            </div>
+            <p class="feature-card__text">
+              Профессиональная психологическая помощь для решения личных и рабочих проблем,
+              снижения стресса и повышения качества жизни.
+            </p>
+            <ul class="feature-card__list">
+              <li>Консультации онлайн и офлайн</li>
+              <li>Индивидуальный подход</li>
+              <li>Конфиденциальность</li>
+            </ul>
+          </article>
+
+          <article class="feature-card feature-card--service">
+            <div class="feature-card__header">
+              <div class="feature-card__service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 4 5 7v5c0 4.2 2.55 7.9 7 9 4.45-1.1 7-4.8 7-9V7l-7-3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="M9.5 12.5 11 14l3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="feature-card__title">Юрист</h3>
+            </div>
+            <p class="feature-card__text">
+              Юридические консультации по любым вопросам: трудовое право, семейные споры,
+              жилищные вопросы и многое другое.
+            </p>
+            <ul class="feature-card__list">
+              <li>Правовой анализ ситуаций</li>
+              <li>Помощь с документами</li>
+              <li>Защита прав сотрудников</li>
+            </ul>
+          </article>
+
+          <article class="feature-card feature-card--service">
+            <div class="feature-card__header">
+              <div class="feature-card__service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+              </div>
+              <h3 class="feature-card__title">Коуч-тренер</h3>
+            </div>
+            <p class="feature-card__text">
+              Помощь в постановке и достижении целей, карьерном росте, развитии лидерских
+              качеств и повышении продуктивности.
+            </p>
+            <ul class="feature-card__list">
+              <li>Карьерное консультирование</li>
+              <li>Развитие soft skills</li>
+              <li>Планирование развития</li>
+            </ul>
+          </article>
+
+          <article class="feature-card feature-card--service">
+            <div class="feature-card__header">
+              <div class="feature-card__service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 20s-6-3.7-6-9a3.5 3.5 0 0 1 6-2.3A3.5 3.5 0 0 1 18 11c0 5.3-6 9-6 9Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="feature-card__title">Фитнес-тренер</h3>
+            </div>
+            <p class="feature-card__text">
+              Индивидуальные программы тренировок, консультации по питанию и здоровому образу
+              жизни для поддержания отличной формы.
+            </p>
+            <ul class="feature-card__list">
+              <li>Персональные тренировки</li>
+              <li>Программы питания</li>
+              <li>Онлайн-занятия</li>
+            </ul>
+          </article>
+
+          <article class="feature-card feature-card--service">
+            <div class="feature-card__header">
+              <div class="feature-card__service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <circle cx="18" cy="10" r="2" stroke="currentColor" stroke-width="1.8"/>
+                  <circle cx="18" cy="15" r="2" stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+              </div>
+              <h3 class="feature-card__title">Зооконсультант</h3>
+            </div>
+            <p class="feature-card__text">
+              Консультации по уходу за домашними животными, решению поведенческих проблем
+              и созданию гармоничных отношений с питомцами.
+            </p>
+            <ul class="feature-card__list">
+              <li>Консультации по уходу</li>
+              <li>Коррекция поведения</li>
+              <li>Рекомендации по питанию</li>
+            </ul>
+          </article>
+
+          <article class="feature-card feature-card--service">
+            <div class="feature-card__header">
+              <div class="feature-card__service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect x="4" y="5" width="16" height="14" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M8 10h8M8 14h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="feature-card__title">Консультант по возврату налогов</h3>
+            </div>
+            <p class="feature-card__text">
+              Помощь в оформлении налоговых вычетов: имущественных, социальных, инвестиционных
+              и других, предусмотренных законом.
+            </p>
+            <ul class="feature-card__list">
+              <li>Помощь с документами</li>
+              <li>Консультации по вычетам</li>
+              <li>Экономия средств сотрудников</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         RU: Целевые программы / жизненные ситуации
+         EN: Targeted life-situation programs
+         ========================================================================== -->
+    <section class="section" aria-labelledby="target-programs-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Целевые программы</div>
+          <h2 class="section-title" id="target-programs-title">Помогаем сотрудникам в самых важных жизненных ситуациях</h2>
+          <p class="section-description">
+            Для сотрудников и членов их семей — адресные программы поддержки в ключевых
+            жизненных событиях.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M3 9.5L12 4l9 5.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M9 21V12h6v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Жилищная программа</h3>
+            <p class="feature-card__text">
+              Льготная ипотека, субсидии на аренду жилья и юридическое сопровождение
+              жилищных вопросов для сотрудников.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 22s-6-3.7-6-9a3.5 3.5 0 0 1 6-2.3A3.5 3.5 0 0 1 18 11c0 5.3-6 9-6 9Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Поддержка в создании семьи</h3>
+            <p class="feature-card__text">
+              Курсы для будущих родителей, юридическая поддержка при планировании семьи
+              и оформлении соответствующих льгот.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M5 21c0-4 3.5-6 7-6s7 2 7 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Поддержка разведённых мужчин</h3>
+            <p class="feature-card__text">
+              Психолог, юридические консультации и группы поддержки для мужчин
+              в период после развода.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M5 21c0-4 3.5-6 7-6s7 2 7 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Поддержка разведённых женщин</h3>
+            <p class="feature-card__text">
+              Психолог, юридическая помощь и женские сообщества для поддержки
+              в период жизненных изменений.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 15c0 2 1 4 4 4h8c3 0 4-2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M12 3v9m0 0l-3-3m3 3l3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Для одиноких родителей</h3>
+            <p class="feature-card__text">
+              Психолог, юрист, помощь с детским досугом и дополнительные меры поддержки
+              для родителей, воспитывающих детей самостоятельно.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 4 5 7v5c0 4.2 2.55 7.9 7 9 4.45-1.1 7-4.8 7-9V7l-7-3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Автомобильная программа</h3>
+            <p class="feature-card__text">
+              Льготный автокредит, скидки у дилеров и консультации по вопросам
+              приобретения и обслуживания автомобиля.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M2 3h6a3 3 0 0 1 3 3v14a3 3 0 0 0-3-3H2V3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M22 3h-6a3 3 0 0 0-3 3v14a3 3 0 0 1 3-3h6V3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Образование детей</h3>
+            <p class="feature-card__text">
+              Профориентация, репетиторы, подготовительные курсы и помощь в выборе
+              образовательной траектории для детей сотрудников.
+            </p>
+          </article>
+        </div>
+
+        <div class="text-callout">
+          <p class="text-callout__text">
+            Не нашли нужной программы? Мы можем разработать целевую программу
+            под специфику ваших сотрудников и отраслевые задачи.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         RU: Вебинары / просветительские форматы
+         EN: Webinars / educational formats
+         ========================================================================== -->
+    <section class="section section--alt" aria-labelledby="webinars-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Вебинары</div>
+          <h2 class="section-title" id="webinars-title">Просветительские форматы для сотрудников</h2>
+          <p class="section-description">
+            Регулярные онлайн-мероприятия по психологии и здоровому образу жизни.
+            Все вебинары проводят профильные специалисты программы.
+          </p>
+        </div>
+
+        <div class="stack-40">
+        <div class="grid-3">
+          <article class="card card--padded">
+            <div class="card__eyebrow">Психология</div>
+            <h3 class="card__title">Профилактика эмоционального выгорания</h3>
+            <p class="card__text">
+              Как распознать первые признаки выгорания и восстановить ресурсное состояние.
+            </p>
+          </article>
+
+          <article class="card card--padded">
+            <div class="card__eyebrow">Психология</div>
+            <h3 class="card__title">Как справляться с негативными эмоциями</h3>
+            <p class="card__text">
+              Практические техники управления гневом, тревогой и раздражением в рабочих
+              и личных ситуациях.
+            </p>
+          </article>
+
+          <article class="card card--padded">
+            <div class="card__eyebrow">Психология</div>
+            <h3 class="card__title">Трудный подросток</h3>
+            <p class="card__text">
+              Как родителям сохранить контакт с ребёнком в подростковом возрасте
+              и справляться с кризисами.
+            </p>
+          </article>
+
+          <article class="card card--padded">
+            <div class="card__eyebrow">Психология</div>
+            <h3 class="card__title">Психология счастья</h3>
+            <p class="card__text">
+              Научные подходы к субъективному благополучию и формированию устойчивых
+              привычек счастливого человека.
+            </p>
+          </article>
+
+          <article class="card card--padded">
+            <div class="card__eyebrow">Психология</div>
+            <h3 class="card__title">Преодоление межличностных конфликтов</h3>
+            <p class="card__text">
+              Инструменты конструктивного разрешения конфликтов в коллективе и семье.
+            </p>
+          </article>
+
+          <article class="card card--padded">
+            <div class="card__eyebrow">Психология</div>
+            <h3 class="card__title">Я не принимаю себя</h3>
+            <p class="card__text">
+              Работа с самооценкой, принятием себя и своими ограничивающими убеждениями.
+            </p>
+          </article>
+        </div>
+
+        <div class="grid-3">
+          <article class="card card--padded">
+            <div class="card__eyebrow">Нутрициология</div>
+            <h3 class="card__title">Питание и продуктивность</h3>
+            <p class="card__text">
+              Как рацион влияет на энергию, концентрацию и эффективность в течение рабочего дня.
+            </p>
+          </article>
+
+          <article class="card card--padded">
+            <div class="card__eyebrow">Нутрициология</div>
+            <h3 class="card__title">Влияние питания на иммунитет</h3>
+            <p class="card__text">
+              Какие продукты укрепляют иммунную систему и помогают снизить частоту заболеваний.
+            </p>
+          </article>
+
+          <article class="card card--padded">
+            <div class="card__eyebrow">Нутрициология</div>
+            <h3 class="card__title">Основные источники энергии</h3>
+            <p class="card__text">
+              Сбалансированное питание для поддержания высокого уровня энергии
+              в течение всего дня.
+            </p>
+          </article>
+
+          <article class="card card--padded">
+            <div class="card__eyebrow">Нутрициология</div>
+            <h3 class="card__title">Питание для улучшения деятельности мозга и памяти</h3>
+            <p class="card__text">
+              Продукты и нутриенты, поддерживающие когнитивные функции и память.
+            </p>
+          </article>
+        </div>
+        </div>
+
+        <div class="text-callout">
+          <p class="text-callout__text">
+            Не нашли нужной темы? Мы можем провести вебинар на актуальный для ваших
+            сотрудников запрос.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         RU: CTA / призыв к действию
+         EN: CTA / call to action
+         ========================================================================== -->
+    <section class="section" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-panel">
+          <div class="cta-panel__inner">
+            <div class="cta-panel__content">
+              <h2 class="cta-panel__title" id="cta-title">
+                Готовы собрать свою программу поддержки?
+              </h2>
+              <p class="cta-panel__text">
+                Оставьте заявку — поможем подобрать состав модулей под вашу компанию,
+                численность сотрудников и HR-задачи.
+              </p>
+            </div>
+
+            <div class="cta-panel__actions">
+              <a class="btn btn--cta-contrast" href="./contacts.html">Получить консультацию</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <a class="site-brand site-brand--footer" href="./index.html" aria-label="ППС — на главную">
+            <img
+              class="site-brand__logo"
+              src="./assets/logo.png"
+              alt="Логотип ППС"
+              width="240"
+              height="58"
+            />
+          </a>
+
+          <p class="site-footer__description">
+            Программа поддержки сотрудников для бизнеса: wellbeing, экспертная помощь
+            и системный подход к корпоративной поддержке команды.
+          </p>
+        </div>
+
+        <div class="site-footer__nav">
+          <div>
+            <div class="site-footer__title">Разделы</div>
+            <ul class="site-footer__list">
+              <li><a href="./about.html">О программе</a></li>
+              <li><a href="./solutions.html">Услуги</a></li>
+              <li><a href="./hr-business.html">HR-бизнес</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="site-footer__title">Компания</div>
+            <ul class="site-footer__list">
+              <li><a href="./gost-ekg.html">ГОСТ / ЭКГ</a></li>
+              <li><a href="./cases.html">Кейсы</a></li>
+              <li><a href="./contacts.html">Контакты</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="site-footer__title">Контакты</div>
+            <ul class="site-footer__list">
+              <li><a href="./contacts.html">Оставить заявку</a></li>
+              <li><a href="tel:+78000000000">+7 (800) 000-00-00</a></li>
+              <li><a href="mailto:info@example.ru">info@example.ru</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <div>© ППС. Все права защищены.</div>
+        <div>Корпоративная программа поддержки сотрудников</div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="Наверх">
+    <svg viewBox="0 0 24 24" fill="none">
+      <path
+        d="M12 19V5M12 5L6 11M12 5L18 11"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </button>
+
+  <script src="./js/script.js" defer></script>
+</body>
+</html>

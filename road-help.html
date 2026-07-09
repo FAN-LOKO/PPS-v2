@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ППС — Как получить помощь: от первого обращения до результата</title>
+
+  <meta
+    name="description"
+    content="Как устроена программа поддержки сотрудников: каналы обращения, маршрутизация к специалисту, конфиденциальность. Пошаговый разбор процесса."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-brand site-brand--header" href="./index.html" aria-label="На главную">
+        <img
+          class="site-brand__logo"
+          src="./assets/logo.png"
+          alt="Программа поддержки сотрудников"
+          width="260"
+          height="72"
+        />
+      </a>
+
+      <nav
+        class="site-nav"
+        id="mobile-navigation"
+        aria-label="Основная навигация"
+      >
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="./about.html">О программе</a></li>
+          <li><a class="site-nav__link" href="./solutions.html">Услуги</a></li>
+          <li><a class="site-nav__link" href="./hr-business.html">HR-бизнес</a></li>
+          <li><a class="site-nav__link" href="./gost-ekg.html">ГОСТ / ЭКГ</a></li>
+          <li><a class="site-nav__link" href="./cases.html">Кейсы</a></li>
+          <li><a class="site-nav__link is-active" href="./road-help.html">Как обратиться</a></li>
+          <li><a class="site-nav__link" href="./contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="btn btn--primary site-header__cabinet" href="./employees.html">
+          Личный кабинет
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+          aria-controls="mobile-navigation"
+        >
+          <span class="menu-toggle__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main" id="main-content">
+
+    <!-- ======================================================================
+         RU: HERO / intro
+         EN: HERO / intro
+         ====================================================================== -->
+    <section class="section" aria-labelledby="road-hero-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Как получить помощь</div>
+          <h1 class="section-title section-title--wide" id="road-hero-title">
+            Как выглядит <span class="text-accent">обращение</span><br />
+            в программу поддержки
+          </h1>
+          <p class="section-description">
+            Вы звоните, пишете в чат или заходите в личный кабинет —
+            и вас соединяют со специалистом. Без участия HR, без лишних
+            вопросов, конфиденциально.
+          </p>
+        </div>
+
+        <div class="hero-badges">
+          <span class="eyebrow">Конфиденциально</span>
+          <span class="eyebrow">Без участия HR</span>
+          <span class="eyebrow">Круглосуточно</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         RU: CHANNELS / точки входа
+         EN: CHANNELS / entry points
+         ====================================================================== -->
+    <section class="section section--alt" aria-labelledby="channels-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Откуда обратиться</div>
+          <h2 class="section-title" id="channels-title">Выберите удобный канал</h2>
+          <p class="section-description">
+            Все каналы работают круглосуточно. Выбранный способ не влияет
+            на качество и скорость помощи.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <article class="card card--padded road-channel">
+            <div class="road-channel__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="road-channel__title">Телефон</h3>
+            <p class="road-channel__text">
+              Позвоните на горячую линию — оператор примет обращение
+              и сразу соединит с профильным специалистом.
+            </p>
+          </article>
+
+          <article class="card card--padded road-channel">
+            <div class="road-channel__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="road-channel__title">Чат на сайте</h3>
+            <p class="road-channel__text">
+              Напишите в чат — ответит оператор, задаст несколько
+              уточняющих вопросов и перенаправит к специалисту.
+            </p>
+          </article>
+
+          <article class="card card--padded road-channel">
+            <div class="road-channel__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="7" y1="9" x2="17" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <line x1="7" y1="15" x2="12" y2="15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="road-channel__title">Мессенджеры</h3>
+            <p class="road-channel__text">
+              Напишите в Telegram или WhatsApp — операторы работают в том же формате, что и в чате на сайте.
+            </p>
+          </article>
+
+          <article class="card card--padded road-channel">
+            <div class="road-channel__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+            </div>
+            <h3 class="road-channel__title">Личный кабинет</h3>
+            <p class="road-channel__text">
+              Зайдите в личный кабинет сотрудника — оставьте запрос
+              текстом, и мы свяжемся с вами в удобное время.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         RU: STEP 2 — первичный приём
+         EN: STEP 2 — intake
+         ====================================================================== -->
+    <section class="section" aria-labelledby="intake-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Первичный приём</div>
+          <h2 class="section-title" id="intake-title">Что происходит после обращения</h2>
+          <p class="section-description">
+            Первый контакт — с оператором. Никаких анкет, логинов
+            и подтверждений. Просто разговор.
+          </p>
+        </div>
+
+        <div class="split-section split-section--center">
+          <div class="road-intake">
+            <h3 class="road-intake__title">Оператор принимает запрос</h3>
+            <p class="road-intake__text">
+              Вы рассказываете, что случилось. Оператор определяет сферу —
+              психология, юриспруденция, коучинг или другой запрос —
+              и сразу соединяет с профильным специалистом.
+            </p>
+            <p class="road-intake__text">
+              Если ситуация сложная, оператор остаётся на линии вместе
+              с вами до того момента, пока специалист не ответит.
+            </p>
+          </div>
+
+          <div class="road-intake">
+            <h3 class="road-intake__title">Конфиденциальность с первой секунды</h3>
+            <p class="road-intake__text">
+              Вы не называете ни ФИО, ни должность, ни компанию, если
+              не хотите. Оператору достаточно знать суть запроса.
+            </p>
+            <p class="road-intake__text">
+              Информация не передаётся вашему руководителю или HR.
+              Ваше обращение — только ваше.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         RU: STEP 3 — подбор специалиста (маршрутизация)
+         EN: Step 3 — routing to specialist
+         ====================================================================== -->
+    <section class="section section--alt" aria-labelledby="routing-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Подбор специалиста</div>
+          <h2 class="section-title" id="routing-title">К кому вас направят</h2>
+          <p class="section-description">
+            Вас не просят выбирать. Оператор подбирает специалиста под
+            ваш запрос: профиль, опыт, удобное время.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card card--padded road-spec">
+            <h3 class="road-spec__title">К психологу</h3>
+            <p class="road-spec__text">
+              Если чувствуете тревогу, апатию, выгорание или переживаете
+              сложную ситуацию. Психолог помогает разобраться в себе
+              и вернуть эмоциональную устойчивость.
+            </p>
+          </article>
+
+          <article class="card card--padded road-spec">
+            <h3 class="road-spec__title">К юристу</h3>
+            <p class="road-spec__text">
+              Если нужен совет по жилищному, семейному, трудовому или
+              другому личному вопросу. Юрист объяснит, какие есть варианты
+              и как действовать.
+            </p>
+          </article>
+
+          <article class="card card--padded road-spec">
+            <h3 class="road-spec__title">К коучу</h3>
+            <p class="road-spec__text">
+              Если хотите разобраться с целями, карьерой, мотивацией
+              или навести порядок в делах. Коуч помогает сфокусироваться
+              и двигаться в нужном направлении.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         RU: STEP 4 — процесс и результат
+         EN: Step 4 — process & outcome
+         ====================================================================== -->
+    <section class="section" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Процесс работы</div>
+          <h2 class="section-title" id="process-title">Как проходят консультации</h2>
+          <p class="section-description">
+            Одна встреча или несколько — формат подбирается под конкретную
+            ситуацию. Вы сами решаете, сколько сессий нужно.
+          </p>
+        </div>
+
+        <div class="road-process">
+          <div class="road-process__item">
+            <div class="road-process__index">01</div>
+            <div class="road-process__content">
+              <h3 class="road-process__title">Первая сессия — диагностическая</h3>
+              <p class="road-process__text">
+                Специалист знакомится с вашей ситуацией, задаёт уточняющие
+                вопросы и вместе с вами определяет, какой формат работы
+                подойдёт лучше всего.
+              </p>
+            </div>
+          </div>
+
+          <div class="road-process__item">
+            <div class="road-process__index">02</div>
+            <div class="road-process__content">
+              <h3 class="road-process__title">Основная работа — в удобном ритме</h3>
+              <p class="road-process__text">
+                Консультации проходят раз в неделю или реже — по вашему
+                графику. Формат: онлайн или офлайн, если это оговорено.
+                Всё конфиденциально.
+              </p>
+            </div>
+          </div>
+
+          <div class="road-process__item">
+            <div class="road-process__index">03</div>
+            <div class="road-process__content">
+              <h3 class="road-process__title">Завершение</h3>
+              <p class="road-process__text">
+                Когда задача решена или вы чувствуете, что готовы
+                продолжать самостоятельно, работа завершается. Вы можете
+                вернуться к тому же специалисту в любой момент.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         RU: CTA
+         EN: CTA
+         ====================================================================== -->
+    <section class="section section--alt" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-panel">
+          <div class="cta-panel__inner">
+            <div class="cta-panel__content">
+              <h2 class="cta-panel__title" id="cta-title">
+                Готовы обратиться?
+              </h2>
+              <p class="cta-panel__text">
+                Перейдите в личный кабинет или позвоните на горячую линию —
+                вас соединят со специалистом без лишних формальностей.
+              </p>
+            </div>
+
+            <div class="cta-panel__actions">
+              <a class="btn btn--cta-contrast" href="./employees.html">Перейти в личный кабинет</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <a class="site-brand site-brand--footer" href="./index.html" aria-label="ППС — на главную">
+            <img
+              class="site-brand__logo"
+              src="./assets/logo.png"
+              alt="Логотип ППС"
+              width="240"
+              height="58"
+            />
+          </a>
+
+          <p class="site-footer__description">
+            Программа поддержки сотрудников для бизнеса: wellbeing, экспертная помощь
+            и системный подход к корпоративной поддержке команды.
+          </p>
+        </div>
+
+        <div class="site-footer__nav">
+          <div>
+            <div class="site-footer__title">Разделы</div>
+            <ul class="site-footer__list">
+              <li><a href="./about.html">О программе</a></li>
+              <li><a href="./solutions.html">Услуги</a></li>
+              <li><a href="./hr-business.html">HR-бизнес</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="site-footer__title">Компания</div>
+            <ul class="site-footer__list">
+              <li><a href="./gost-ekg.html">ГОСТ / ЭКГ</a></li>
+              <li><a href="./cases.html">Кейсы</a></li>
+              <li><a href="./contacts.html">Контакты</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="site-footer__title">Сотрудникам</div>
+            <ul class="site-footer__list">
+              <li><a href="./road-help.html">Как обратиться</a></li>
+              <li><a href="./employees.html">Личный кабинет</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <div>© ППС. Все права защищены.</div>
+        <div>Корпоративная программа поддержки сотрудников</div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="Наверх">
+    <svg viewBox="0 0 24 24" fill="none">
+      <path
+        d="M12 19V5M12 5L6 11M12 5L18 11"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </button>
+
+  <script src="./js/script.js" defer></script>
+</body>
+</html>

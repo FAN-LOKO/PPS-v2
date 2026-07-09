@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ППС — Кейсы: как программа поддержки работает в реальных ситуациях</title>
+
+  <meta
+    name="description"
+    content="Реальные сценарии программы поддержки сотрудников: разбор обращений, формат работы специалистов, результаты. Обезличенные данные, практические примеры."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-brand site-brand--header" href="./index.html" aria-label="На главную">
+        <img
+          class="site-brand__logo"
+          src="./assets/logo.png"
+          alt="Программа поддержки сотрудников"
+          width="260"
+          height="72"
+        />
+      </a>
+
+      <nav
+        class="site-nav"
+        id="mobile-navigation"
+        aria-label="Основная навигация"
+      >
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="./about.html">О программе</a></li>
+          <li><a class="site-nav__link" href="./solutions.html">Услуги</a></li>
+          <li><a class="site-nav__link" href="./hr-business.html">HR-бизнес</a></li>
+          <li><a class="site-nav__link" href="./gost-ekg.html">ГОСТ / ЭКГ</a></li>
+          <li><a class="site-nav__link is-active" href="./cases.html">Кейсы</a></li>
+          <li><a class="site-nav__link" href="./road-help.html">Как обратиться</a></li>
+          <li><a class="site-nav__link" href="./contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="btn btn--primary site-header__cabinet" href="./employees.html">
+          Личный кабинет
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+          aria-controls="mobile-navigation"
+        >
+          <span class="menu-toggle__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main" id="main-content">
+
+    <!-- ======================================================================
+         RU: HERO — intro + trust badges
+         EN: HERO — intro + trust badges
+         ====================================================================== -->
+    <section class="section" aria-labelledby="cases-hero-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Кейсы</div>
+          <h1 class="section-title section-title--wide" id="cases-hero-title">
+            Как <span class="text-accent">программа работает</span> в реальных ситуациях
+          </h1>
+          <p class="section-description">
+            Ниже — практические сценарии, основанные на обезличенных данных
+            обращений. Каждый кейс показывает последовательность: ситуация,
+            действия специалиста, результат.
+          </p>
+        </div>
+
+        <div class="hero-badges">
+          <span class="eyebrow">Обезличенные данные</span>
+          <span class="eyebrow">Реальные сценарии</span>
+          <span class="eyebrow">Агрегированная статистика</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         RU: FEATURED CASE — разбор одного обращения
+         EN: FEATURED CASE — one scenario walkthrough
+         ====================================================================== -->
+    <section class="section section--alt" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Разбор одного обращения</div>
+          <h2 class="section-title section-title--featured" id="featured-title">
+            <span class="section-title__line">Эмоциональное выгорание:</span>
+            <span class="section-title__line">от запроса до результата</span>
+          </h2>
+        </div>
+
+        <article class="case-featured" aria-label="Кейс: эмоциональное выгорание">
+          <div class="case-featured__grid">
+            <div class="case-featured__left">
+              <div class="case-featured__block case-featured__block--situation">
+                <h3 class="case-featured__block-title">Ситуация</h3>
+                <p class="case-featured__text">
+                  Сотрудник IT-отдела крупной компании обратился с жалобами
+                  на постоянную усталость, потерю интереса к работе и раздражительность.
+                  Запрос поступил через телефонную линию поддержки. Оператор
+                  определил профиль — эмоциональное выгорание, риск снижения
+                  продуктивности и увольнения.
+                </p>
+              </div>
+
+              <div class="case-featured__block case-featured__block--actions">
+                <h3 class="case-featured__block-title">Что было сделано</h3>
+                <ul class="case-featured__list">
+                  <li>
+                    <svg class="case-featured__check" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M4 8.5L6.5 11L12 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Маршрутизация к психологу с опытом работы в когнитивно-поведенческом подходе
+                  </li>
+                  <li>
+                    <svg class="case-featured__check" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M4 8.5L6.5 11L12 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Первичная диагностическая сессия — оценка уровня выгорания
+                  </li>
+                  <li>
+                    <svg class="case-featured__check" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M4 8.5L6.5 11L12 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Шесть еженедельных консультаций с фокусом на восстановление ресурса
+                  </li>
+                  <li>
+                    <svg class="case-featured__check" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M4 8.5L6.5 11L12 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Рекомендации по режиму работы и техникам саморегуляции
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="case-featured__right">
+              <div class="case-featured__section--result">
+                <h3 class="case-featured__section-result-title">Результат</h3>
+                <p class="case-featured__text">
+                  Сотрудник вернулся к стабильному рабочему ритму. Частота
+                  жалоб на усталость снизилась, вовлечённость в задачи
+                  восстановилась. HR компании отметил сокращение больничных
+                  у данного сотрудника на <strong class="case-featured__num">60%</strong> в течение двух месяцев после
+                  завершения консультаций.
+                </p>
+              </div>
+
+              <aside class="case-featured__proof">
+                <blockquote class="case-featured__proof-quote">
+                  <p class="case-featured__proof-text">
+                    Мы видим, что после обращения сотрудники реже уходят на больничный
+                    и быстрее возвращаются в рабочий режим. Для нас это конкретный
+                    показатель эффективности программы, а не абстрактная забота.
+                  </p>
+                  <footer class="case-featured__proof-footer">
+                    HR-директор, IT-компания, 1 200 сотрудников
+                  </footer>
+                </blockquote>
+              </aside>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         RU: COMPACT CASES — 3 коротких сценария
+         EN: COMPACT CASES — 3 short scenarios
+         ====================================================================== -->
+    <section class="section" aria-labelledby="compact-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Другие сценарии</div>
+          <h2 class="section-title" id="compact-title">Коротко о разных типах обращений</h2>
+          <p class="section-description">
+            Ещё три ситуации, которые показывают разнообразие запросов
+            и формат работы специалистов.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card card--padded case-compact">
+            <span class="card__eyebrow">Юридическая ситуация</span>
+            <h3 class="card__title case-compact__title">Спор с застройщиком</h3>
+            <p class="card__text case-compact__text">
+              Сотрудник столкнулся с нарушением сроков сдачи жилья. Юрист программы
+              разъяснил порядок претензионной работы, помог составить досудебную
+              претензию. Спор урегулирован в досудебном порядке — выплачена
+              неустойка.
+            </p>
+            <div class="case-compact__result">
+              <span class="case-compact__result-label">Результат:</span>
+              Спор закрыт без суда, сотрудник получил компенсацию
+            </div>
+          </article>
+
+          <article class="card card--padded case-compact">
+            <span class="card__eyebrow">Коучинг</span>
+            <h3 class="card__title case-compact__title">Адаптация нового руководителя</h3>
+            <p class="card__text case-compact__text">
+              Руководитель отдела, перешедший в компанию из другой отрасли,
+              испытывал сложности со встраиванием в процессы и командой. Коуч
+              помог сформировать план вхождения в должность. Через месяц —
+              снижение напряжения, улучшение контакта с подчинёнными.
+            </p>
+            <div class="case-compact__result">
+              <span class="case-compact__result-label">Результат:</span>
+              Адаптация сокращена с 4 до 2 месяцев
+            </div>
+          </article>
+
+          <article class="card card--padded case-compact">
+            <span class="card__eyebrow">Wellbeing</span>
+            <h3 class="card__title case-compact__title">Профилактика выгорания в команде</h3>
+            <p class="card__text case-compact__text">
+              После реорганизации в отделе продаж выросла текучесть.
+              Консультант по wellbeing провёл серию групповых сессий по управлению
+              стрессом. По итогам — снижение уровня тревожности и обращений
+              на горячую линию со стороны отдела.
+            </p>
+            <div class="case-compact__result">
+              <span class="case-compact__result-label">Результат:</span>
+              Текучка в отделе снизилась на 30% за квартал
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         RU: TRUST / как формируются кейсы
+         EN: TRUST / how cases are compiled
+         ====================================================================== -->
+    <section class="section section--alt" aria-labelledby="trust-title">
+      <div class="container">
+        <div class="case-trust">
+          <div class="case-trust__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="case-trust__content">
+            <h2 class="case-trust__title" id="trust-title">Как формируются эти кейсы</h2>
+            <p class="case-trust__text">
+              Каждый кейс основан на агрегированных обезличенных данных
+              множества обращений. Мы анализируем типовые сценарии, обобщаем
+              опыт и не раскрываем персональные данные сотрудников. Цитаты
+              — реконструкция обратной связи, имена и детали, позволяющие
+              идентифицировать сотрудника или компанию, скрыты.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         RU: INDUSTRIES / применимость в разных типах компаний
+         EN: INDUSTRIES / applicability across company types
+         ====================================================================== -->
+    <section class="section" aria-labelledby="industries-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Применимость</div>
+          <h2 class="section-title section-title--wide" id="industries-title">
+            В каких компаниях программа работает
+          </h2>
+          <p class="section-description">
+            Отрасль, масштаб и географическая распределённость влияют на
+            набор запросов, но логика поддержки остаётся единой.
+          </p>
+        </div>
+
+        <div class="cases-industries">
+          <article class="cases-industries__item">
+            <div class="cases-industries__value">IT и цифровые продукты</div>
+            <div class="cases-industries__label">Запросы: выгорание, адаптация, карьерные вопросы</div>
+            <p class="cases-industries__text">
+              Высокая интенсивность труда, удалённые команды. Востребованы
+              психолог и коуч, особенно в периоды релизов и реорганизаций.
+            </p>
+          </article>
+
+          <article class="cases-industries__item">
+            <div class="cases-industries__value">Производство и логистика</div>
+            <div class="cases-industries__label">Запросы: юридические вопросы, стресс, семейные ситуации</div>
+            <p class="cases-industries__text">
+              Сотрудники ценят юридическую поддержку и консультации по
+              бытовым вопросам. Wellbeing-направление снижает общий
+              уровень стресса в коллективе.
+            </p>
+          </article>
+
+          <article class="cases-industries__item">
+            <div class="cases-industries__value">Ритейл и сервис</div>
+            <div class="cases-industries__label">Запросы: эмоциональное истощение, конфликты</div>
+            <p class="cases-industries__text">
+              Высокая контактная нагрузка, работа с людьми. Психологическая
+              поддержка и профилактика выгорания — базовый запрос.
+            </p>
+          </article>
+
+          <article class="cases-industries__item">
+            <div class="cases-industries__value">Финансы и консалтинг</div>
+            <div class="cases-industries__label">Запросы: профессиональное развитие, стресс-менеджмент</div>
+            <p class="cases-industries__text">
+              Высокие стандарты и дедлайны. Коучинг и карьерное
+              консультирование востребованы наравне с психологической
+              поддержкой.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         RU: CTA
+         EN: CTA
+         ====================================================================== -->
+    <section class="section section--alt" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-panel">
+          <div class="cta-panel__inner">
+            <div class="cta-panel__content">
+              <h2 class="cta-panel__title" id="cta-title">
+                Обсудить ваш сценарий
+              </h2>
+              <p class="cta-panel__text">
+                Расскажите о ситуации в вашей компании — мы поможем подобрать
+                формат поддержки, который будет работать именно у вас.
+              </p>
+            </div>
+
+            <div class="cta-panel__actions">
+              <a class="btn btn--cta-contrast" href="./contacts.html">Получить консультацию</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <a class="site-brand site-brand--footer" href="./index.html" aria-label="ППС — на главную">
+            <img
+              class="site-brand__logo"
+              src="./assets/logo.png"
+              alt="Логотип ППС"
+              width="240"
+              height="58"
+            />
+          </a>
+
+          <p class="site-footer__description">
+            Программа поддержки сотрудников для бизнеса: wellbeing, экспертная помощь
+            и системный подход к корпоративной поддержке команды.
+          </p>
+        </div>
+
+        <div class="site-footer__nav">
+          <div>
+            <div class="site-footer__title">Разделы</div>
+            <ul class="site-footer__list">
+              <li><a href="./about.html">О программе</a></li>
+              <li><a href="./solutions.html">Услуги</a></li>
+              <li><a href="./hr-business.html">HR-бизнес</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="site-footer__title">Компания</div>
+            <ul class="site-footer__list">
+              <li><a href="./gost-ekg.html">ГОСТ / ЭКГ</a></li>
+              <li><a href="./cases.html">Кейсы</a></li>
+              <li><a href="./contacts.html">Контакты</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="site-footer__title">Контакты</div>
+            <ul class="site-footer__list">
+              <li><a href="./contacts.html">Оставить заявку</a></li>
+              <li><a href="tel:+78000000000">+7 (800) 000-00-00</a></li>
+              <li><a href="mailto:info@example.ru">info@example.ru</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <div>© ППС. Все права защищены.</div>
+        <div>Корпоративная программа поддержки сотрудников</div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="Наверх">
+    <svg viewBox="0 0 24 24" fill="none">
+      <path
+        d="M12 19V5M12 5L6 11M12 5L18 11"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </button>
+
+  <script src="./js/script.js" defer></script>
+</body>
+</html>

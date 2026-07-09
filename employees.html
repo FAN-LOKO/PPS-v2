@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ППС — Личный кабинет сотрудника</title>
+
+  <meta
+    name="description"
+    content="Программа поддержки сотрудников: профессиональная помощь психологов, юристов, коучей и консультантов по wellbeing. Конфиденциально, круглосуточно, для вас и вашей семьи."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-brand site-brand--header" href="./index.html" aria-label="На главную">
+        <img
+          class="site-brand__logo"
+          src="./assets/logo.png"
+          alt="Программа поддержки сотрудников"
+          width="260"
+          height="72"
+        />
+      </a>
+
+      <nav
+        class="site-nav"
+        id="mobile-navigation"
+        aria-label="Основная навигация"
+      >
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="./about.html">О программе</a></li>
+          <li><a class="site-nav__link" href="./solutions.html">Услуги</a></li>
+          <li><a class="site-nav__link" href="./hr-business.html">HR-бизнес</a></li>
+          <li><a class="site-nav__link" href="./gost-ekg.html">ГОСТ / ЭКГ</a></li>
+          <li><a class="site-nav__link" href="./cases.html">Кейсы</a></li>
+          <li><a class="site-nav__link" href="./road-help.html">Как обратиться</a></li>
+          <li><a class="site-nav__link" href="./contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="btn btn--primary site-header__cabinet" href="./employees.html">
+          Личный кабинет
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+          aria-controls="mobile-navigation"
+        >
+          <span class="menu-toggle__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main" id="main-content">
+
+    <!-- ==========================================================================
+         RU: PORTAL HERO / Первый экран для сотрудника
+         EN: PORTAL HERO / First screen for employee
+         ========================================================================== -->
+    <section class="portal-hero" aria-labelledby="portal-hero-title">
+      <div class="container">
+        <div class="portal-hero__inner">
+          <h1 class="portal-hero__title" id="portal-hero-title">
+            Поддержка, когда она нужна
+          </h1>
+
+          <p class="portal-hero__subtitle">
+            Профессиональная помощь психологов, юристов, коучей и консультантов
+            по wellbeing. Бесплатно, конфиденциально, круглосуточно — для вас
+            и вашей семьи.
+          </p>
+
+          <div class="portal-hero__actions">
+            <a class="btn btn--primary" href="tel:+78000000000">Позвонить</a>
+            <a class="btn btn--secondary" href="#employee-services">Написать в чат</a>
+          </div>
+
+          <div class="portal-hero__badges">
+            <span class="portal-hero__badge">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 12l5 5L20 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Анонимно
+            </span>
+            <span class="portal-hero__badge">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 12h16M12 4l8 8-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Конфиденциально
+            </span>
+            <span class="portal-hero__badge">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              24/7
+            </span>
+            <span class="portal-hero__badge">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M3 9.5L12 4l9 5.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M9 21V12h6v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Для вас и вашей семьи
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         RU: SERVICE ENTRY CARDS / С чем мы помогаем
+         EN: SERVICE ENTRY CARDS / What we help with
+         ========================================================================== -->
+    <section class="section section--alt" id="employee-services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title" id="services-title">С чем мы помогаем</h2>
+          <p class="section-description">
+            Выберите направление — мы подберём подходящего специалиста под ваш запрос.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="service-entry-card">
+            <div class="service-entry-card__header">
+              <div class="service-entry-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3c-3.866 0-7 3.134-7 7 0 1.955.804 3.721 2.098 4.992.63.618 1.204 1.571 1.34 2.508h7.124c.136-.937.71-1.89 1.34-2.508A6.967 6.967 0 0 0 19 10c0-3.866-3.134-7-7-7Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9.5 19h5M10 21h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="service-entry-card__title">Психолог</h3>
+            </div>
+            <p class="service-entry-card__text">
+              Чувствуете тревогу, апатию или выгорание? Психолог поможет разобраться
+              в себе и вернуть эмоциональную опору.
+            </p>
+            <a class="service-entry-card__link" href="tel:+78000000000">
+              Связаться со специалистом
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+          <article class="service-entry-card">
+            <div class="service-entry-card__header">
+              <div class="service-entry-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 4 5 7v5c0 4.2 2.55 7.9 7 9 4.45-1.1 7-4.8 7-9V7l-7-3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="M9.5 12.5 11 14l3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="service-entry-card__title">Юрист</h3>
+            </div>
+            <p class="service-entry-card__text">
+              Нужен совет по жилищным, семейным или другим правовым вопросам?
+              Юрист подскажет, как действовать и какие документы подготовить.
+            </p>
+            <a class="service-entry-card__link" href="tel:+78000000000">
+              Связаться со специалистом
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+          <article class="service-entry-card">
+            <div class="service-entry-card__header">
+              <div class="service-entry-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+              </div>
+              <h3 class="service-entry-card__title">Коуч</h3>
+            </div>
+            <p class="service-entry-card__text">
+              Хотите расти по карьере, найти мотивацию или навести порядок
+              в делах? Коуч поможет сфокусироваться и двигаться к цели.
+            </p>
+            <a class="service-entry-card__link" href="tel:+78000000000">
+              Связаться со специалистом
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+          <article class="service-entry-card">
+            <div class="service-entry-card__header">
+              <div class="service-entry-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 20s-6-3.7-6-9a3.5 3.5 0 0 1 6-2.3A3.5 3.5 0 0 1 18 11c0 5.3-6 9-6 9Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="service-entry-card__title">Консультант по wellbeing</h3>
+            </div>
+            <p class="service-entry-card__text">
+              Заботитесь о здоровье, сне, питании и общем самочувствии?
+              Консультант по wellbeing поддержит и даст практические рекомендации.
+            </p>
+            <a class="service-entry-card__link" href="tel:+78000000000">
+              Связаться со специалистом
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+          <article class="service-entry-card">
+            <div class="service-entry-card__header">
+              <div class="service-entry-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect x="4" y="5" width="16" height="14" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M8 10h8M8 14h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="service-entry-card__title">Целевые программы</h3>
+            </div>
+            <p class="service-entry-card__text">
+              Особая жизненная ситуация? У нас есть адресные программы поддержки
+              для разных периодов жизни — от жилья до образования детей.
+            </p>
+            <a class="service-entry-card__link" href="tel:+78000000000">
+              Связаться со специалистом
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+          <article class="service-entry-card">
+            <div class="service-entry-card__header">
+              <div class="service-entry-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect x="4" y="6" width="16" height="10" rx="2.5" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="service-entry-card__title">Вебинары</h3>
+            </div>
+            <p class="service-entry-card__text">
+              Хотите узнать больше о психологии, здоровье и саморазвитии?
+              Смотрите вебинары от наших экспертов в удобное время.
+            </p>
+            <a class="service-entry-card__link" href="tel:+78000000000">
+              Связаться со специалистом
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         RU: COMPACT PROCESS / Как получить помощь в 3 шага
+         EN: COMPACT PROCESS / How to get help in 3 steps
+         ========================================================================== -->
+    <section class="section" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title" id="process-title">Как получить помощь</h2>
+          <p class="section-description">
+            Мы сделали процесс максимально простым. Три шага — и вы на связи
+            с нужным специалистом.
+          </p>
+        </div>
+
+        <div class="process-compact">
+          <article class="process-compact__step">
+            <div class="process-compact__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M22 16.92v3a1.998 1.998 0 0 1-2.18 2 19.791 19.791 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.791 19.791 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="process-compact__step-title">Свяжитесь с нами</h3>
+            <p class="process-compact__step-text">
+              Позвоните, напишите в чат или оставьте заявку на сайте.
+              Первичный контакт занимает не больше минуты.
+            </p>
+          </article>
+
+          <article class="process-compact__step">
+            <div class="process-compact__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M12 7v5l4 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="process-compact__step-title">Мы направим к специалисту</h3>
+            <p class="process-compact__step-text">
+              Оператор определит профиль вашего запроса и соединит
+              с подходящим экспертом — психологом, юристом или коучем.
+            </p>
+          </article>
+
+          <article class="process-compact__step">
+            <div class="process-compact__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 12l5 5L20 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="process-compact__step-title">Получите поддержку</h3>
+            <p class="process-compact__step-text">
+              Консультация в удобном формате — онлайн, по телефону или лично.
+              Всё, что вы скажете, остаётся между вами и специалистом.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         RU: EMPLOYEE FAQ / Частые вопросы сотрудников
+         EN: EMPLOYEE FAQ / Frequently asked questions from employees
+         ========================================================================== -->
+    <section class="section section--alt" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title" id="faq-title">Частые вопросы</h2>
+          <p class="section-description">
+            Мы понимаем, что обращаться за помощью бывает непросто. Вот ответы
+            на самые распространённые вопросы, которые нам задают.
+          </p>
+        </div>
+
+        <div class="faq">
+          <article class="faq-item is-open">
+            <button class="faq-item__button" type="button">
+              <span class="faq-item__title">Узнает ли работодатель, что я обращался?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__content">
+              Нет. Сервис работает по принципу полной анонимности. HR видит
+              только общую обезличенную статистику — количество обращений,
+              тематику, удовлетворённость. Никаких имён, должностей или отделов.
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-item__button" type="button">
+              <span class="faq-item__title">Сколько это стоит? Сколько консультаций я могу получить?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__content">
+              Программа полностью оплачивается вашей компанией. Для вас
+              и членов вашей семьи все консультации бесплатны. Количество
+              обращений не ограничено — обращайтесь столько раз, сколько нужно.
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-item__button" type="button">
+              <span class="faq-item__title">Могу ли я обратиться за члена своей семьи?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__content">
+              Да. Поддержка распространяется не только на вас, но и на членов
+              вашей семьи — супругов, детей и других близких родственников,
+              проживающих вместе с вами.
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-item__button" type="button">
+              <span class="faq-item__title">Как я могу связаться с сервисом?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__content">
+              Вы можете позвонить по телефону, написать сообщение в чате
+              на этом сайте или оставить заявку на обратный звонок.
+              Выбирайте любой удобный для вас способ.
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-item__button" type="button">
+              <span class="faq-item__title">Работает ли сервис круглосуточно?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__content">
+              Да, сервис доступен 24/7. В любое время суток вы можете позвонить
+              или оставить заявку, и мы оперативно свяжемся с вами. Консультации
+              со специалистами проводятся по согласованному графику.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         RU: TRUST + CTA / Конфиденциальность и призыв к действию
+         EN: TRUST + CTA / Confidentiality and call to action
+         ========================================================================== -->
+    <section class="section" aria-labelledby="trust-cta-title">
+      <div class="container">
+        <div class="cta-panel">
+          <div class="cta-panel__inner">
+            <div class="cta-panel__content">
+              <h2 class="cta-panel__title" id="trust-cta-title">
+                Всё, что вы скажете, останется между нами
+              </h2>
+              <p class="cta-panel__text">
+                Конфиденциальность — наш главный принцип. Ни один ваш разговор
+                со специалистом не станет известен работодателю или коллегам.
+                Вы можете обратиться с любым вопросом и быть уверены в полной
+                приватности.
+              </p>
+            </div>
+
+            <div class="cta-panel__actions">
+              <div class="stack-20">
+                <a class="btn btn--cta-contrast" href="tel:+78000000000">Позвонить</a>
+                <a class="btn btn--cta-contrast" href="tel:+78000000000">Записаться на консультацию</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <a class="site-brand site-brand--footer" href="./index.html" aria-label="ППС — на главную">
+            <img
+              class="site-brand__logo"
+              src="./assets/logo.png"
+              alt="Логотип ППС"
+              width="240"
+              height="58"
+            />
+          </a>
+
+          <p class="site-footer__description">
+            Программа поддержки сотрудников для бизнеса: wellbeing, экспертная помощь
+            и системный подход к корпоративной поддержке команды.
+          </p>
+        </div>
+
+        <div class="site-footer__nav">
+          <div>
+            <div class="site-footer__title">Разделы</div>
+            <ul class="site-footer__list">
+              <li><a href="./about.html">О программе</a></li>
+              <li><a href="./solutions.html">Услуги</a></li>
+              <li><a href="./hr-business.html">HR-бизнес</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="site-footer__title">Компания</div>
+            <ul class="site-footer__list">
+              <li><a href="./gost-ekg.html">ГОСТ / ЭКГ</a></li>
+              <li><a href="./cases.html">Кейсы</a></li>
+              <li><a href="./contacts.html">Контакты</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="site-footer__title">Контакты</div>
+            <ul class="site-footer__list">
+              <li><a href="./contacts.html">Оставить заявку</a></li>
+              <li><a href="tel:+78000000000">+7 (800) 000-00-00</a></li>
+              <li><a href="mailto:info@example.ru">info@example.ru</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <div>© ППС. Все права защищены.</div>
+        <div>Корпоративная программа поддержки сотрудников</div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="Наверх">
+    <svg viewBox="0 0 24 24" fill="none">
+      <path
+        d="M12 19V5M12 5L6 11M12 5L18 11"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </button>
+
+  <script src="./js/script.js" defer></script>
+</body>
+</html>
