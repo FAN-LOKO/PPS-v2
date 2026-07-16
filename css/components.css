@@ -334,7 +334,15 @@
   align-items: center;
 }
 
-/* ========================================================================== */
+.split-section--form {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+}
+
+.bottom-cards .mini-card {
+  width: auto;
+}
+
+/* ==========================================================================
 /* RU: Showcase card / Акцентная карточка                                     */
 /* EN: Showcase card / accent card                                            */
 /* ========================================================================== */
@@ -837,6 +845,16 @@ a.btn--cta-contrast:hover {
   width: 18px;
   height: 18px;
   margin-top: 0.15em;
+}
+
+.form-agreement a {
+  text-decoration: underline;
+}
+
+.form-agreement a:hover,
+.form-agreement a:focus {
+  color: var(--color-primary);
+  text-decoration: underline;
 }
 
 .form-actions {
@@ -1548,7 +1566,8 @@ a.btn--cta-contrast:hover {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .split-section {
+  .split-section,
+  .split-section--form {
     grid-template-columns: 1fr;
   }
 
@@ -2213,6 +2232,374 @@ a.btn--cta-contrast:hover {
   color: var(--color-text-muted);
   font-size: 0.96rem;
   line-height: 1.6;
+}
+
+/* ========================================================================== */
+/* RU: Trust / Нам доверяют (index.html)                                      */
+/* EN: Trust / Our clients (index.html)                                        */
+/* ========================================================================== */
+.trust-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  margin-top: 12px;
+}
+
+.trust-logos img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-height: 96px;
+  max-width: 220px;
+  object-fit: contain;
+}
+
+.section--trust .section-description {
+  max-width: 78ch;
+}
+
+@media (max-width: 760px) {
+  .trust-logos {
+    gap: 28px;
+    margin-top: 4px;
+  }
+
+  .trust-logos img {
+    max-height: 64px;
+    max-width: 160px;
+  }
+}
+
+/* ========================================================================== */
+/* RU: Грамоты и документы / секция + card (about.html)                       */
+/* EN: Certificates & documents / section + card (about.html)                 */
+/* ========================================================================== */
+.section--docs .section-head {
+  margin-bottom: 32px;
+}
+
+.section--docs .eyebrow {
+  margin-bottom: 12px;
+}
+
+.section--docs .section-title {
+  max-width: 32ch;
+  margin-bottom: 12px;
+}
+
+.section--docs .section-description {
+  max-width: 76ch;
+}
+
+.doc-card {
+  padding: 14px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.90);
+  border: 1px solid rgba(11, 53, 88, 0.08);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.doc-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.doc-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius-md) - 4px);
+}
+
+/* ========================================================================== */
+/* RU: Review card / Карточка отзыва (road-help.html)                         */
+/* EN: Review card / Testimonial card (road-help.html)                        */
+/* ========================================================================== */
+.review-card {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  padding: 24px;
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  border: 1px solid rgba(11, 53, 88, 0.07);
+  box-shadow: var(--shadow-sm);
+}
+
+.review-card__text {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 0.96rem;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.review-card__author {
+  color: var(--color-text-muted);
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 760px) {
+  .review-card {
+    padding: 20px;
+  }
+}
+
+/* ========================================================================== */
+/* RU: Audio reviews / Аудиоотзывы (employees.html)                           */
+/* EN: Audio reviews / Audio testimonials (employees.html)                    */
+/* ========================================================================== */
+.audio-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.audio-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  border: 1px solid rgba(11, 53, 88, 0.08);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.audio-card:hover {
+  border-color: rgba(0, 107, 255, 0.2);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.audio-card__avatar {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+}
+
+.audio-card__initial {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text);
+  background: linear-gradient(145deg, #f0f7ff, #e3f2fd);
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.audio-card__initial--pink {
+  background: linear-gradient(145deg, #f3e5f5, #ede7f6);
+}
+
+.audio-card__initial--indigo {
+  background: linear-gradient(145deg, #e8eaf6, #c5cae9);
+}
+
+.audio-card__wave {
+  position: absolute;
+  bottom: -6px;
+  right: -8px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 4px 7px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 107, 255, 0.18);
+  box-shadow: 0 4px 10px rgba(0, 107, 255, 0.12);
+}
+
+.audio-card__wave span {
+  display: inline-block;
+  width: 3px;
+  height: 10px;
+  background: var(--color-primary);
+  border-radius: 3px;
+  animation: audioWave 1.5s infinite ease-in-out;
+}
+
+.audio-card__wave span:nth-child(2) { height: 15px; animation-delay: 0.2s; }
+.audio-card__wave span:nth-child(3) { height: 7px; animation-delay: 0.4s; }
+.audio-card__wave span:nth-child(4) { height: 12px; animation-delay: 0.6s; }
+.audio-card__wave span:nth-child(5) { height: 9px; animation-delay: 0.8s; }
+
+@keyframes audioWave {
+  0%, 100% { transform: scaleY(0.8); opacity: 0.6; }
+  50% { transform: scaleY(1.2); opacity: 1; }
+}
+
+.audio-card__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.audio-card__author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.audio-card__name {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.audio-card__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(0, 107, 255, 0.08);
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.audio-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-muted);
+  font-size: 0.84rem;
+}
+
+.audio-card__sep {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(11, 53, 88, 0.2);
+}
+
+.audio-card__player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 6px 6px 14px;
+  border-radius: 999px;
+  background: rgba(246, 250, 255, 0.92);
+  border: 1px solid rgba(11, 53, 88, 0.08);
+  flex-shrink: 0;
+}
+
+.play-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color var(--transition), transform var(--transition);
+  box-shadow: 0 4px 12px rgba(0, 107, 255, 0.3);
+}
+
+.play-btn:hover {
+  background: var(--color-primary-hover);
+  transform: scale(1.05);
+}
+
+.play-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.play-btn--disabled,
+.play-btn--disabled:hover {
+  background: rgba(11, 53, 88, 0.15);
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.play-btn--disabled:focus-visible {
+  outline-color: rgba(11, 53, 88, 0.3);
+}
+
+.audio-card__waveform {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.audio-card__waveform span {
+  display: inline-block;
+  width: 4px;
+  height: 22px;
+  border-radius: 6px;
+  background: rgba(11, 53, 88, 0.1);
+  transition: background-color var(--transition), height var(--transition);
+}
+
+.audio-card__waveform span:nth-child(2) { height: 18px; }
+.audio-card__waveform span:nth-child(3) { height: 26px; }
+.audio-card__waveform span:nth-child(4) { height: 14px; }
+.audio-card__waveform span:nth-child(5) { height: 24px; }
+.audio-card__waveform span:nth-child(6) { height: 16px; }
+.audio-card__waveform span:nth-child(7) { height: 20px; }
+.audio-card__waveform span:nth-child(8) { height: 26px; }
+.audio-card__waveform span:nth-child(9) { height: 14px; }
+.audio-card__waveform span:nth-child(10) { height: 22px; }
+
+.audio-card__status {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  margin-left: 4px;
+}
+
+@media (max-width: 920px) {
+  .audio-card {
+    flex-wrap: wrap;
+  }
+
+  .audio-card__player {
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .audio-card {
+    padding: 16px;
+  }
+
+  .audio-card__author {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .audio-card__avatar {
+    width: 52px;
+    height: 52px;
+  }
+
+  .audio-card__initial {
+    width: 52px;
+    height: 52px;
+    font-size: 17px;
+  }
 }
 
 /* ---- responsive ---- */
