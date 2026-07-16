@@ -31,7 +31,7 @@
       <a class="site-brand site-brand--header" href="./index.html" aria-label="На главную">
         <img
           class="site-brand__logo"
-          src="./assets/logo.png"
+          src="./assets/logos/logo.png"
           alt="Программа поддержки сотрудников"
           width="260"
           height="72"
@@ -49,13 +49,31 @@
           <li><a class="site-nav__link" href="./hr-business.html">HR-бизнес</a></li>
           <li><a class="site-nav__link" href="./gost-ekg.html">ГОСТ / ЭКГ</a></li>
           <li><a class="site-nav__link" href="./cases.html">Кейсы</a></li>
-          <li><a class="site-nav__link" href="./road-help.html">Как обратиться</a></li>
-          <li><a class="site-nav__link is-active" href="./contacts.html">Контакты</a></li>
+           <li class="site-nav__item--has-sub">
+             <div class="site-nav__link-wrap">
+               <a class="site-nav__link" href="./road-help.html">
+                 Как обратиться
+                 <svg class="site-nav__arrow" viewBox="0 0 24 24" fill="none" width="10" height="10" aria-hidden="true">
+                   <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                 </svg>
+               </a>
+               <button class="site-nav__sub-toggle" type="button" aria-label="Раскрыть подменю" aria-expanded="false">
+                 <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                   <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                 </svg>
+               </button>
+             </div>
+             <ul class="site-nav__sub">
+               <li><a class="site-nav__sublink" href="./road-help.html">Как обратиться</a></li>
+               <li><a class="site-nav__sublink" href="./employees.html">Поддержка сотрудникам</a></li>
+             </ul>
+           </li>
+           <li><a class="site-nav__link is-active" href="./contacts.html">Контакты</a></li>
         </ul>
       </nav>
 
       <div class="site-header__actions">
-        <a class="btn btn--primary site-header__cabinet" href="./employees.html">
+        <a class="btn btn--primary site-header__cabinet" href="http://lknew.mponline.ru">
           Личный кабинет
         </a>
 
@@ -75,20 +93,24 @@
   <main class="site-main" id="main-content">
 
     <!-- ==========================================================================
-         RU: CONTACT HERO / Первый экран
-         EN: CONTACT HERO / First screen
+         RU: HERO — split layout, текст слева / изображение справа
+         EN: HERO — split layout, text left / supporting image right
          ========================================================================== -->
-    <section class="contact-hero" aria-labelledby="contact-hero-title">
-      <div class="container">
-        <div class="contact-hero__inner">
-          <h1 class="contact-hero__title" id="contact-hero-title">
+    <section class="section hero-split" aria-labelledby="contact-hero-title">
+      <div class="container hero-split__inner">
+        <div class="hero-split__content">
+          <div class="eyebrow">Контакты</div>
+          <h1 class="section-title section-title--wide" id="contact-hero-title">
             Свяжитесь с нами
           </h1>
-          <p class="contact-hero__subtitle">
+          <p class="section-description">
             Обсудим программу поддержки для вашей компании, ответим на вопросы
             и поможем подобрать подходящий формат. Выберите свой сценарий —
             мы направим вас к нужной команде.
           </p>
+        </div>
+        <div class="hero-split__media">
+          <img src="./assets/images/contacts.png" alt="Свяжитесь с нами — программа поддержки сотрудников" width="768" height="512" />
         </div>
       </div>
     </section>
@@ -159,7 +181,7 @@
             </p>
             <div class="contact-route-card__action-row">
               <a class="btn btn--secondary" href="./employees.html">Перейти в кабинет</a>
-              <a class="btn btn--secondary" href="tel:+78000000000">Позвонить</a>
+              <a class="btn btn--secondary" href="tel:88005054317">Позвонить</a>
             </div>
           </article>
         </div>
@@ -247,7 +269,7 @@
 
             <label class="form-agreement">
               <input type="checkbox" name="agreement" required />
-              <span>Я соглашаюсь на обработку персональных данных</span>
+              <span>Я даю согласие на обработку персональных данных и принимаю <a href="https://mponline.ru/documents">политику конфиденциальности</a></span>
             </label>
 
             <div class="form-actions">
@@ -289,7 +311,7 @@
               </svg>
             </div>
             <div class="contact-channel-card__value">
-              <a href="tel:+78000000000">+7 (800) 000-00-00</a>
+              <a href="tel:88005054317">8-800-505-43-17</a>
             </div>
             <p class="contact-channel-card__note">
               Для срочных вопросов и быстрой связи с менеджером. Звоните
@@ -305,7 +327,7 @@
               </svg>
             </div>
             <div class="contact-channel-card__value">
-              <a href="mailto:info@example.ru">info@example.ru</a>
+              <a href="mailto:info@mponline.ru">info@mponline.ru</a>
             </div>
             <p class="contact-channel-card__note">
               Для детальных запросов, коммерческих предложений и партнёрских
@@ -339,7 +361,7 @@
           <a class="site-brand site-brand--footer" href="./index.html" aria-label="ППС — на главную">
             <img
               class="site-brand__logo"
-              src="./assets/logo.png"
+              src="./assets/logos/logo.png"
               alt="Логотип ППС"
               width="240"
               height="58"
@@ -372,11 +394,19 @@
           </div>
 
           <div>
+            <div class="site-footer__title">Сотрудникам</div>
+            <ul class="site-footer__list">
+              <li><a href="./road-help.html">Как обратиться</a></li>
+              <li><a href="http://lknew.mponline.ru">Личный кабинет</a></li>
+            </ul>
+          </div>
+
+          <div>
             <div class="site-footer__title">Контакты</div>
             <ul class="site-footer__list">
               <li><a href="./contacts.html">Оставить заявку</a></li>
-              <li><a href="tel:+78000000000">+7 (800) 000-00-00</a></li>
-              <li><a href="mailto:info@example.ru">info@example.ru</a></li>
+              <li><a href="tel:88005054317">8-800-505-43-17</a></li>
+              <li><a href="mailto:info@mponline.ru">info@mponline.ru</a></li>
             </ul>
           </div>
         </div>
