@@ -22,6 +22,13 @@
   <link rel="stylesheet" href="./css/layout.css" />
   <link rel="stylesheet" href="./css/components.css" />
   <link rel="stylesheet" href="./css/styles.css" />
+
+  <style>
+    .hero-split__content .portal-hero__actions,
+    .hero-split__content .portal-hero__badges {
+      justify-content: flex-start;
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Перейти к содержимому</a>
@@ -31,7 +38,7 @@
       <a class="site-brand site-brand--header" href="./index.html" aria-label="На главную">
         <img
           class="site-brand__logo"
-          src="./assets/logo.png"
+          src="./assets/logos/logo.png"
           alt="Программа поддержки сотрудников"
           width="260"
           height="72"
@@ -49,13 +56,31 @@
           <li><a class="site-nav__link" href="./hr-business.html">HR-бизнес</a></li>
           <li><a class="site-nav__link" href="./gost-ekg.html">ГОСТ / ЭКГ</a></li>
           <li><a class="site-nav__link" href="./cases.html">Кейсы</a></li>
-          <li><a class="site-nav__link" href="./road-help.html">Как обратиться</a></li>
-          <li><a class="site-nav__link" href="./contacts.html">Контакты</a></li>
+           <li class="site-nav__item--has-sub">
+             <div class="site-nav__link-wrap">
+               <a class="site-nav__link is-active" href="./road-help.html">
+                 Как обратиться
+                 <svg class="site-nav__arrow" viewBox="0 0 24 24" fill="none" width="10" height="10" aria-hidden="true">
+                   <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                 </svg>
+               </a>
+               <button class="site-nav__sub-toggle" type="button" aria-label="Раскрыть подменю" aria-expanded="false">
+                 <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                   <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                 </svg>
+               </button>
+             </div>
+             <ul class="site-nav__sub">
+               <li><a class="site-nav__sublink" href="./road-help.html">Как обратиться</a></li>
+               <li><a class="site-nav__sublink is-active" href="./employees.html">Поддержка сотрудникам</a></li>
+             </ul>
+           </li>
+           <li><a class="site-nav__link" href="./contacts.html">Контакты</a></li>
         </ul>
       </nav>
 
       <div class="site-header__actions">
-        <a class="btn btn--primary site-header__cabinet" href="./employees.html">
+        <a class="btn btn--primary site-header__cabinet" href="http://lknew.mponline.ru">
           Личный кабинет
         </a>
 
@@ -78,9 +103,9 @@
          RU: PORTAL HERO / Первый экран для сотрудника
          EN: PORTAL HERO / First screen for employee
          ========================================================================== -->
-    <section class="portal-hero" aria-labelledby="portal-hero-title">
-      <div class="container">
-        <div class="portal-hero__inner">
+    <section class="section hero-split" aria-labelledby="portal-hero-title">
+      <div class="container hero-split__inner">
+        <div class="hero-split__content">
           <h1 class="portal-hero__title" id="portal-hero-title">
             Поддержка, когда она нужна
           </h1>
@@ -124,6 +149,10 @@
               Для вас и вашей семьи
             </span>
           </div>
+        </div>
+
+        <div class="hero-split__media">
+          <img src="./assets/images/employees.png" alt="Поддержка сотрудникам" width="768" height="512" />
         </div>
       </div>
     </section>
@@ -335,6 +364,123 @@
     </section>
 
     <!-- ==========================================================================
+         RU: AUDIO REVIEWS / Аудиоотзывы участников
+         EN: AUDIO REVIEWS / Audio testimonials from participants
+         ========================================================================== -->
+    <section class="section section--audio" aria-labelledby="audio-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Аудиоотзывы</div>
+          <h2 class="section-title" id="audio-title">Что говорят участники программы</h2>
+          <p class="section-description">
+            Реальные истории сотрудников, которые уже воспользовались поддержкой
+          </p>
+        </div>
+
+        <div class="audio-grid">
+          <div class="audio-card">
+            <div class="audio-card__avatar">
+              <div class="audio-card__initial">И</div>
+              <div class="audio-card__wave" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+
+            <div class="audio-card__info">
+              <div class="audio-card__author">
+                <h3 class="audio-card__name">Ирина</h3>
+                <span class="audio-card__badge">Сотрудник</span>
+              </div>
+              <div class="audio-card__meta">
+                <span>Участник программы</span>
+                <span class="audio-card__sep"></span>
+                <span>3:42</span>
+              </div>
+            </div>
+
+            <div class="audio-card__player">
+              <button class="play-btn play-btn--disabled" type="button" disabled aria-label="Аудио скоро будет доступно">
+                <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+                  <path d="M8 5v14l11-7z" fill="currentColor"/>
+                </svg>
+              </button>
+              <div class="audio-card__waveform" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <span class="audio-card__status">Скоро</span>
+            </div>
+          </div>
+
+          <div class="audio-card">
+            <div class="audio-card__avatar">
+              <div class="audio-card__initial audio-card__initial--pink">А</div>
+              <div class="audio-card__wave" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+
+            <div class="audio-card__info">
+              <div class="audio-card__author">
+                <h3 class="audio-card__name">Анна</h3>
+                <span class="audio-card__badge">HR-специалист</span>
+              </div>
+              <div class="audio-card__meta">
+                <span>Участник программы</span>
+                <span class="audio-card__sep"></span>
+                <span>2:58</span>
+              </div>
+            </div>
+
+            <div class="audio-card__player">
+              <button class="play-btn play-btn--disabled" type="button" disabled aria-label="Аудио скоро будет доступно">
+                <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+                  <path d="M8 5v14l11-7z" fill="currentColor"/>
+                </svg>
+              </button>
+              <div class="audio-card__waveform" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <span class="audio-card__status">Скоро</span>
+            </div>
+          </div>
+
+          <div class="audio-card">
+            <div class="audio-card__avatar">
+              <div class="audio-card__initial audio-card__initial--indigo">К</div>
+              <div class="audio-card__wave" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+
+            <div class="audio-card__info">
+              <div class="audio-card__author">
+                <h3 class="audio-card__name">Кирилл</h3>
+                <span class="audio-card__badge">Сотрудник</span>
+              </div>
+              <div class="audio-card__meta">
+                <span>Участник программы</span>
+                <span class="audio-card__sep"></span>
+                <span>3:12</span>
+              </div>
+            </div>
+
+            <div class="audio-card__player">
+              <button class="play-btn play-btn--disabled" type="button" disabled aria-label="Аудио скоро будет доступно">
+                <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+                  <path d="M8 5v14l11-7z" fill="currentColor"/>
+                </svg>
+              </button>
+              <div class="audio-card__waveform" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <span class="audio-card__status">Скоро</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
          RU: EMPLOYEE FAQ / Частые вопросы сотрудников
          EN: EMPLOYEE FAQ / Frequently asked questions from employees
          ========================================================================== -->
@@ -452,7 +598,7 @@
           <a class="site-brand site-brand--footer" href="./index.html" aria-label="ППС — на главную">
             <img
               class="site-brand__logo"
-              src="./assets/logo.png"
+              src="./assets/logos/logo.png"
               alt="Логотип ППС"
               width="240"
               height="58"
@@ -485,11 +631,19 @@
           </div>
 
           <div>
+            <div class="site-footer__title">Сотрудникам</div>
+            <ul class="site-footer__list">
+              <li><a href="./road-help.html">Как обратиться</a></li>
+              <li><a href="http://lknew.mponline.ru">Личный кабинет</a></li>
+            </ul>
+          </div>
+
+          <div>
             <div class="site-footer__title">Контакты</div>
             <ul class="site-footer__list">
               <li><a href="./contacts.html">Оставить заявку</a></li>
-              <li><a href="tel:+78000000000">+7 (800) 000-00-00</a></li>
-              <li><a href="mailto:info@example.ru">info@example.ru</a></li>
+              <li><a href="tel:88005054317">8-800-505-43-17</a></li>
+              <li><a href="mailto:info@mponline.ru">info@mponline.ru</a></li>
             </ul>
           </div>
         </div>
