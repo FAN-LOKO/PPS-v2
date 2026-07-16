@@ -31,7 +31,7 @@
       <a class="site-brand site-brand--header" href="./index.html" aria-label="На главную">
         <img
           class="site-brand__logo"
-          src="./assets/logo.png"
+          src="./assets/logos/logo.png"
           alt="Программа поддержки сотрудников"
           width="260"
           height="72"
@@ -49,13 +49,31 @@
           <li><a class="site-nav__link" href="./hr-business.html">HR-бизнес</a></li>
           <li><a class="site-nav__link" href="./gost-ekg.html">ГОСТ / ЭКГ</a></li>
           <li><a class="site-nav__link" href="./cases.html">Кейсы</a></li>
-          <li><a class="site-nav__link" href="./road-help.html">Как обратиться</a></li>
-          <li><a class="site-nav__link" href="./contacts.html">Контакты</a></li>
+           <li class="site-nav__item--has-sub">
+             <div class="site-nav__link-wrap">
+               <a class="site-nav__link" href="./road-help.html">
+                 Как обратиться
+                 <svg class="site-nav__arrow" viewBox="0 0 24 24" fill="none" width="10" height="10" aria-hidden="true">
+                   <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                 </svg>
+               </a>
+               <button class="site-nav__sub-toggle" type="button" aria-label="Раскрыть подменю" aria-expanded="false">
+                 <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                   <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                 </svg>
+               </button>
+             </div>
+             <ul class="site-nav__sub">
+               <li><a class="site-nav__sublink" href="./road-help.html">Как обратиться</a></li>
+               <li><a class="site-nav__sublink" href="./employees.html">Поддержка сотрудникам</a></li>
+             </ul>
+           </li>
+           <li><a class="site-nav__link" href="./contacts.html">Контакты</a></li>
         </ul>
       </nav>
 
       <div class="site-header__actions">
-        <a class="btn btn--primary site-header__cabinet" href="./employees.html">
+        <a class="btn btn--primary site-header__cabinet" href="http://lknew.mponline.ru">
           Личный кабинет
         </a>
 
@@ -74,12 +92,12 @@
 
   <main class="site-main" id="main-content">
     <!-- ==========================================================================
-         RU: B2B-ориентированное введение / page header
-         EN: B2B-oriented introduction / page header
+         RU: HERO — split layout, текст слева / изображение справа
+         EN: HERO — split layout, text left / supporting image right
          ========================================================================== -->
-    <section class="section" aria-labelledby="solutions-hero-title">
-      <div class="container">
-        <div class="section-head">
+    <section class="section hero-split" aria-labelledby="solutions-hero-title">
+      <div class="container hero-split__inner">
+        <div class="hero-split__content">
           <div class="eyebrow">Услуги</div>
           <h1 class="section-title section-title--wide" id="solutions-hero-title">
             Соберите <span class="text-accent">программу поддержки</span> под задачи вашего бизнеса
@@ -91,30 +109,12 @@
             и HR-приоритеты.
           </p>
         </div>
-
-        <div class="section-intro-metrics">
-          <div class="grid-3">
-            <article class="metric-card text-center">
-              <div class="metric-card__value">6</div>
-              <div class="metric-card__label">Направлений помощи</div>
-              <p class="metric-card__text">Профильные специалисты для сотрудников и членов их семей</p>
-            </article>
-
-            <article class="metric-card text-center">
-              <div class="metric-card__value">7</div>
-              <div class="metric-card__label">Целевых программ</div>
-              <p class="metric-card__text">Адресная поддержка в ключевых жизненных ситуациях</p>
-            </article>
-
-            <article class="metric-card text-center">
-              <div class="metric-card__value">10+</div>
-              <div class="metric-card__label">Вебинаров</div>
-              <p class="metric-card__text">Просветительские форматы по психологии и здоровью</p>
-            </article>
-          </div>
+        <div class="hero-split__media">
+          <img src="./assets/images/solution.png" alt="Услуги программы поддержки сотрудников" width="768" height="512" />
         </div>
       </div>
     </section>
+
 
     <!-- ==========================================================================
          RU: Ключевые специалисты / базовый контур программы
@@ -369,8 +369,23 @@
             </div>
             <h3 class="feature-card__title">Образование детей</h3>
             <p class="feature-card__text">
-              Профориентация, репетиторы, подготовительные курсы и помощь в выборе
-              образовательной траектории для детей сотрудников.
+               Профориентация, репетиторы, подготовительные курсы и помощь в выборе
+               образовательной траектории для детей сотрудников.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect x="2" y="3" width="20" height="13" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M12 16v4M8 21h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M10 7.5l5.5 3.5-5.5 3.5v-7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Вебинары и целевые программы</h3>
+            <p class="feature-card__text">
+               Профилактика выгорания, стресс-менеджмент и тематические обучающие
+               программы под задачи компании.
             </p>
           </article>
         </div>
@@ -532,7 +547,7 @@
           <a class="site-brand site-brand--footer" href="./index.html" aria-label="ППС — на главную">
             <img
               class="site-brand__logo"
-              src="./assets/logo.png"
+              src="./assets/logos/logo.png"
               alt="Логотип ППС"
               width="240"
               height="58"
@@ -565,11 +580,19 @@
           </div>
 
           <div>
+            <div class="site-footer__title">Сотрудникам</div>
+            <ul class="site-footer__list">
+              <li><a href="./road-help.html">Как обратиться</a></li>
+              <li><a href="http://lknew.mponline.ru">Личный кабинет</a></li>
+            </ul>
+          </div>
+
+          <div>
             <div class="site-footer__title">Контакты</div>
             <ul class="site-footer__list">
               <li><a href="./contacts.html">Оставить заявку</a></li>
-              <li><a href="tel:+78000000000">+7 (800) 000-00-00</a></li>
-              <li><a href="mailto:info@example.ru">info@example.ru</a></li>
+              <li><a href="tel:88005054317">8-800-505-43-17</a></li>
+              <li><a href="mailto:info@mponline.ru">info@mponline.ru</a></li>
             </ul>
           </div>
         </div>
