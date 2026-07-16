@@ -31,7 +31,7 @@
       <a class="site-brand site-brand--header" href="./index.html" aria-label="На главную">
         <img
           class="site-brand__logo"
-          src="./assets/logo.png"
+          src="./assets/logos/logo.png"
           alt="Программа поддержки сотрудников"
           width="260"
           height="72"
@@ -49,13 +49,31 @@
           <li><a class="site-nav__link" href="./hr-business.html">HR-бизнес</a></li>
           <li><a class="site-nav__link" href="./gost-ekg.html">ГОСТ / ЭКГ</a></li>
           <li><a class="site-nav__link" href="./cases.html">Кейсы</a></li>
-          <li><a class="site-nav__link is-active" href="./road-help.html">Как обратиться</a></li>
-          <li><a class="site-nav__link" href="./contacts.html">Контакты</a></li>
+           <li class="site-nav__item--has-sub">
+             <div class="site-nav__link-wrap">
+               <a class="site-nav__link is-active" href="./road-help.html">
+                 Как обратиться
+                 <svg class="site-nav__arrow" viewBox="0 0 24 24" fill="none" width="10" height="10" aria-hidden="true">
+                   <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                 </svg>
+               </a>
+               <button class="site-nav__sub-toggle" type="button" aria-label="Раскрыть подменю" aria-expanded="false">
+                 <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                   <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                 </svg>
+               </button>
+             </div>
+             <ul class="site-nav__sub">
+               <li><a class="site-nav__sublink is-active" href="./road-help.html">Как обратиться</a></li>
+               <li><a class="site-nav__sublink" href="./employees.html">Поддержка сотрудникам</a></li>
+             </ul>
+           </li>
+           <li><a class="site-nav__link" href="./contacts.html">Контакты</a></li>
         </ul>
       </nav>
 
       <div class="site-header__actions">
-        <a class="btn btn--primary site-header__cabinet" href="./employees.html">
+        <a class="btn btn--primary site-header__cabinet" href="http://lknew.mponline.ru">
           Личный кабинет
         </a>
 
@@ -74,13 +92,13 @@
 
   <main class="site-main" id="main-content">
 
-    <!-- ======================================================================
-         RU: HERO / intro
-         EN: HERO / intro
-         ====================================================================== -->
-    <section class="section" aria-labelledby="road-hero-title">
-      <div class="container">
-        <div class="section-head">
+    <!-- ==========================================================================
+         RU: HERO — split layout, текст слева / изображение справа
+         EN: HERO — split layout, text left / supporting image right
+         ========================================================================== -->
+    <section class="section hero-split" aria-labelledby="road-hero-title">
+      <div class="container hero-split__inner">
+        <div class="hero-split__content">
           <div class="eyebrow">Как получить помощь</div>
           <h1 class="section-title section-title--wide" id="road-hero-title">
             Как выглядит <span class="text-accent">обращение</span><br />
@@ -91,12 +109,14 @@
             и вас соединяют со специалистом. Без участия HR, без лишних
             вопросов, конфиденциально.
           </p>
+          <div class="hero-badges">
+            <span class="eyebrow">Конфиденциально</span>
+            <span class="eyebrow">Без участия HR</span>
+            <span class="eyebrow">Круглосуточно</span>
+          </div>
         </div>
-
-        <div class="hero-badges">
-          <span class="eyebrow">Конфиденциально</span>
-          <span class="eyebrow">Без участия HR</span>
-          <span class="eyebrow">Круглосуточно</span>
+        <div class="hero-split__media">
+          <img src="./assets/images/road-help.png" alt="Как обратиться в программу поддержки сотрудников" width="768" height="512" />
         </div>
       </div>
     </section>
@@ -321,6 +341,50 @@
     </section>
 
     <!-- ======================================================================
+         RU: ОТЗЫВЫ — социальное доказательство для услуги
+         EN: REVIEWS — social proof for the service
+         ====================================================================== -->
+    <section class="section" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Отзывы</div>
+          <h2 class="section-title" id="reviews-title">Что говорят те, кто уже обращался</h2>
+          <p class="section-description">
+            Реальные истории — коротко и по делу
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="review-card">
+            <p class="review-card__text">
+              «После ДТП не знал, что делать. Позвонил — юрист объяснил
+              порядок действий за 5 минут. Растерянность ушла сразу.»
+            </p>
+            <div class="review-card__author">Михаил, водитель</div>
+          </article>
+
+          <article class="review-card">
+            <p class="review-card__text">
+              «На трассе заглохла машина в темноте. Психолог помог
+              успокоиться и вспомнить, кого звать на помощь.
+              До этого паниковала.»
+            </p>
+            <div class="review-card__author">Ольга, менеджер</div>
+          </article>
+
+          <article class="review-card">
+            <p class="review-card__text">
+              «Попал в аварию по чужой вине. Оператор сразу соединил
+              с юристом — тот подсказал, что фиксировать и как говорить
+              с инспектором. Один на один с проблемой не остался.»
+            </p>
+            <div class="review-card__author">Кирилл, экспедитор</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
          RU: CTA
          EN: CTA
          ====================================================================== -->
@@ -355,7 +419,7 @@
           <a class="site-brand site-brand--footer" href="./index.html" aria-label="ППС — на главную">
             <img
               class="site-brand__logo"
-              src="./assets/logo.png"
+              src="./assets/logos/logo.png"
               alt="Логотип ППС"
               width="240"
               height="58"
@@ -391,7 +455,7 @@
             <div class="site-footer__title">Сотрудникам</div>
             <ul class="site-footer__list">
               <li><a href="./road-help.html">Как обратиться</a></li>
-              <li><a href="./employees.html">Личный кабинет</a></li>
+              <li><a href="http://lknew.mponline.ru">Личный кабинет</a></li>
             </ul>
           </div>
         </div>
