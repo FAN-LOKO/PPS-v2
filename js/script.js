@@ -52,6 +52,28 @@ function initMobileMenu() {
     });
   });
 
+  /* ---- submenu toggle (mobile) ---- */
+  const subToggles = nav.querySelectorAll(".site-nav__sub-toggle");
+  subToggles.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var sub = this.parentElement.nextElementSibling;
+      if (sub && sub.classList.contains("site-nav__sub")) {
+        sub.classList.toggle("is-open");
+        this.classList.toggle("is-open");
+        var expanded = this.getAttribute("aria-expanded") === "true" ? "false" : "true";
+        this.setAttribute("aria-expanded", expanded);
+      }
+    });
+  });
+
+  var subLinks = nav.querySelectorAll(".site-nav__sublink");
+  subLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      closeMenu();
+    });
+  });
+
   document.addEventListener("click", (event) => {
     const clickedInsideNav = nav.contains(event.target);
     const clickedToggle = toggleButton.contains(event.target);
@@ -337,3 +359,52 @@ function initStickyHeaderState() {
   updateHeaderState();
   window.addEventListener("scroll", updateHeaderState, { passive: true });
 }
+
+/* ========================================================================== */
+/* RU: Audio player toggle (employees.html) — активируется после добавления   */
+/*     реальных аудиофайлов: уберите .play-btn--disabled и disabled с кнопок  */
+/* EN: Audio player toggle (employees.html) — activates once real audio       */
+/*     files are added: remove .play-btn--disabled and disabled from buttons  */
+/* ========================================================================== */
+let currentAudio = null;
+let currentButton = null;
+
+function togglePlay(btn, audioSrc) {
+  if (currentAudio && !currentAudio.paused) {
+    currentAudio.pause();
+    if (currentButton) {
+      currentButton.classList.remove("playing");
+      currentButton.innerHTML =
+        '<svg viewBox="0 0 24 24" fill="none" width="18" height="18"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>';
+    }
+
+    if (currentButton === btn) {
+      currentAudio = null;
+      currentButton = null;
+      return;
+    }
+  }
+
+  const audio = new Audio(audioSrc);
+
+  audio.addEventListener("ended", function () {
+    btn.classList.remove("playing");
+    btn.innerHTML =
+      '<svg viewBox="0 0 24 24" fill="none" width="18" height="18"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>';
+    currentAudio = null;
+    currentButton = null;
+  });
+
+  audio.play().catch(function () {
+    console.log("Не удалось воспроизвести аудио:", audioSrc);
+  });
+
+  btn.classList.add("playing");
+  btn.innerHTML =
+    '<svg viewBox="0 0 24 24" fill="none" width="18" height="18"><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/></svg>';
+
+  currentAudio = audio;
+  currentButton = btn;
+}
+
+window.togglePlay = togglePlay;
