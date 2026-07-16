@@ -51,7 +51,7 @@
       <a class="site-brand site-brand--header" href="./index.html" aria-label="На главную">
         <img
           class="site-brand__logo"
-          src="./assets/logo.png"
+          src="./assets/logos/logo.png"
           alt="Программа поддержки сотрудников"
           width="260"
           height="72"
@@ -69,13 +69,31 @@
           <li><a class="site-nav__link" href="./hr-business.html">HR-бизнес</a></li>
           <li><a class="site-nav__link" href="./gost-ekg.html">ГОСТ / ЭКГ</a></li>
           <li><a class="site-nav__link" href="./cases.html">Кейсы</a></li>
-          <li><a class="site-nav__link" href="./road-help.html">Как обратиться</a></li>
-          <li><a class="site-nav__link" href="./contacts.html">Контакты</a></li>
+           <li class="site-nav__item--has-sub">
+             <div class="site-nav__link-wrap">
+               <a class="site-nav__link" href="./road-help.html">
+                 Как обратиться
+                 <svg class="site-nav__arrow" viewBox="0 0 24 24" fill="none" width="10" height="10" aria-hidden="true">
+                   <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                 </svg>
+               </a>
+               <button class="site-nav__sub-toggle" type="button" aria-label="Раскрыть подменю" aria-expanded="false">
+                 <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                   <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                 </svg>
+               </button>
+             </div>
+             <ul class="site-nav__sub">
+               <li><a class="site-nav__sublink" href="./road-help.html">Как обратиться</a></li>
+               <li><a class="site-nav__sublink" href="./employees.html">Поддержка сотрудникам</a></li>
+             </ul>
+           </li>
+           <li><a class="site-nav__link" href="./contacts.html">Контакты</a></li>
         </ul>
       </nav>
 
       <div class="site-header__actions">
-        <a class="btn btn--primary site-header__cabinet" href="./employees.html">
+        <a class="btn btn--primary site-header__cabinet" href="http://lknew.mponline.ru">
           Личный кабинет
         </a>
 
@@ -298,6 +316,28 @@
               Программа становится частью корпоративной среды, которая помогает сотрудникам чувствовать поддержку.
             </p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         RU: Нам доверяют / Trust signals
+         EN: Trust / Our clients
+         ========================================================================== -->
+    <section class="section section--trust" aria-labelledby="trust-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Клиенты</div>
+          <h2 class="section-title" id="trust-title">Нам доверяют</h2>
+          <p class="section-description">
+            Более 300 компаний и образовательных учреждений уже используют наши услуги
+          </p>
+        </div>
+
+        <div class="trust-logos">
+          <img src="./assets/images/trust/dov1.png" alt="Клиент 1" loading="lazy" />
+          <img src="./assets/images/trust/dov2.png" alt="Клиент 2" loading="lazy" />
+          <img src="./assets/images/trust/dov3.png" alt="Клиент 3" loading="lazy" />
         </div>
       </div>
     </section>
@@ -706,7 +746,7 @@
           </div>
         </div>
 
-        <div class="split-section split-section--center">
+        <div class="split-section split-section--center split-section--form">
           <div class="form-card" id="lead-form">
             <h3 class="form-card__title">Получить консультацию</h3>
             <p class="form-card__text">
@@ -793,7 +833,7 @@
             </form>
           </div>
 
-          <aside class="stack-20" aria-label="Дополнительная информация">
+          <aside class="stack-20 bottom-cards" aria-label="Дополнительная информация">
             <div class="mini-card">
               <div class="mini-card__title">Контакты</div>
               <div class="mini-card__text">Телефон: +7 (800) 000-00-00</div>
@@ -830,7 +870,7 @@
           <a class="site-brand site-brand--footer" href="#main-content" aria-label="ППС — к началу страницы">
             <img
               class="site-brand__logo"
-              src="./assets/logo.png"
+              src="./assets/logos/logo.png"
               alt="Логотип ППС"
               width="240"
               height="58"
@@ -863,11 +903,19 @@
           </div>
 
           <div>
+            <div class="site-footer__title">Сотрудникам</div>
+            <ul class="site-footer__list">
+              <li><a href="./road-help.html">Как обратиться</a></li>
+              <li><a href="http://lknew.mponline.ru">Личный кабинет</a></li>
+            </ul>
+          </div>
+
+          <div>
             <div class="site-footer__title">Контакты</div>
             <ul class="site-footer__list">
-              <li><a href="#contacts">Оставить заявку</a></li>
-              <li><a href="tel:+78000000000">+7 (800) 000-00-00</a></li>
-              <li><a href="mailto:info@example.ru">info@example.ru</a></li>
+              <li><a href="./contacts.html">Оставить заявку</a></li>
+              <li><a href="tel:88005054317">8-800-505-43-17</a></li>
+              <li><a href="mailto:info@mponline.ru">info@mponline.ru</a></li>
             </ul>
           </div>
         </div>
